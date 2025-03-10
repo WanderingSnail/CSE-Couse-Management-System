@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QU Student Management - Course Registration</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <script src="scripts/app.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="main.html" class="logo">QU Student Management</a>
+      <ul class="nav-links">
+        <li><a href="student_learning_path.html">My Learning Path</a></li>
+        <li><a href="login.html" class="btn-logout">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="registration-section">
+      <h2>Register for Course</h2>
+      <div class="course-details">
+        <h3 id="courseName">Course Name</h3>
+        <p id="courseCategory">Category: Programming</p>
+        <p id="coursePrerequisites">Prerequisites: <span>OOP Basics</span></p>
+        <p id="courseStatus">Open for Registration: <span>Yes</span></p>
+        <p id="courseInstructors">Select Instructor:</p>
+        <select id="instructorList" title="Select Instructor">
+          <option value="instructor1">Instructor 1</option>
+          <option value="instructor2">Instructor 2</option>
+        </select>
+      </div>
+      <button id="btnSubmitRegistration">Submit Registration</button>
+      <div id="registrationResult"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CSE Department - Qatar University</p>
+  </footer>
+</body>
+</html>

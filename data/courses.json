@@ -1,0 +1,30 @@
+[
+    {
+      "id": "c001",
+      "name": "Introduction to JavaScript",
+      "category": "Programming",
+      "prerequisites": [],
+      "status": "open",
+      "instructors": [],
+      "classes": []
+    },
+    {
+      "id": "c002",
+      "name": "Database Systems",
+      "category": "Databases",
+      "prerequisites": [],
+      "status": "open",
+      "instructors": [],
+      "classes": []
+    },
+    {
+      "id": "c003",
+      "name": "AI Fundamentals",
+      "category": "AI",
+      "prerequisites": ["c001"],
+      "status": "open",
+      "instructors": [],
+      "classes": []
+    }
+  ]
+  

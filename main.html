@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QU Student Management - Login</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="scripts/app.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="main.html" class="logo">QU Student Management</a>
+      <ul class="nav-links">
+        <li><a href="student_learning_path.html">My Learning Path</a></li>
+        <li><a href="instructor_dashboard.html">Instructor Dashboard</a></li>
+        <li><a href="admin_dashboard.html">Admin Dashboard</a></li>
+        <li><a href="login.html" class="btn-logout">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="course-search">
+      <h2>Available Courses</h2>
+      <div class="search-bar">
+        <input type="text" id="searchByName" placeholder="Search by course name..." />
+        <label for="searchByCategory">Category:</label>
+        <select id="searchByCategory">
+          <option value="">All Categories</option>
+          <option value="Programming">Programming</option>
+          <option value="Databases">Databases</option>
+          <option value="AI">AI</option>
+        </select>
+        <button id="searchBtn">Search</button>
+      </div>
+
+      <div id="coursesContainer" class="courses-container">
+        <div class="course-card">
+          <h3>Introduction to JavaScript</h3>
+          <p>Category: Programming</p>
+          <button class="btn-register">Register</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CSE Department - Qatar University</p>
+  </footer>
+</body>
+
+</html>

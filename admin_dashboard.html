@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QU Student Management - Admin Dashboard</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <script src="scripts/app.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="main.html" class="logo">QU Student Management</a>
+      <ul class="nav-links">
+        <li><a href="admin_dashboard.html" class="active">Admin Dashboard</a></li>
+        <li><a href="login.html" class="btn-logout">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="admin-section">
+      <h2>Admin Dashboard</h2>
+
+      <div class="courses-overview">
+        <h3>Current and Upcoming Courses/Classes</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Course Name</th>
+              <th>Category</th>
+              <th>Status</th>
+              <th>Classes (Instructors)</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="adminCoursesTable">
+            <tr>
+              <td>Database Systems</td>
+              <td>Databases</td>
+              <td>Open for registration</td>
+              <td>Class 1 (Dr. X), Class 2 (Dr. Y)</td>
+              <td>
+                <button>Validate</button>
+                <button>Cancel</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="admin-actions">
+        <h3>Create New Course</h3>
+        <form id="createCourseForm">
+          <div class="form-group">
+            <label for="courseTitle">Course Title:</label>
+            <input type="text" id="courseTitle" required/>
+          </div>
+          <div class="form-group">
+            <label for="courseCategory">Category:</label>
+            <input type="text" id="courseCategory" required/>
+          </div>
+          <button type="submit">Create Course</button>
+        </form>
+      </div>
+
+      <div class="admin-actions">
+        <h3>Create New Class</h3>
+        <form id="createClassForm">
+          <div class="form-group">
+            <label for="selectCourse">Select Course:</label>
+            <select id="selectCourse">
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="selectInstructor">Select Instructor:</label>
+            <select id="selectInstructor">
+            </select>
+          </div>
+          <button type="submit">Create Class</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CSE Department - Qatar University</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QU Student Management</title>
+    <link rel="stylesheet" href="../styles/st.css" />
+    <script src="scripts/app.js" defer></script>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo-img">
+        <img
+          src="/img/QU logo.png"
+          alt="Qatar University logo"
+          height="100%"
+          width="100%"
+        />
+      </div>
+      <h1>Welcome to <span>QU Student Management system </span></h1>
+    </header>
+
+    <main>
+      <div class="login-container">
+        <form id="login-Form" action="#">
+          <h2>Login</h2>
+          <div class="input-group">
+            <label for="username"> <i class="bx bxs-user"></i> Username:</label>
+            <input
+              type="text"
+              name="username"
+              class="input-user-password"
+              placeholder="Enter your username"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="password">
+              <i class="bx bxs-lock-alt"></i>Password:</label
+            >
+            <input
+              type="password"
+              name="password"
+              class="input-user-password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+
+          <button type="submit" class="login-btn">Login</button>
+          <p class="redirect-msg">
+            Don’t have an account? <a href="#">Contact Admin</a>
+          </p>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 CSE Department - Qatar University</p>
+    </footer>
+  </body>
+</html>

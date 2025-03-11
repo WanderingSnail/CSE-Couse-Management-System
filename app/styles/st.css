@@ -30,6 +30,7 @@ header {
     color: rgb(177, 87, 87);
   }
 }
+
 .logo-img {
   width: 5.2rem;
   img {
@@ -40,12 +41,13 @@ header {
 
 main {
   grid-area: main;
-  background-image: url(/img/Qu\ system.webp);
+  background-image: url(../img/Qu_system.webp);
   background-size: cover;
   width: 100%;
   -ms-grid-column-align: center;
   padding-top: 3rem;
 }
+
 footer {
   grid-area: footer;
   display: flex;
@@ -59,6 +61,7 @@ footer {
   justify-content: center;
   align-self: center;
 }
+
 #login-Form {
   display: flex;
   flex-direction: column;
@@ -74,10 +77,12 @@ footer {
   }
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
 #login-Form:hover {
   transform: scale(1.1);
   background-color: rgba(252, 252, 252, 0.973);
 }
+
 .input-group {
   margin: 1rem;
 }
@@ -111,11 +116,13 @@ label {
 .login-btn:hover {
   transform: scale(1.1);
 }
+
 .redirect-msg {
   align-self: center;
   margin: 0.8rem;
   font-size: small;
 }
+
 footer {
   background-color: snow;
   color: #000000;

@@ -1,55 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QU Student Management - My Learning Path</title>
+    <link rel="stylesheet" href="../styles/st.css" />
+    <script src="scripts/app.js" defer></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QU Student Management - My Learning Path</title>
-  <link rel="stylesheet" href="../styles/styles.css"/>
-  <script src="scripts/app.js" defer></script>
-</head>
-
-<body>
-  <header>
-    <nav class="navbar">
-      <a href="main.html" class="logo">QU Student Management</a>
-      <ul class="nav-links">
-        <li><a href="main.html">All Courses</a></li>
-        <li><a href="login.html" class="btn-logout">Logout</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <section class="learning-path">
-      <h2>My Learning Path</h2>
-
-      <div class="path-section">
-        <h3>Completed Courses (with Grades)</h3>
-        <ul id="completedCourses">
-          <li>CMPS 151 - Intro to Programming, Grade: A</li>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="main.html" class="logo">QU Student Management</a>
+        <ul class="nav-links">
+          <li><a href="main.html">All Courses</a></li>
+          <li><a href="login.html" class="btn-logout">Logout</a></li>
         </ul>
-      </div>
+      </nav>
+    </header>
 
-      <div class="path-section">
-        <h3>In-Progress Courses</h3>
-        <ul id="inProgressCourses">
-          <li>CMPS 350 - Web Development</li>
-        </ul>
-      </div>
+    <main>
+      <section class="learning-path">
+        <h2>My Learning Path</h2>
 
-      <div class="path-section">
-        <h3>Pending Courses</h3>
-        <ul id="pendingCourses">
-          <li>CMPS 405 - AI Fundamentals (registration open, not started)</li>
-        </ul>
-      </div>
-    </section>
-  </main>
+        <div class="path-section">
+          <h3>Completed Courses (with Grades)</h3>
+          <ul id="completedCourses">
+            <li>CMPS 151 - Intro to Programming, Grade: A</li>
+          </ul>
+        </div>
 
-  <footer>
-    <p>&copy; 2024 CSE Department - Qatar University</p>
-  </footer>
-</body>
+        <div class="path-section">
+          <h3>In-Progress Courses</h3>
+          <ul id="inProgressCourses">
+            <li>CMPS 350 - Web Development</li>
+          </ul>
+        </div>
 
+        <div class="path-section">
+          <h3>Pending Courses</h3>
+          <ul id="pendingCourses">
+            <li>CMPS 405 - AI Fundamentals (registration open, not started)</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 CSE Department - Qatar University</p>
+    </footer>
+  </body>
 </html>

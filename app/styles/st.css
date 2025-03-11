@@ -140,7 +140,17 @@ footer {
   .logo-title {
     flex-direction: row;
   }
+  .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 1rem;
+  }
+  .nav-ul {
+    display: flex;
+  }
 }
+
 /* main html styling  */
 
 .header-title {
@@ -156,12 +166,22 @@ nav {
   list-style: none;
   text-align: center;
   padding: 0.4rem;
+  text-wrap: nowrap;
 }
 .nav-ul li a {
   text-decoration: none;
-  background-color: rgb(212, 122, 122);
   color: white;
   padding: 0.2rem;
   border-radius: 3rem;
+  font-size: small;
+  transition: 0.7s ease;
+  background-color: rgb(212, 122, 122);
+}
 
+.nav-ul li a:hover {
+  background-color: brown;
+}
+
+.nav-ul li:hover {
+  transform: scale(1.1);
 }

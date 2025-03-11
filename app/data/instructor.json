@@ -1,0 +1,19 @@
+[
+  {
+    "id": "202013001",
+    "name": "Dr. Smith",
+    "username": "instructor1",
+    "password": "pass123",
+    "role": "instructor",
+    "assignedCourses": ["CMPS151", "CMPS460"]
+  },
+  {
+    "id": "202008002",
+    "name": "Dr. Johnson",
+    "username": "instructor2",
+    "password": "pass456",
+    "role": "instructor",
+    "assignedCourses": ["CMPS351"]
+  }
+  ]
+  

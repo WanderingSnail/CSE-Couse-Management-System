@@ -1,0 +1,9 @@
+[
+    {
+      "id": "admin1",
+      "name": "Dr. Khalid Ali",
+      "username": "admin1",
+      "password": "adminpass",
+      "role": "admin"
+    }
+]

@@ -1,0 +1,10 @@
+[
+    {
+      "id": "012025001",
+      "name": "Mohmmed Mohsin",
+      "username": "mm2025001",
+      "password": "01mm001",
+      "role": "student",
+      "enrolledCourses": ["CMPS351"]
+    }
+  ]

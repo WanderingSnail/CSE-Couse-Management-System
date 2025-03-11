@@ -1,8 +1,8 @@
 [
     {
-      "classId": "class-1",
+      "room.NO": "101",
       "courseId": "c001",
-      "day": "Sunday",
+      "day": ["Sunday", "tuesday"],
       "time": "08:00 - 09:00"
     }
   ]

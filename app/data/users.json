@@ -1,21 +1,39 @@
 [
-    {
-      "username": "student1",
-      "password": "pass123",
-      "role": "student",
-      "id": "s1001"
-    },
-    {
-      "username": "instructor1",
-      "password": "pass123",
-      "role": "instructor",
-      "name": "Dr. Smith"
-    },
-    {
-      "username": "admin1",
-      "password": "adminpass",
-      "role": "admin",
-      "name": "Admin"
-    }
-  ]
+  {
+    "id": "112014001",
+    "name": "Khalid Ali",
+    "username": "ka140001",
+    "password": "11ka001",
+    "role": "admin"
+  },
+  {
+    "id": "102013001",
+    "name": "Smith Divid",
+    "username": "sd130001",
+    "password": "10sd001",
+    "role": "instructor"
+  },
+  {
+    "id": "102008002",
+    "name": "Johnson Mike",
+    "username": "jm080002",
+    "password": "10jm002",
+    "role": "instructor"
+  },
+  {
+    "id": "102017003",
+    "name": "Bruce Wayen",
+    "username": "bw170003",
+    "password": "10bw003",
+    "role": "instructor"
+  },
+  {
+    "id": "012025001",
+    "name": "Mohmmed Mohsin",
+    "username": "mm2025001",
+    "password": "01mm001",
+    "role": "student"
+  }
+
+]
   

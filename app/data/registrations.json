@@ -1,10 +1,9 @@
 [
-    {
-      "studentId": "s1001",
-      "courseId": "c001",
-      "classId": "class-1",
-      "status": "completed",
-      "grade": "A"
-    }
+  {
+    "studentId": "012025001",
+    "courseId": "CMPS151",
+    "status": "completed",
+    "grade": "A"
+  }
   ]
   

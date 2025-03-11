@@ -1,0 +1,7 @@
+first two
+[01] = student example: 012022043
+[10] = instructor example: 102020321
+[11] = admin examlpe: 112014340
+
+next four digit represent the year the user joined QU
+last 3 digit is an index *starting from 001 is optinal* 

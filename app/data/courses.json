@@ -1,30 +1,30 @@
 [
-    {
-      "id": "c001",
-      "name": "Introduction to JavaScript",
-      "category": "Programming",
-      "prerequisites": [],
-      "status": "open",
-      "instructors": [],
-      "classes": []
-    },
-    {
-      "id": "c002",
-      "name": "Database Systems",
-      "category": "Databases",
-      "prerequisites": [],
-      "status": "open",
-      "instructors": [],
-      "classes": []
-    },
-    {
-      "id": "c003",
-      "name": "AI Fundamentals",
-      "category": "AI",
-      "prerequisites": ["c001"],
-      "status": "open",
-      "instructors": [],
-      "classes": []
-    }
+  {
+    "id": "CMPS151",
+    "name": "Introduction to JavaScript",
+    "category": "Programming",
+    "description": "Learn the fundamentals of JavaScript programming.",
+    "prerequisites": [],
+    "status": "open",
+    "instructors": ["Smith Divid"]
+  },
+  {
+    "id": "CMPS351",
+    "name": "Database Systems",
+    "category": "Databases",
+    "description": "Introduction to database management and SQL.",
+    "prerequisites": [],
+    "status": "open",
+    "instructors": ["Johnson Mike", "Bruce Wayen"]
+  },
+  {
+    "id": "CMPS460",
+    "name": "AI Fundamentals",
+    "category": "AI",
+    "description": "Basic concepts of Artificial Intelligence and Machine Learning.",
+    "prerequisites": ["CMPS151"],
+    "status": "open",
+    "instructors": ["Smith Divid"]
+  }
   ]
   

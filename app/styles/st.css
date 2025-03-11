@@ -17,22 +17,28 @@ body {
 
 header {
   grid-area: header;
+  background-color: snow;
+}
+
+.logo-title {
   display: flex;
   padding: 0.5rem;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   text-align: center;
-  font-size: smaller;
-  background-color: snow;
   text-shadow: 2px 2px 4px #a19b9b;
+  h1 {
+    font-size: large;
+  }
   span {
     color: rgb(177, 87, 87);
   }
 }
 
 .logo-img {
-  width: 5.2rem;
+  width: 4rem;
   img {
     border-radius: 48%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -44,8 +50,7 @@ main {
   background-image: url(../img/Qu_system.webp);
   background-size: cover;
   width: 100%;
-  -ms-grid-column-align: center;
-  padding-top: 3rem;
+  padding-top: 3.5rem;
 }
 
 footer {
@@ -129,4 +134,34 @@ footer {
   text-align: center;
   padding: 0.7em;
   font-weight: bold;
+  font-size: small;
+}
+@media screen and (min-width: 481px) {
+  .logo-title {
+    flex-direction: row;
+  }
+}
+/* main html styling  */
+
+.header-title {
+  text-decoration: none;
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nav-ul li {
+  list-style: none;
+  text-align: center;
+  padding: 0.4rem;
+}
+.nav-ul li a {
+  text-decoration: none;
+  background-color: rgb(212, 122, 122);
+  color: white;
+  padding: 0.2rem;
+  border-radius: 3rem;
+
 }

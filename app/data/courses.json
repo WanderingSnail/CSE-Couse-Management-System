@@ -5,8 +5,8 @@
     "category": "Programming",
     "description": "Learn the fundamentals of JavaScript programming.",
     "prerequisites": [],
-    "status": "open",
-    "instructors": ["Smith Divid"]
+    "minStudents": 10,
+    "maxStudents": 20
   },
   {
     "id": "CMPS351",
@@ -14,8 +14,8 @@
     "category": "Databases",
     "description": "Introduction to database management and SQL.",
     "prerequisites": [],
-    "status": "open",
-    "instructors": ["Johnson Mike", "Bruce Wayen"]
+    "minStudents": 10,
+    "maxStudents": 20
   },
   {
     "id": "CMPS460",
@@ -23,8 +23,8 @@
     "category": "AI",
     "description": "Basic concepts of Artificial Intelligence and Machine Learning.",
     "prerequisites": ["CMPS151"],
-    "status": "open",
-    "instructors": ["Smith Divid"]
+    "minStudents": 10,
+    "maxStudents": 20
   }
   ]
   

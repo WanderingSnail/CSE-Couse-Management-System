@@ -5,14 +5,17 @@
     "username": "instructor1",
     "password": "pass123",
     "role": "instructor",
+    "expertise_area": ["AI", "Programming"],
     "assignedCourses": ["CMPS151", "CMPS460"]
   },
+  
   {
     "id": "202008002",
     "name": "Dr. Johnson",
     "username": "instructor2",
     "password": "pass456",
     "role": "instructor",
+    "expertise_area": ["Databases", "Programming"],
     "assignedCourses": ["CMPS351"]
   }
   ]

@@ -92,7 +92,7 @@ footer {
   margin: 1rem;
 }
 
-.input-user-password {
+.input-user-password, .input-user-username {
   border: 2px solid rgb(182, 166, 166);
   border-radius: 40px;
   width: 100%;

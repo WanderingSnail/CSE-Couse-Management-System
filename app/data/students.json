@@ -5,6 +5,21 @@
       "username": "mm2025001",
       "password": "01mm001",
       "role": "student",
-      "enrolledCourses": ["CMPS351"]
+
+      "enrolledCourses": [
+        {
+          "courseID": ["CMPS351"],
+          "instructor": ["Johnson Mike", "Bruce Wayen"],
+          "status": "inProgress"
+        }               
+      ],
+
+      "completedCourses": [
+        {
+        "courseID": ["CMPS151"],
+        "instructor": ["Smith Divid"],
+         "grade": "A"
+        }
+      ]
     }
   ]

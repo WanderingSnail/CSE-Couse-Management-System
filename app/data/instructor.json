@@ -1,17 +1,25 @@
 [
   {
-    "id": "202013001",
-    "name": "Dr. Smith",
-    "username": "instructor1",
-    "password": "pass123",
+    "id": "102013001",
+    "name": "Smith Divid",
+    "username": "sd130001",
+    "password": "10sd001",
     "role": "instructor",
     "assignedCourses": ["CMPS151", "CMPS460"]
   },
   {
-    "id": "202008002",
-    "name": "Dr. Johnson",
-    "username": "instructor2",
-    "password": "pass456",
+    "id": "102008002",
+    "name": "Johnson Mike",
+    "username": "jm080002",
+    "password": "10jm002",
+    "role": "instructor",
+    "assignedCourses": ["CMPS351"]
+  },
+  {
+    "id": "102017003",
+    "name": "Bruce Wayen",
+    "username": "bw170003",
+    "password": "10bw003",
     "role": "instructor",
     "assignedCourses": ["CMPS351"]
   }

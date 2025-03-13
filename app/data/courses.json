@@ -1,30 +1,162 @@
 [
   {
     "id": "CMPS151",
-    "name": "Introduction to JavaScript",
-    "category": "Programming",
-    "description": "Learn the fundamentals of JavaScript programming.",
+    "name": "Programming Concept",
+    "category": ["Programming"],
+    "description": "Learn the fundamentals and basic techniques of programming.",
     "prerequisites": [],
-    "minStudents": 10,
-    "maxStudents": 20
+    "creditHours": 3,
+    "minStudents": 30,
+    "maxStudents": 40
+  },
+  {
+    "id": "CMPS205",
+    "name": "Discrete Structures",
+    "category": ["Programming","Computing Systems"],
+    "description": "Study the fundamental discrete mathematical structures used in computing.",
+    "prerequisites": [],
+    "creditHours": 3,
+    "minStudents": 30,
+    "maxStudents": 40
+  },
+  {
+    "id": "CMPS200",
+    "name": "Computer Ethics",
+    "category": ["Software Engineering"],
+    "description": "Explore ethical considerations and responsibilities in computing.",
+    "prerequisites": [],
+    "creditHours": 1,
+    "minStudents": 30,
+    "maxStudents": 40
+  },
+  {
+    "id": "CMPS251",
+    "name": "Object Oriented Programming",
+    "category": ["Programming"],
+    "description": "Learn object-oriented programming concepts and design patterns.",
+    "prerequisites": ["CMPS151"],
+    "creditHours": 4,
+    "minStudents": 30,
+    "maxStudents": 40
+  },
+    {
+    "id": "CMPS303",
+    "name": "Data Structures",
+    "category": ["Programming"],
+    "description": "Study various data structures and their applications in software development.",
+    "prerequisites": ["CMPS251"],
+    "creditHours": 4,
+    "minStudents": 30,
+    "maxStudents": 40
+  },
+  {
+    "id": "CMPS323",
+    "name": "Design & Analysis of Algorithms",
+    "category": ["Programming"],
+    "description": "Learn techniques for algorithm design and performance analysis.",
+    "prerequisites": ["CMPS205","CMPS303"],
+    "creditHours": 3,
+    "minStudents": 30,
+    "maxStudents": 40
   },
   {
     "id": "CMPS351",
-    "name": "Database Systems",
-    "category": "Databases",
-    "description": "Introduction to database management and SQL.",
-    "prerequisites": [],
-    "minStudents": 10,
-    "maxStudents": 20
+    "name": " Fundamentals of Database",
+    "category": ["Programming","Computing Systems"],
+    "description": "Learn about database design, SQL, and database management systems.",
+    "prerequisites": ["CMPS251"],
+    "creditHours": 4,
+    "minStudents": 30,
+    "maxStudents": 40
   },
   {
-    "id": "CMPS460",
-    "name": "AI Fundamentals",
-    "category": "AI",
-    "description": "Basic concepts of Artificial Intelligence and Machine Learning.",
-    "prerequisites": ["CMPS151"],
-    "minStudents": 10,
-    "maxStudents": 20
+    "id": "CMPE263",
+    "name": "Computer Architecture & Organization",
+    "category": ["Computing Systems"],
+    "description": "Study the fundamental architecture of computer systems and processors.",
+    "prerequisites": ["CMPS151","CMPS205"],
+    "creditHours": 3,
+    "minStudents": 30,
+    "maxStudents": 40
+  },
+  {
+    "id": "CMPS310",
+    "name": "Software Engineering",
+    "category": ["Software Engineering"],
+    "description": "Understand the principles of software engineering, design, and development.",
+    "prerequisites": ["CMPS251"],
+    "creditHours": 4,
+    "minStudents": 30,
+    "maxStudents": 40
+  },
+  {
+    "id": "CMPS350",
+    "name": " Web Development Fundamentals",
+    "category": ["Programming","Software Engineering"],
+    "description": "Develop foundational web development skills including HTML, CSS, and JavaScript.",
+    "prerequisites": ["CMPS251"],
+    "creditHours": 3,
+    "minStudents": 30,
+    "maxStudents": 40
+  },
+  {
+    "id": "CMPS380",
+    "name": " Cybersecurity Fundamentals",
+    "category": ["Security"],
+    "description": "Introduction to cybersecurity principles and best practices.",
+    "prerequisites": ["CMPS303"],
+    "creditHours": 3,
+    "minStudents": 30,
+    "maxStudents": 40
+  },
+  {
+    "id": "CMPS405",
+    "name": "Operating Systems",
+    "category": ["Computing Systems"],
+    "description": "Understand the fundamentals of modern operating systems and their components.",
+    "prerequisites": ["CMPE263","CMPS303"],
+    "creditHours": 4,
+    "minStudents": 30,
+    "maxStudents": 40
+  },
+  {
+    "id": "CMPE355",
+    "name": " Data Communication & Networks I",
+    "category": ["Computing Systems","Security"],
+    "description": "Understand the principles of data communication and networking.",
+    "prerequisites": ["CMPE263"],
+    "creditHours": 4,
+    "minStudents": 30,
+    "maxStudents": 40
+  },
+  {
+    "id": "CMPS307",
+    "name": " Introduction to Project Management and Entrepreneurship",
+    "category": ["Software Engineering", "Project"],
+    "description": "Gain knowledge of project management principles and entrepreneurial skills.",
+    "prerequisites": [],
+    "creditHours": 2,
+    "minStudents": 30,
+    "maxStudents": 40
+  },
+  {
+    "id": "CMPS493",
+    "name": "Senior Project I",
+    "category": ["Project"],
+    "description": "First part of the capstone project for final-year students.",
+    "prerequisites": ["CMPS310", "CMPS350 or CMPS405"],
+    "creditHours": 3,
+    "minStudents": 2,
+    "maxStudents": 4
+  },
+  {
+    "id": "CMPS499",
+    "name": "Senior Project II",
+    "category": ["Project"],
+    "description": "Final part of the capstone project for final-year students.",
+    "prerequisites": ["CMPS493"],
+    "creditHours": 3,
+    "minStudents": 2,
+    "maxStudents": 4
   }
-  ]
-  
+]

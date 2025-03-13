@@ -1,4 +1,4 @@
-/* General Reset */
+/* 🌐 General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -38,6 +38,7 @@ nav .logo {
     font-size: 1.5rem;
     font-weight: bold;
     color: #333;
+    text-decoration: none;
 }
 
 .nav-links {
@@ -58,7 +59,7 @@ nav .logo {
 
 .btn-logout {
     background-color: lightgray;
-    border: none;
+    color: white;
 }
 
 main {
@@ -66,7 +67,7 @@ main {
     padding: 2rem;
 }
 
-.course-search {
+.instructor-section {
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 15px;
     padding: 2rem;
@@ -75,79 +76,40 @@ main {
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
 }
 
-.course-search h2 {
+.instructor-section h2 {
     text-align: center;
     margin-bottom: 1rem;
     color: #333;
 }
 
-.search-bar {
+.selection-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 1rem;
     justify-content: center;
     margin-bottom: 2rem;
 }
 
-.search-bar input[type="text"] {
+.selection-container select {
     padding: 0.5rem;
     border-radius: 5rem;
-    width: 250px;
+    width: 200px;
 }
 
-.search-bar select {
-    padding: 0.5rem;
-    border-radius: 5rem;
-    width: 180px;
+.grades-submission {
+    margin-top: 2rem;
 }
 
-.search-bar button {
-    padding: 0.5rem 1rem;
-    background-color: #121414;
-    color: #fff;
-    border: none;
-    border-radius: 5rem;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.search-bar button:hover {
-    transform: scale(1.05);
-}
-
-.courses-container {
-    width: 100%;
+.grades-submission h3 {
     margin-bottom: 1rem;
+    color: #333;
 }
 
-#coursesTable {
-    width: 100%;
-}
-
-#coursesTable th,
-#coursesTable td {
-    padding: 1rem;
+.grade-input {
+    padding: 0.5rem;
+    border-radius: 5px;
     border: 1px solid #ccc;
     text-align: center;
-}
-
-.course-row:hover {
-    background-color: rgba(252, 252, 252, 0.973);
-}
-
-.register-button-container {
-    text-align: right;
-    margin-top: 1rem;
-}
-
-.register-button-container .btn-register {
-    padding: 0.5rem 1rem;
-    background-color: #121414;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: 0.3s ease;
+    width: 80px;
 }
 
 footer {
@@ -156,4 +118,43 @@ footer {
     text-align: center;
     padding: 0.7em;
     font-weight: bold;
+}
+
+.grades-submission table {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.grades-submission th,
+.grades-submission td {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.grade-input {
+    width: 100px;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 1rem;
+}
+
+#submitGradesBtn {
+    margin: 1rem;
+    padding: 0.7rem 1.5rem;
+    background-color: #121414;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+div > label {
+    padding-top: 0.65rem;
+}
+
+.submit-container {
+    display: flex;
+    justify-content: center;
 }

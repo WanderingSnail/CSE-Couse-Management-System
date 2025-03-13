@@ -1,63 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>QU Student Management - Login</title>
-    <link rel="stylesheet" href="../styles/st.css" />
-    <script src="scripts/app.js" defer></script>
-    <link
-    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-    rel="stylesheet"
-  />
-  </head>
 
-  <body>
-    <header>
-      <nav class="nav">
-      <div class="logo-title">
-        <div class="logo-img">
-          <img
-          src="../img/QU logo.png"
-          alt="Qatar University logo"
-          height="100%"
-          width="100%"
-          />
-        </div>
-        <h1> <a href="main.html" class="header-title"><span>QU Student Management system </span></h1>
-        </a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QU Student Management - Courses</title>
+  <link rel="stylesheet" href="../styles/mainStyle.css" />
+</head>
+
+<body>
+  <header>
+    <div class="logo-img">
+      <img src="../img/QU logo.png" alt="Qatar University logo" width="100%"/>
+    </div>
+    <nav class="navbar">
+      <a href="main.html" class="logo">QU Student Management</a>
+      <ul class="nav-links">
+        <li><a href="student_learning_path.html">My Learning Path</a></li>
+        <li><a href="login.html" class="btn-logout">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="course-search">
+      <h2>Available Courses</h2>
+      <div class="search-bar">
+        <input type="text" id="searchByName" placeholder="Search by course name..." />
+        <!-- "‎" is an empty character -->
+        <label for="searchByCategory">‎</label>
+        <select id="searchByCategory">
+          <!-- Inject from JSON into here -->
+          <option value="">All Categories</option>
+          <option value="Programming">Programming</option>
+          <option value="Databases">Databases</option>
+          <option value="AI">AI</option>
+        </select>
+        <button id="searchBtn">Search</button>
       </div>
-        <ul class="nav-ul">
-          <li><a href="main.html"> Main Page <i class='bx bx-home'></i></a></li>
-          <li><a href="student_learning_path.html">  Veiw Learning Path <i class='bx bx-book-reader'></i></a></li>
-          <li><a href="login.html" class="logout-btn"> Logout <i class='bx bx-log-out'></i></a></li>
-        </ul>
-      </nav>
-    </header>
 
-    <main>
-      <!-- <div class="course-search">
-        <h2>Available Courses</h2>
-        <div class="search-bar">
-          <input
-            type="text"
-            id="searchByName"
-            placeholder="Search by course name..."
-          />
-          <label for="searchByCategory">Category:</label>
-          <select id="searchByCategory">
-            <option value="">All Categories</option>
-            <option value="Programming">Programming</option>
-            <option value="Databases">Databases</option>
-            <option value="AI">AI</option>
-          </select>
-          <button class="login-btn">Search</button>
-        </div>
-      </div> -->
-    </main>
+      <div class="courses-container">
+        <table id="coursesTable">
+          <thead>
+            <tr>
+              <th>Select</th>
+              <th>Course Name</th>
+              <th>Category</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Inject from JSON into here -->
+            <tr class="course-row">
+              <td>
+                <!-- "‎" is an empty character -->
+                <label>
+                  <input type="checkbox" class="course-checkbox" value="course1"> ‎
+                </label>
+              </td>
+              <td>Introduction to JavaScript</td>
+              <td>Programming</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-    <footer>
-      <p>&copy; 2025 CSE Department - Qatar University</p>
-    </footer>
-  </body>
+      <div class="register-button-container">
+        <button id="registerBtn" class="btn-register">Register</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CSE Department - Qatar University</p>
+  </footer>
+</body>
+
 </html>

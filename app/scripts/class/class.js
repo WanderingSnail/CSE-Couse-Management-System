@@ -28,4 +28,8 @@ export class Class extends Course {
     get schedule() {
         return this.#schedule;
     }
+
+    static fromJson(json) {
+        return new Class(json.instructor, json.students, json.status, json.schedule);
+    }
 }

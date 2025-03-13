@@ -16,8 +16,10 @@ document.addEventListener("DOMContentLoaded", async () => {
             let flag = false;
             for (const user of users) {
                 if (user.login(username, password)) {
+                    //Store the user's ID in local storage
                     localStorage.setItem("id", user.id);
                     flag = true;
+                    //Redirect to the appropriate page based on the user's role
                     switch (user.role) {
                         case "admin":
                             window.location.href = "../html/admin_dashboard.html";

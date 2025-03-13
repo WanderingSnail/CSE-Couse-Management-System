@@ -1,0 +1,153 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    font-family: Arial, sans-serif;
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.logo-img {
+    width: 4.5rem;
+}
+
+nav {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 1rem;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 1.5rem;
+}
+
+.nav-links li a:hover {
+    background-color: #f0f0f0;
+}
+
+.btn-logout {
+    background-color: lightgray;
+    color: white;
+    border: none;
+}
+
+main {
+    grid-area: main;
+    padding: 2rem;
+}
+
+.learning-path {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+}
+
+.learning-path h2, h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.search-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.search-bar input[type="text"] {
+    padding: 0.5rem;
+    border-radius: 5rem;
+    width: 250px;
+}
+
+.search-bar select {
+    padding: 0.5rem;
+    border-radius: 5rem;
+    width: 180px;
+}
+
+.search-bar button {
+    padding: 0.5rem 1rem;
+    background-color: #121414;
+    color: #fff;
+    border: none;
+    border-radius: 5rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.search-bar button:hover {
+    transform: scale(1.05);
+}
+
+.courses-container {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+#enrolledCoursesTable, #completedCoursesTable {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+#enrolledCoursesTable th,
+#enrolledCoursesTable td {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+#completedCoursesTable th,
+#completedCoursesTable td {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.course-row:hover {
+    background-color: rgba(252, 252, 252, 0.973);
+}
+
+footer {
+    grid-area: footer;
+    color: #000;
+    text-align: center;
+    padding: 0.7em;
+    font-weight: bold;
+}

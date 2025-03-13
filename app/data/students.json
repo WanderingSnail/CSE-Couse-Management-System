@@ -8,7 +8,7 @@
 
       "enrolledCourses": [
         {
-          "courseID": ["CMPS351"],
+          "courseID": "CMPS351",
           "instructor": ["Johnson Mike", "Bruce Wayen"],
           "status": "inProgress"
         }               
@@ -16,7 +16,7 @@
 
       "completedCourses": [
         {
-        "courseID": ["CMPS151"],
+        "courseID": "CMPS205",
         "instructor": ["Smith Divid"],
          "grade": "A"
         }

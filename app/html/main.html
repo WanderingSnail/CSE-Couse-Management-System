@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QU Student Management - Courses</title>
   <link rel="stylesheet" href="../styles/mainStyle.css" />
+  <script src="..\scripts\main.js" type="module" defer></script>
 </head>
 
 <body>
@@ -27,14 +28,14 @@
       <h2>Available Courses</h2>
       <div class="search-bar">
         <input type="text" id="searchByName" placeholder="Search by course name..." />
-        <!-- "‎" is an empty character -->
-        <label for="searchByCategory">‎</label>
-        <select id="searchByCategory">
-          <!-- Inject from JSON into here -->
+        <label for="searchByCategory"></label>
+        <select id="searchByCategory">qw
           <option value="">All Categories</option>
           <option value="Programming">Programming</option>
-          <option value="Databases">Databases</option>
-          <option value="AI">AI</option>
+          <option value="Computing Systems">Computing Systems</option>
+          <option value="Software Engineering">Software Engineering</option>
+          <option value="Security">Security</option>
+          <option value="Project">Project</option>
         </select>
         <button id="searchBtn">Search</button>
       </div>
@@ -49,12 +50,10 @@
             </tr>
           </thead>
           <tbody>
-            <!-- Inject from JSON into here -->
             <tr class="course-row">
               <td>
-                <!-- "‎" is an empty character -->
                 <label>
-                  <input type="checkbox" class="course-checkbox" value="course1"> ‎
+                  <input type="checkbox" class="course-checkbox" value="course1">
                 </label>
               </td>
               <td>Introduction to JavaScript</td>

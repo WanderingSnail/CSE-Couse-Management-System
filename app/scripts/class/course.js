@@ -42,4 +42,8 @@ export class Course {
     get maxStudents() {
         return this.#maxStudents;
     }
+
+    static fromJson(json) {
+        return new Course(json.id, json.name, json.category, json.description, json.prerequisites);
+    }
 }

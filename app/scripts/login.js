@@ -36,6 +36,5 @@ document.addEventListener("DOMContentLoaded", async () => {
                 alert("Invalid username or password");
             }
         });
-    
     }
 );

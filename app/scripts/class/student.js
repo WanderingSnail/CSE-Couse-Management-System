@@ -3,8 +3,8 @@ import { User } from "./user.js";
 export class Student extends User {
     #enrolledCourses;
     #completedCourses;
-    constructor(username, password, role="student", id, enrolledCourses, completedCourses) {
-        super(username, password, role, id);
+    constructor(id, name, username, password, role="student", enrolledCourses, completedCourses) {
+        super(id, name, username, password, role);
         this.#enrolledCourses = enrolledCourses;
         this.#completedCourses = completedCourses;
     }
@@ -18,5 +18,9 @@ export class Student extends User {
     //Completed courses with courseID, instructor, grade
     get completedCourses() {
         return this.#completedCourses;
+    }
+
+    static fromJson(json) {
+        return new Student(json.id, json.name, json.username, json.password, json.role, json.enrolledCourses, json.completedCourses);
     }
 }

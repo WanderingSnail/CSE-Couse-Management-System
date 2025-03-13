@@ -4,16 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>QU Student Management - My Learning Path</title>
-    <link rel="stylesheet" href="../styles/st.css" />
-    <script src="scripts/app.js" defer></script>
+    <link rel="stylesheet" href="../styles/learningPath.css"  />
+    <script src="../scripts/learningPath.js" type="module"></script>
   </head>
 
   <body>
     <header>
+      <div class="logo-img">
+        <img src="../img/QU logo.png" alt="Qatar University logo" width="100%"/>
+      </div>
       <nav class="navbar">
         <a href="main.html" class="logo">QU Student Management</a>
         <ul class="nav-links">
-          <li><a href="main.html">All Courses</a></li>
+          <li><a href="student_learning_path.html">My Learning Path</a></li>
           <li><a href="login.html" class="btn-logout">Logout</a></li>
         </ul>
       </nav>
@@ -22,26 +25,60 @@
     <main>
       <section class="learning-path">
         <h2>My Learning Path</h2>
-
-        <div class="path-section">
-          <h3>Completed Courses (with Grades)</h3>
-          <ul id="completedCourses">
-            <li>CMPS 151 - Intro to Programming, Grade: A</li>
-          </ul>
+        <div class="search-bar">
+          <input type="text" id="searchByName" placeholder="Search by course name..." />
+          <label for="searchByCategory"></label>
+          <select id="searchByCategory">qw
+            <option value="">All Categories</option>
+            <option value="Programming">Programming</option>
+            <option value="Computing Systems">Computing Systems</option>
+            <option value="Software Engineering">Software Engineering</option>
+            <option value="Security">Security</option>
+            <option value="Project">Project</option>
+          </select>
+          <button id="searchBtn">Search</button>
         </div>
+  
+        <div class="courses-container">
+          <h3>Enrolled Courses</h3>
+          <table id="enrolledCoursesTable">
+            <thead>
+              <tr>
+                <th>Course Name</th>
+                <th>Category</th>
+                <th>Instructor</th>
+                <th>Status</th>            
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="course-row">
+                <td>Programming Concept</td>
+                <td>Programming</td>
+                <td>Johnson Mike</td>
+                <td>inProgress</td>              
+              </tr>
+            </tbody>
+          </table>
 
-        <div class="path-section">
-          <h3>In-Progress Courses</h3>
-          <ul id="inProgressCourses">
-            <li>CMPS 350 - Web Development</li>
-          </ul>
-        </div>
-
-        <div class="path-section">
-          <h3>Pending Courses</h3>
-          <ul id="pendingCourses">
-            <li>CMPS 405 - AI Fundamentals (registration open, not started)</li>
-          </ul>
+          <h3>Completed Courses</h3>
+          <table id="completedCoursesTable">
+            <thead>
+              <tr>
+                <th>Course Name</th>
+                <th>Category</th>
+                <th>Instructor</th>
+                <th>Grade</th>            
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="course-row">
+                <td>Programming Concept</td>
+                <td>Programming</td>
+                <td>Johnson Mike</td>
+                <td>A</td>              
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
     </main>
@@ -50,4 +87,5 @@
       <p>&copy; 2025 CSE Department - Qatar University</p>
     </footer>
   </body>
-</html>
+  
+  </html>

@@ -1,34 +1,418 @@
 [
-    {
-      "id": "CMPS151",
-      "name": "Introduction to JavaScript",
-      "category": "Programming",
-      "description": "Learn the fundamentals of JavaScript programming.",
-      "prerequisites": [],
-      "status": "open",
-      "instructors": ["Smith Divid"]
-    },
-    {
-      "id": "CMPS351",
-      "name": "Database Systems",
-      "category": "Databases",
-      "description": "Introduction to database management and SQL.",
-      "prerequisites": [],
-      "status": "open",
-      "instructors": ["Johnson Mike", "Bruce Wayen"],
-      "schedule": {
-        "room.NO": "101",    
-        "day": ["Sunday", "tuesday"],
-        "time": "08:00 - 09:00"
-      }
-    },
-    {
-      "id": "CMPS460",
-      "name": "AI Fundamentals",
-      "category": "AI",
-      "description": "Basic concepts of Artificial Intelligence and Machine Learning.",
-      "prerequisites": ["CMPS151"],
-      "status": "open",
-      "instructors": ["Smith Divid"]
+  {
+    "id": "L01",
+    "course": "CMPS151",
+    "name": "Programming Concept",
+    "status": "open",
+    "instructors": "Brad Peter",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "101",
+      "day": ["Monday", "Wednesday"],
+      "time": "08:00 - 09:00"
     }
-    ]
+  },
+  {
+    "id": "L02",
+    "course": "CMPS151",
+    "name": "Programming Concept",
+    "status": "open",
+    "instructors": "Scarlett Johansson",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "102",
+      "day": ["Monday", "Wednesday"],
+      "time": "09:00 - 10:00"
+    }
+  },
+  {
+    "id": "L01",
+    "course": "CMPS205",
+    "name": "Discrete Structures",
+    "status": "open",
+    "instructors": "Tony Stark",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "103",
+      "day": ["Monday", "Wednesday"],
+      "time": "10:00 - 11:00"
+    }
+  },
+  {
+    "id": "L02",
+    "course": "CMPS205",
+    "name": "Discrete Structures",
+    "status": "open",
+    "instructors": "Scarlett Johansson",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "104",
+      "day": ["Monday", "Wednesday"],
+      "time": "11:00 - 12:00"
+    }
+  },
+  {
+    "id": "L01",
+    "course": "CMPS200",
+    "name": "Computer Ethics",
+    "status": "open",
+    "instructors": "Bruce Wayne",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "105",
+      "day": ["Tuesday", "Thursday"],
+      "time": "08:00 - 09:00"
+    }
+  },
+  {
+    "id": "L02",
+    "course": "CMPS200",
+    "name": "Computer Ethics",
+    "status": "open",
+    "instructors": "Bruce Wayne",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "106",
+      "day": ["Tuesday", "Thursday"],
+      "time": "09:00 - 10:00"
+    }
+  },
+  {
+    "id": "L01",
+    "course": "CMPS251",
+    "name": "Object Oriented Programming",
+    "status": "open",
+    "instructors": "Brad Peter",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "107",
+      "day": ["Tuesday", "Thursday"],
+      "time": "10:00 - 11:00"
+    }
+  },
+  {
+    "id": "L02",
+    "course": "CMPS251",
+    "name": "Object Oriented Programming",
+    "status": "open",
+    "instructors": "Brad Peter",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "108",
+      "day": ["Tuesday", "Thursday"],
+      "time": "11:00 - 12:00"
+    }
+  },
+  {
+    "id": "L01",
+    "course": "CMPS303",
+    "name": "Data Structures",
+    "status": "open",
+    "instructors": "Tony Stark",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "109",
+      "day": ["Wednesday", "Friday"],
+      "time": "08:00 - 09:00"
+    }
+  },
+  {
+    "id": "L02",
+    "course": "CMPS303",
+    "name": "Data Structures",
+    "status": "open",
+    "instructors": "Tony Stark",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "110",
+      "day": ["Wednesday", "Friday"],
+      "time": "09:00 - 10:00"
+    }
+  },
+  {
+    "id": "L01",
+    "course": "CMPS323",
+    "name": "Design & Analysis of Algorithms",
+    "status": "open",
+    "instructors": "Brad Peter",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "111",
+      "day": ["Wednesday", "Friday"],
+      "time": "10:00 - 11:00"
+    }
+  },
+  {
+    "id": "L02",
+    "course": "CMPS323",
+    "name": "Design & Analysis of Algorithms",
+    "status": "open",
+    "instructors": "Kylian Memphis",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "112",
+      "day": ["Wednesday", "Friday"],
+      "time": "11:00 - 12:00"
+    }
+  },
+  {
+    "id": "L01",
+    "course": "CMPS351",
+    "name": "Fundamentals of Database",
+    "status": "open",
+    "instructors": "Kylian Memphis",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "113",
+      "day": ["Thursday", "Saturday"],
+      "time": "08:00 - 09:00"
+    }
+  },
+  {
+    "id": "L02",
+    "course": "CMPS351",
+    "name": "Fundamentals of Database",
+    "status": "open",
+    "instructors": "Kylian Memphis",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "114",
+      "day": ["Thursday", "Saturday"],
+      "time": "09:00 - 10:00"
+    }
+  },
+  {
+    "id": "L01",
+    "course": "CMPE263",
+    "name": "Computer Architecture & Organization",
+    "status": "open",
+    "instructors": "Leonardo DiMaria",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "115",
+      "day": ["Thursday", "Saturday"],
+      "time": "10:00 - 11:00"
+    }
+  },
+  {
+    "id": "L02",
+    "course": "CMPE263",
+    "name": "Computer Architecture & Organization",
+    "status": "open",
+    "instructors": "Leonardo DiMaria",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "201",
+      "day": ["Thursday", "Saturday"],
+      "time": "11:00 - 12:00"
+    }
+  },
+  {
+    "id": "L01",
+    "course": "CMPS310",
+    "name": "Software Engineering",
+    "status": "open",
+    "instructors": "Bruce Wayne",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "202",
+      "day": ["Sunday", "Tuesday"],
+      "time": "08:00 - 09:00"
+    }
+  },
+  {
+    "id": "L02",
+    "course": "CMPS310",
+    "name": "Software Engineering",
+    "status": "open",
+    "instructors": "Bruce Wayne",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "203",
+      "day": ["Sunday", "Tuesday"],
+      "time": "09:00 - 10:00"
+    }
+  },
+  {
+    "id": "L01",
+    "course": "CMPS350",
+    "name": "Web Development Fundamentals",
+    "status": "open",
+    "instructors": "Kylian Memphis",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "204",
+      "day": ["Sunday", "Tuesday"],
+      "time": "10:00 - 11:00"
+    }
+  },
+  {
+    "id": "L02",
+    "course": "CMPS350",
+    "name": "Web Development Fundamentals",
+    "status": "open",
+    "instructors": "Kylian Memphis",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "205",
+      "day": ["Sunday", "Tuesday"],
+      "time": "11:00 - 12:00"
+    }
+  },
+  {
+    "id": "L01",
+    "course": "CMPS380",
+    "name": "Cybersecurity Fundamentals",
+    "status": "open",
+    "instructors": "Peter Parker",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "206",
+      "day": ["Monday", "Friday"],
+      "time": "08:00 - 09:00"
+    }
+  },
+  {
+    "id": "L02",
+    "course": "CMPS380",
+    "name": "Cybersecurity Fundamentals",
+    "status": "open",
+    "instructors": "Robert Downey",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "207",
+      "day": ["Monday", "Friday"],
+      "time": "09:00 - 10:00"
+    }
+  },
+  {
+    "id": "L01",
+    "course": "CMPS405",
+    "name": "Operating Systems",
+    "status": "open",
+    "instructors": "Leonardo DiMaria",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "208",
+      "day": ["Monday", "Friday"],
+      "time": "10:00 - 11:00"
+    }
+  },
+  {
+    "id": "L02",
+    "course": "CMPS405",
+    "name": "Operating Systems",
+    "status": "open",
+    "instructors": "Leonardo DiMaria",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "209",
+      "day": ["Monday", "Friday"],
+      "time": "11:00 - 12:00"
+    }
+  },
+  {
+    "id": "L01",
+    "course": "CMPE355",
+    "name": "Data Communication & Networks I",
+    "status": "open",
+    "instructors": "Peter Parker",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "210",
+      "day": ["Tuesday", "Friday"],
+      "time": "08:00 - 09:00"
+    }
+  },
+  {
+    "id": "L02",
+    "course": "CMPE355",
+    "name": "Data Communication & Networks I",
+    "status": "open",
+    "instructors": "Robert Downey",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "211",
+      "day": ["Tuesday", "Friday"],
+      "time": "09:00 - 10:00"
+    }
+  },
+  {
+    "id": "L01",
+    "course": "CMPS307",
+    "name": "Introduction to Project Management and Entrepreneurship",
+    "status": "open",
+    "instructors": "Christian Bale",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "212",
+      "day": ["Tuesday", "Friday"],
+      "time": "10:00 - 11:00"
+    }
+  },
+  {
+    "id": "L02",
+    "course": "CMPS307",
+    "name": "Introduction to Project Management and Entrepreneurship",
+    "status": "open",
+    "instructors": "Hugh Jackman",
+    "capacity": 40,
+    "schedule": {
+      "room.NO": "213",
+      "day": ["Tuesday", "Friday"],
+      "time": "11:00 - 12:00"
+    }
+  },
+  {
+    "id": "L01",
+    "course": "CMPS493",
+    "name": "Senior Project I",
+    "status": "open",
+    "instructors": "Christian Bale",
+    "capacity": 4,
+    "schedule": {
+      "room.NO": "214",
+      "day": ["Wednesday", "Saturday"],
+      "time": "08:00 - 09:00"
+    }
+  },
+  {
+    "id": "L02",
+    "course": "CMPS493",
+    "name": "Senior Project I",
+    "status": "open",
+    "instructors": "Hugh Jackman",
+    "capacity": 4,
+    "schedule": {
+      "room.NO": "215",
+      "day": ["Wednesday", "Saturday"],
+      "time": "09:00 - 10:00"
+    }
+  },
+  {
+    "id": "L01",
+    "course": "CMPS499",
+    "name": "Senior Project II",
+    "status": "open",
+    "instructors": "Christian Bale",
+    "capacity": 4,
+    "schedule": {
+      "room.NO": "101",
+      "day": ["Wednesday", "Saturday"],
+      "time": "10:00 - 11:00"
+    }
+  },
+  {
+    "id": "L02",
+    "course": "CMPS499",
+    "name": "Senior Project II",
+    "status": "open",
+    "instructors": "Christian Bale",
+    "capacity": 4,
+    "schedule": {
+      "room.NO": "102",
+      "day": ["Wednesday", "Saturday"],
+      "time": "11:00 - 12:00"
+    }
+  }
+]

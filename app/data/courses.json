@@ -144,7 +144,7 @@
     "name": "Senior Project I",
     "category": ["Project"],
     "description": "First part of the capstone project for final-year students.",
-    "prerequisites": ["CMPS310", "CMPS350 or CMPS405"],
+    "prerequisites": ["CMPS310", "CMPS350"],
     "creditHours": 3,
     "minStudents": 2,
     "maxStudents": 4

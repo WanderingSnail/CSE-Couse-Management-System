@@ -2,8 +2,8 @@ import { Course } from "./class/course.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
      // Fetch and load courses
-    const response = await fetch("../data/courses.json");
-    const coursesJSON = await response.json();
+    const coursesResponse = await fetch("../data/courses.json");
+    const coursesJSON = await coursesResponse.json();
     const courses = coursesJSON.map(Course.fromJson);
 
     // Get DOM elements
@@ -23,11 +23,20 @@ document.addEventListener("DOMContentLoaded", async () => {
   
       courses.forEach((course) => {
         const row = document.createElement("tr");
+        const L01 =  
         row.classList.add("course-row");
         row.innerHTML = `
           <td><input type="checkbox" class="course-checkbox" value="${course.id}"></td>
           <td>${course.name}</td>
           <td>${course.category.join(", ")}</td>
+          <td></td>
+          <td></td>
+          <td>
+            <select class="class-dropdown">
+            <option value="L01" selected>L01</option>
+            <option value="L02">L02</option>
+            </select>
+          </td>
         `;
         coursesTable.appendChild(row);
       });

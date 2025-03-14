@@ -6,8 +6,8 @@
     "description": "Learn the fundamentals and basic techniques of programming.",
     "prerequisites": [],
     "creditHours": 3,
-    "minStudents": 30,
-    "maxStudents": 40
+    "minStudents": 4,
+    "maxStudents": 20
   },
   {
     "courseId": "CMPS205",
@@ -16,8 +16,8 @@
     "description": "Study the fundamental discrete mathematical structures used in computing.",
     "prerequisites": [],
     "creditHours": 3,
-    "minStudents": 30,
-    "maxStudents": 40
+    "minStudents": 4,
+    "maxStudents": 20
   },
   {
     "courseId": "CMPS200",
@@ -26,8 +26,8 @@
     "description": "Explore ethical considerations and responsibilities in computing.",
     "prerequisites": [],
     "creditHours": 1,
-    "minStudents": 30,
-    "maxStudents": 40
+    "minStudents": 4,
+    "maxStudents": 20
   },
   {
     "courseId": "CMPS251",
@@ -36,8 +36,8 @@
     "description": "Learn object-oriented programming concepts and design patterns.",
     "prerequisites": ["CMPS151"],
     "creditHours": 4,
-    "minStudents": 30,
-    "maxStudents": 40
+    "minStudents": 4,
+    "maxStudents": 20
   },
     {
     "courseId": "CMPS303",
@@ -46,8 +46,8 @@
     "description": "Study various data structures and their applications in software development.",
     "prerequisites": ["CMPS251"],
     "creditHours": 4,
-    "minStudents": 30,
-    "maxStudents": 40
+    "minStudents": 4,
+    "maxStudents": 20
   },
   {
     "courseId": "CMPS323",
@@ -56,8 +56,8 @@
     "description": "Learn techniques for algorithm design and performance analysis.",
     "prerequisites": ["CMPS205","CMPS303"],
     "creditHours": 3,
-    "minStudents": 30,
-    "maxStudents": 40
+    "minStudents": 4,
+    "maxStudents": 20
   },
   {
     "courseId": "CMPS351",
@@ -66,8 +66,8 @@
     "description": "Learn about database design, SQL, and database management systems.",
     "prerequisites": ["CMPS251"],
     "creditHours": 4,
-    "minStudents": 30,
-    "maxStudents": 40
+    "minStudents": 4,
+    "maxStudents": 20
   },
   {
     "courseId": "CMPE263",
@@ -76,8 +76,8 @@
     "description": "Study the fundamental architecture of computer systems and processors.",
     "prerequisites": ["CMPS151","CMPS205"],
     "creditHours": 3,
-    "minStudents": 30,
-    "maxStudents": 40
+    "minStudents": 4,
+    "maxStudents": 20
   },
   {
     "courseId": "CMPS310",
@@ -86,8 +86,8 @@
     "description": "Understand the principles of software engineering, design, and development.",
     "prerequisites": ["CMPS251"],
     "creditHours": 4,
-    "minStudents": 30,
-    "maxStudents": 40
+    "minStudents": 4,
+    "maxStudents": 20
   },
   {
     "courseId": "CMPS350",
@@ -96,8 +96,8 @@
     "description": "Develop foundational web development skills including HTML, CSS, and JavaScript.",
     "prerequisites": ["CMPS251"],
     "creditHours": 3,
-    "minStudents": 30,
-    "maxStudents": 40
+    "minStudents": 4,
+    "maxStudents": 20
   },
   {
     "courseId": "CMPS380",
@@ -106,8 +106,8 @@
     "description": "Introduction to cybersecurity principles and best practices.",
     "prerequisites": ["CMPS303"],
     "creditHours": 3,
-    "minStudents": 30,
-    "maxStudents": 40
+    "minStudents": 4,
+    "maxStudents": 20
   },
   {
     "courseId": "CMPS405",
@@ -116,8 +116,8 @@
     "description": "Understand the fundamentals of modern operating systems and their components.",
     "prerequisites": ["CMPE263","CMPS303"],
     "creditHours": 4,
-    "minStudents": 30,
-    "maxStudents": 40
+    "minStudents": 4,
+    "maxStudents": 20
   },
   {
     "courseId": "CMPE355",
@@ -126,8 +126,8 @@
     "description": "Understand the principles of data communication and networking.",
     "prerequisites": ["CMPE263"],
     "creditHours": 4,
-    "minStudents": 30,
-    "maxStudents": 40
+    "minStudents": 4,
+    "maxStudents": 20
   },
   {
     "courseId": "CMPS307",
@@ -136,8 +136,8 @@
     "description": "Gain knowledge of project management principles and entrepreneurial skills.",
     "prerequisites": [],
     "creditHours": 2,
-    "minStudents": 30,
-    "maxStudents": 40
+    "minStudents": 4,
+    "maxStudents": 20
   },
   {
     "courseId": "CMPS493",

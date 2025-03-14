@@ -4,299 +4,381 @@
     "courseId": "CMPS151",
     "status": "open",
     "instructors": "Brad Peter",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "101",
       "day": ["Monday", "Wednesday"],
       "time": "08:00 - 09:00"
-    }
+    },
+    "students": [
+    { "name": "Ibrahim Al-Hassan", "id": "012020012" },
+    { "name": "Hassan Al-Rashid", "id": "012020013" },
+    { "name": "Rashid Al-Maktoum", "id": "012020014" },
+    { "name": "Tariq Al-Salem", "id": "012020015" },
+    { "name": "Khalid Al-Omari", "id": "012020016" },
+    { "name": "Omar Al-Farid", "id": "012020017" },
+    { "name": "Saif Al-Amin", "id": "012020018" },
+    { "name": "Nasser Al-Rawi", "id": "012020019" }
+    ]
   },
   {
     "classId": "L02",
     "courseId": "CMPS151",
     "status": "open",
     "instructors": "Scarlett Johansson",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "102",
       "day": ["Monday", "Wednesday"],
       "time": "09:00 - 10:00"
-    }
+    },
+    "students": [
+
+    ]
   },
   {
     "classId": "L01",
     "courseId": "CMPS205",
     "status": "open",
     "instructors": "Tony Stark",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "103",
       "day": ["Monday", "Wednesday"],
       "time": "10:00 - 11:00"
-    }
+    },
+    "students": [
+      
+    ]
   },
   {
     "classId": "L02",
     "courseId": "CMPS205",
     "status": "open",
     "instructors": "Scarlett Johansson",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "104",
       "day": ["Monday", "Wednesday"],
       "time": "11:00 - 12:00"
-    }
+    },
+    "students": [
+      
+    ]
   },
   {
     "classId": "L01",
     "courseId": "CMPS200",
     "status": "open",
     "instructors": "Bruce Wayne",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "105",
       "day": ["Tuesday", "Thursday"],
       "time": "08:00 - 09:00"
-    }
+    },
+    "students": [
+      
+    ]
   },
   {
     "classId": "L02",
     "courseId": "CMPS200",
     "status": "open",
     "instructors": "Bruce Wayne",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "106",
       "day": ["Tuesday", "Thursday"],
       "time": "09:00 - 10:00"
-    }
+    },
+    "students": [
+      
+    ]
   },
   {
     "classId": "L01",
     "courseId": "CMPS251",
     "status": "open",
     "instructors": "Brad Peter",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "107",
       "day": ["Tuesday", "Thursday"],
       "time": "10:00 - 11:00"
-    }
+    },
+    "students": [
+      
+    ]
   },
   {
     "classId": "L02",
     "courseId": "CMPS251",
     "status": "open",
     "instructors": "Brad Peter",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "108",
       "day": ["Tuesday", "Thursday"],
       "time": "11:00 - 12:00"
-    }
+    },
+    "students": [
+      
+    ]
   },
   {
     "classId": "L01",
     "courseId": "CMPS303",
     "status": "open",
     "instructors": "Tony Stark",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "109",
       "day": ["Wednesday", "Friday"],
       "time": "08:00 - 09:00"
-    }
+    },
+    "students": [
+      { "name": "Khalid Mansour", "id": "012024005" }
+    ]
   },
   {
     "classId": "L02",
     "courseId": "CMPS303",
     "status": "open",
     "instructors": "Tony Stark",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "110",
       "day": ["Wednesday", "Friday"],
       "time": "09:00 - 10:00"
-    }
+    },
+    "students": [
+      { "name": "Mohmmed Mohsin", "id": "012025001" }
+    ]
   },
   {
     "classId": "L01",
     "courseId": "CMPS323",
     "status": "open",
     "instructors": "Brad Peter",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "111",
       "day": ["Wednesday", "Friday"],
       "time": "10:00 - 11:00"
-    }
+    },
+    "students": [
+      
+    ]
   },
   {
     "classId": "L02",
     "courseId": "CMPS323",
     "status": "open",
     "instructors": "Kylian Memphis",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "112",
       "day": ["Wednesday", "Friday"],
       "time": "11:00 - 12:00"
-    }
+    },
+    "students": [
+      { "name": "Khalid Mansour", "id": "012024005" }
+    ]
   },
   {
     "classId": "L01",
     "courseId": "CMPS351",
     "status": "open",
     "instructors": "Kylian Memphis",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "113",
       "day": ["Thursday", "Saturday"],
       "time": "08:00 - 09:00"
-    }
+    },
+    "students": [
+      { "name": "Mohmmed Mohsin", "id": "012025001" }
+    ]
   },
   {
     "classId": "L02",
     "courseId": "CMPS351",
     "status": "open",
     "instructors": "Kylian Memphis",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "114",
       "day": ["Thursday", "Saturday"],
       "time": "09:00 - 10:00"
-    }
+    },
+    "students": [
+      
+    ]
   },
   {
     "classId": "L01",
     "courseId": "CMPE263",
     "status": "open",
     "instructors": "Leonardo DiMaria",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "115",
       "day": ["Thursday", "Saturday"],
       "time": "10:00 - 11:00"
-    }
+    },
+    "students": [
+      
+    ]
   },
   {
     "classId": "L02",
     "courseId": "CMPE263",
     "status": "open",
     "instructors": "Leonardo DiMaria",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "201",
       "day": ["Thursday", "Saturday"],
       "time": "11:00 - 12:00"
-    }
+    },
+    "students": [
+      
+    ]
   },
   {
     "classId": "L01",
     "courseId": "CMPS310",
     "status": "open",
     "instructors": "Bruce Wayne",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "202",
       "day": ["Sunday", "Tuesday"],
       "time": "08:00 - 09:00"
-    }
+    },
+    "students": [
+      { "name": "Yousef Karim", "id": "012024007" }
+    ]
   },
   {
     "classId": "L02",
     "courseId": "CMPS310",
     "status": "open",
     "instructors": "Bruce Wayne",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "203",
       "day": ["Sunday", "Tuesday"],
       "time": "09:00 - 10:00"
-    }
+    },
+    "students": [
+      
+    ]
   },
   {
     "classId": "L01",
     "courseId": "CMPS350",
     "status": "open",
     "instructors": "Kylian Memphis",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "204",
       "day": ["Sunday", "Tuesday"],
       "time": "10:00 - 11:00"
-    }
+    },
+    "students": [
+      
+    ]
   },
   {
     "classId": "L02",
     "courseId": "CMPS350",
     "status": "open",
     "instructors": "Kylian Memphis",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "205",
       "day": ["Sunday", "Tuesday"],
       "time": "11:00 - 12:00"
-    }
+    },
+    "students": [
+      
+    ]
   },
   {
     "classId": "L01",
     "courseId": "CMPS380",
     "status": "open",
     "instructors": "Peter Parker",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "206",
       "day": ["Monday", "Friday"],
       "time": "08:00 - 09:00"
-    }
+    },
+    "students": [
+      
+    ]
   },
   {
     "classId": "L02",
     "courseId": "CMPS380",
     "status": "open",
     "instructors": "Robert Downey",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "207",
       "day": ["Monday", "Friday"],
       "time": "09:00 - 10:00"
-    }
+    },
+    "students": [
+      
+    ]
   },
   {
     "classId": "L01",
     "courseId": "CMPS405",
     "status": "open",
     "instructors": "Leonardo DiMaria",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "208",
       "day": ["Monday", "Friday"],
       "time": "10:00 - 11:00"
-    }
+    },
+    "students": [
+      
+    ]
   },
   {
     "classId": "L02",
     "courseId": "CMPS405",
     "status": "open",
     "instructors": "Leonardo DiMaria",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "209",
       "day": ["Monday", "Friday"],
       "time": "11:00 - 12:00"
-    }
+    },
+    "students": [
+      
+    ]
   },
   {
     "classId": "L01",
     "courseId": "CMPE355",
     "status": "open",
     "instructors": "Peter Parker",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "210",
       "day": ["Tuesday", "Friday"],
-      "time": "08:00 - 09:00"
+      "time": "08:00 - 09:00",
+      "students": [
+      { "name": "Yousef Karim", "id": "012024007" }
+    ]
     }
   },
   {
@@ -304,36 +386,45 @@
     "courseId": "CMPE355",
     "status": "open",
     "instructors": "Robert Downey",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "211",
       "day": ["Tuesday", "Friday"],
       "time": "09:00 - 10:00"
-    }
+    },
+    "students": [
+      
+    ]
   },
   {
     "classId": "L01",
     "courseId": "CMPS307",
     "status": "open",
     "instructors": "Christian Bale",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "212",
       "day": ["Tuesday", "Friday"],
       "time": "10:00 - 11:00"
-    }
+    },
+    "students": [
+      
+    ]
   },
   {
     "classId": "L02",
     "courseId": "CMPS307",
     "status": "open",
     "instructors": "Hugh Jackman",
-    "capacity": 40,
+    "capacity": 20,
     "schedule": {
       "room.NO": "213",
       "day": ["Tuesday", "Friday"],
       "time": "11:00 - 12:00"
-    }
+    },
+    "students": [
+      
+    ]
   },
   {
     "classId": "L01",
@@ -345,7 +436,10 @@
       "room.NO": "214",
       "day": ["Wednesday", "Saturday"],
       "time": "08:00 - 09:00"
-    }
+    },
+    "students": [
+      
+    ]
   },
   {
     "classId": "L02",
@@ -357,7 +451,10 @@
       "room.NO": "215",
       "day": ["Wednesday", "Saturday"],
       "time": "09:00 - 10:00"
-    }
+    },
+    "students": [
+      
+    ]
   },
   {
     "classId": "L01",
@@ -369,7 +466,10 @@
       "room.NO": "101",
       "day": ["Wednesday", "Saturday"],
       "time": "10:00 - 11:00"
-    }
+    },
+    "students": [
+      
+    ]
   },
   {
     "classId": "L02",
@@ -381,6 +481,9 @@
       "room.NO": "102",
       "day": ["Wednesday", "Saturday"],
       "time": "11:00 - 12:00"
-    }
+    },
+    "students": [
+      
+    ]
   }
 ]

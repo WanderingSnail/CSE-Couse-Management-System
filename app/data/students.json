@@ -1,25 +1,284 @@
 [
+  {
+    "info": [
     {
       "id": "012025001",
       "name": "Mohmmed Mohsin",
-      "username": "mm2025001",
+      "username": "mm20250001",
       "password": "01mm001",
-      "role": "student",
-
-      "enrolledCourses": [
-        {
-          "courseID": "CMPS351",
-          "instructor": ["Johnson Mike", "Bruce Wayen"],
-          "status": "inProgress"
-        }               
-      ],
-
-      "completedCourses": [
-        {
-        "courseID": "CMPS205",
-        "instructor": ["Smith Divid"],
-         "grade": "A"
-        }
-      ]
+      "role": "student"
     }
-  ]
+    ],
+    "enrolledCourses": [
+      {
+        "classId": "L01",
+        "courseID": "CMPS351",
+        "instructor": "Kylian Memphis"
+      },
+      {
+        "classId": "L02",
+        "courseID": "CMPS303",
+        "instructor": "Tony Stark"
+      }               
+    ],
+
+    "completedCourses": [
+      {
+      "classId": "L02",
+      "courseID": "CMPS251",
+      "instructor": "Brad Peter",
+      "grade": "C+"
+      },
+      {
+        "classId": "L01",
+        "courseID": "CMPS151",
+        "instructor": "Scarlett Johansson",
+        "grade": "A"
+        }
+    ]
+  },
+  {
+    "info": [
+      {
+        "id": "012024005",
+        "name": "Khalid Mansour",
+        "username": "km240005",
+        "password": "01km005",
+        "role": "student"
+      }
+    ],
+    "enrolledCourses": [
+      {
+        "classId": "L01",
+        "courseID": "CMPS303",
+        "instructor": "Tony Stark"
+      },
+      {
+        "classId": "L02",
+        "courseID": "CMPS323",
+        "instructor": "Kylian Memphis"
+      }
+    ],
+    "completedCourses": [
+      {
+        "classId": "L02",
+        "courseID": "CMPS151",
+        "instructor": "Scarlett Johansson",
+        "grade": "A"
+      },
+      {
+        "classId": "L02",
+        "courseID": "CMPS251",
+        "instructor": "Brad Peter",
+        "grade": "B+"
+      },
+      {
+        "classId": "L01",
+        "courseID": "CMPS205",
+        "instructor": "Tony Stark",
+        "grade": "B"
+      }
+    ]
+  },
+  {
+    "info": [
+      {
+        "id": "012024007",
+        "name": "Yousef Karim",
+        "username": "yk240007",
+        "password": "01yk007",
+        "role": "student"
+      }
+    ],
+    "enrolledCourses": [
+      {
+        "classId": "L01",
+        "courseID": "CMPE355",
+        "instructor": "Peter Parker"
+      },
+      {
+        "classId": "L01",
+        "courseID": "CMPS310",
+        "instructor": "Bruce Wayne"
+      }
+    ],
+    "completedCourses": [
+      {
+        "classId": "L01",
+        "courseID": "CMPS151",
+        "instructor": "Brad Peter",
+        "grade": "A"
+      },
+      {
+        "classId": "L02",
+        "courseID": "CMPS251",
+        "instructor": "Brad Peter",
+        "grade": "B+"
+      },
+      {
+        "classId": "L01",
+        "courseID": "CMPE263",
+        "instructor": "Leonardo DiMaria",
+        "grade": "A"
+      },
+      {
+        "classId": "L01",
+        "courseID": "CMPS205",
+        "instructor": "Tony Stark",
+        "grade": "B"
+      }
+    ]
+  },
+  {
+    "info": [
+      {
+        "id": "012020012",
+        "name": "Ibrahim Al-Hassan",
+        "username": "ia200012",
+        "password": "01ia012",
+        "role": "student"
+      }
+    ],
+    "enrolledCourses": [
+      {
+        "classId": "L01",
+        "courseID": "CMPS151",
+        "instructor": "Brad Peter"
+      }
+    ],
+    "completedCourses": []
+  },
+  {
+    "info": [
+      {
+        "id": "012020013",
+        "name": "Hassan Al-Rashid",
+        "username": "ha200013",
+        "password": "01ha013",
+        "role": "student"
+      }
+    ],
+    "enrolledCourses": [
+      {
+        "classId": "L01",
+        "courseID": "CMPS151",
+        "instructor": "Brad Peter"
+      }
+    ],
+    "completedCourses": []
+  },
+  {
+    "info": [
+      {
+        "id": "012020014",
+        "name": "Rashid Al-Maktoum",
+        "username": "ra200014",
+        "password": "01ra014",
+        "role": "student"
+      }
+    ],
+    "enrolledCourses": [
+      {
+        "classId": "L01",
+        "courseID": "CMPS151",
+        "instructor": "Brad Peter"
+      }
+    ],
+    "completedCourses": []
+  },
+  {
+    "info": [
+      {
+        "id": "012020015",
+        "name": "Tariq Al-Salem",
+        "username": "ta200015",
+        "password": "01ta015",
+        "role": "student"
+      }
+    ],
+    "enrolledCourses": [
+      {
+        "classId": "L01",
+        "courseID": "CMPS151",
+        "instructor": "Brad Peter"
+      }
+    ],
+    "completedCourses": []
+  },
+  {
+    "info": [
+      {
+        "id": "012020016",
+        "name": "Khalid Al-Omari",
+        "username": "ka200016",
+        "password": "01ka016",
+        "role": "student"
+      }
+    ],
+    "enrolledCourses": [
+      {
+        "classId": "L01",
+        "courseID": "CMPS151",
+        "instructor": "Brad Peter"
+      }
+    ],
+    "completedCourses": []
+  },
+  {
+    "info": [
+      {
+        "id": "012020017",
+        "name": "Omar Al-Farid",
+        "username": "oa200017",
+        "password": "01oa017",
+        "role": "student"
+      }
+    ],
+    "enrolledCourses": [
+      {
+        "classId": "L01",
+        "courseID": "CMPS151",
+        "instructor": "Brad Peter"
+      }
+    ],
+    "completedCourses": []
+  },
+  {
+    "info": [
+      {
+        "id": "012020018",
+        "name": "Saif Al-Amin",
+        "username": "sa200018",
+        "password": "01sa018",
+        "role": "student"
+      }
+    ],
+    "enrolledCourses": [
+      {
+        "classId": "L01",
+        "courseID": "CMPS151",
+        "instructor": "Brad Peter"
+      }
+    ],
+    "completedCourses": []
+  },
+  {
+    "info": [
+      {
+        "id": "012020019",
+        "name": "Nasser Al-Rawi",
+        "username": "na200019",
+        "password": "01na019",
+        "role": "student"
+      }
+    ],
+    "enrolledCourses": [
+      {
+        "classId": "L01",
+        "courseID": "CMPS151",
+        "instructor": "Brad Peter"
+      }
+    ],
+    "completedCourses": []
+  }
+]

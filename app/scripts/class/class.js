@@ -5,8 +5,9 @@ export class Class {
     #instructors;
     #capacity;
     #schedule;
+    #studentList;
     
-    constructor(classId, courseId, status, instructors, capacity, schedule) {
+    constructor(classId, courseId, status, instructors, capacity, schedule, studentList) {
         this.#classId = classId;
         this.#courseId = courseId;
         this.#status = status;
@@ -40,6 +41,6 @@ export class Class {
     }
 
     static fromJson(json) {
-        return new Class(json.classId, json.courseId, json.status, json.instructors, json.capacity, json.schedule);
+        return new Class(json.classId, json.courseId, json.status, json.instructors, json.capacity, json.schedule, json.studentList);
     }
 }

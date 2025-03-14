@@ -1,28 +1,38 @@
-import { Course } from "./course.js";
-
-export class Class extends Course {
-    #instructor;
-    #student;
+export class Class {
+    #classId;
+    #courseId;
     #status; //open, closed, in progress, completed
+    #instructors;
+    #capacity;
     #schedule;
     
-    constructor(instructor, students, status, schedule) {
-        this.#instructor = instructor;
-        this.#student = students;
+    constructor(classId, courseId, status, instructors, capacity, schedule) {
+        this.#classId = classId;
+        this.#courseId = courseId;
         this.#status = status;
+        this.#instructors = instructors;
+        this.#capacity = capacity;
         this.#schedule = schedule;
     }
     
-    get instructor() {
-        return this.#instructor;
+    get classId() {
+        return this.#classId;
     }
 
-    get students() {
-        return this.#student;
+    get courseId() {
+        return this.#courseId;
+    }
+
+    get instructors() {
+        return this.#instructors;
     }
 
     get status() {
         return this.#status;
+    }
+
+    get capacity() {
+        return this.#capacity;
     }
 
     get schedule() {
@@ -30,6 +40,6 @@ export class Class extends Course {
     }
 
     static fromJson(json) {
-        return new Class(json.instructor, json.students, json.status, json.schedule);
+        return new Class(json.classId, json.courseId, json.status, json.instructors, json.capacity, json.schedule);
     }
 }

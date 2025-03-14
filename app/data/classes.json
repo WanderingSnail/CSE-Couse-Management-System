@@ -1,8 +1,7 @@
 [
   {
-    "id": "L01",
-    "course": "CMPS151",
-    "name": "Programming Concept",
+    "classId": "L01",
+    "courseId": "CMPS151",
     "status": "open",
     "instructors": "Brad Peter",
     "capacity": 40,
@@ -13,9 +12,8 @@
     }
   },
   {
-    "id": "L02",
-    "course": "CMPS151",
-    "name": "Programming Concept",
+    "classId": "L02",
+    "courseId": "CMPS151",
     "status": "open",
     "instructors": "Scarlett Johansson",
     "capacity": 40,
@@ -26,9 +24,8 @@
     }
   },
   {
-    "id": "L01",
-    "course": "CMPS205",
-    "name": "Discrete Structures",
+    "classId": "L01",
+    "courseId": "CMPS205",
     "status": "open",
     "instructors": "Tony Stark",
     "capacity": 40,
@@ -39,9 +36,8 @@
     }
   },
   {
-    "id": "L02",
-    "course": "CMPS205",
-    "name": "Discrete Structures",
+    "classId": "L02",
+    "courseId": "CMPS205",
     "status": "open",
     "instructors": "Scarlett Johansson",
     "capacity": 40,
@@ -52,9 +48,8 @@
     }
   },
   {
-    "id": "L01",
-    "course": "CMPS200",
-    "name": "Computer Ethics",
+    "classId": "L01",
+    "courseId": "CMPS200",
     "status": "open",
     "instructors": "Bruce Wayne",
     "capacity": 40,
@@ -65,9 +60,8 @@
     }
   },
   {
-    "id": "L02",
-    "course": "CMPS200",
-    "name": "Computer Ethics",
+    "classId": "L02",
+    "courseId": "CMPS200",
     "status": "open",
     "instructors": "Bruce Wayne",
     "capacity": 40,
@@ -78,9 +72,8 @@
     }
   },
   {
-    "id": "L01",
-    "course": "CMPS251",
-    "name": "Object Oriented Programming",
+    "classId": "L01",
+    "courseId": "CMPS251",
     "status": "open",
     "instructors": "Brad Peter",
     "capacity": 40,
@@ -91,9 +84,8 @@
     }
   },
   {
-    "id": "L02",
-    "course": "CMPS251",
-    "name": "Object Oriented Programming",
+    "classId": "L02",
+    "courseId": "CMPS251",
     "status": "open",
     "instructors": "Brad Peter",
     "capacity": 40,
@@ -104,9 +96,8 @@
     }
   },
   {
-    "id": "L01",
-    "course": "CMPS303",
-    "name": "Data Structures",
+    "classId": "L01",
+    "courseId": "CMPS303",
     "status": "open",
     "instructors": "Tony Stark",
     "capacity": 40,
@@ -117,9 +108,8 @@
     }
   },
   {
-    "id": "L02",
-    "course": "CMPS303",
-    "name": "Data Structures",
+    "classId": "L02",
+    "courseId": "CMPS303",
     "status": "open",
     "instructors": "Tony Stark",
     "capacity": 40,
@@ -130,9 +120,8 @@
     }
   },
   {
-    "id": "L01",
-    "course": "CMPS323",
-    "name": "Design & Analysis of Algorithms",
+    "classId": "L01",
+    "courseId": "CMPS323",
     "status": "open",
     "instructors": "Brad Peter",
     "capacity": 40,
@@ -143,9 +132,8 @@
     }
   },
   {
-    "id": "L02",
-    "course": "CMPS323",
-    "name": "Design & Analysis of Algorithms",
+    "classId": "L02",
+    "courseId": "CMPS323",
     "status": "open",
     "instructors": "Kylian Memphis",
     "capacity": 40,
@@ -156,9 +144,8 @@
     }
   },
   {
-    "id": "L01",
-    "course": "CMPS351",
-    "name": "Fundamentals of Database",
+    "classId": "L01",
+    "courseId": "CMPS351",
     "status": "open",
     "instructors": "Kylian Memphis",
     "capacity": 40,
@@ -169,9 +156,8 @@
     }
   },
   {
-    "id": "L02",
-    "course": "CMPS351",
-    "name": "Fundamentals of Database",
+    "classId": "L02",
+    "courseId": "CMPS351",
     "status": "open",
     "instructors": "Kylian Memphis",
     "capacity": 40,
@@ -182,9 +168,8 @@
     }
   },
   {
-    "id": "L01",
-    "course": "CMPE263",
-    "name": "Computer Architecture & Organization",
+    "classId": "L01",
+    "courseId": "CMPE263",
     "status": "open",
     "instructors": "Leonardo DiMaria",
     "capacity": 40,
@@ -195,9 +180,8 @@
     }
   },
   {
-    "id": "L02",
-    "course": "CMPE263",
-    "name": "Computer Architecture & Organization",
+    "classId": "L02",
+    "courseId": "CMPE263",
     "status": "open",
     "instructors": "Leonardo DiMaria",
     "capacity": 40,
@@ -208,9 +192,8 @@
     }
   },
   {
-    "id": "L01",
-    "course": "CMPS310",
-    "name": "Software Engineering",
+    "classId": "L01",
+    "courseId": "CMPS310",
     "status": "open",
     "instructors": "Bruce Wayne",
     "capacity": 40,
@@ -221,9 +204,8 @@
     }
   },
   {
-    "id": "L02",
-    "course": "CMPS310",
-    "name": "Software Engineering",
+    "classId": "L02",
+    "courseId": "CMPS310",
     "status": "open",
     "instructors": "Bruce Wayne",
     "capacity": 40,
@@ -234,9 +216,8 @@
     }
   },
   {
-    "id": "L01",
-    "course": "CMPS350",
-    "name": "Web Development Fundamentals",
+    "classId": "L01",
+    "courseId": "CMPS350",
     "status": "open",
     "instructors": "Kylian Memphis",
     "capacity": 40,
@@ -247,9 +228,8 @@
     }
   },
   {
-    "id": "L02",
-    "course": "CMPS350",
-    "name": "Web Development Fundamentals",
+    "classId": "L02",
+    "courseId": "CMPS350",
     "status": "open",
     "instructors": "Kylian Memphis",
     "capacity": 40,
@@ -260,9 +240,8 @@
     }
   },
   {
-    "id": "L01",
-    "course": "CMPS380",
-    "name": "Cybersecurity Fundamentals",
+    "classId": "L01",
+    "courseId": "CMPS380",
     "status": "open",
     "instructors": "Peter Parker",
     "capacity": 40,
@@ -273,9 +252,8 @@
     }
   },
   {
-    "id": "L02",
-    "course": "CMPS380",
-    "name": "Cybersecurity Fundamentals",
+    "classId": "L02",
+    "courseId": "CMPS380",
     "status": "open",
     "instructors": "Robert Downey",
     "capacity": 40,
@@ -286,9 +264,8 @@
     }
   },
   {
-    "id": "L01",
-    "course": "CMPS405",
-    "name": "Operating Systems",
+    "classId": "L01",
+    "courseId": "CMPS405",
     "status": "open",
     "instructors": "Leonardo DiMaria",
     "capacity": 40,
@@ -299,9 +276,8 @@
     }
   },
   {
-    "id": "L02",
-    "course": "CMPS405",
-    "name": "Operating Systems",
+    "classId": "L02",
+    "courseId": "CMPS405",
     "status": "open",
     "instructors": "Leonardo DiMaria",
     "capacity": 40,
@@ -312,9 +288,8 @@
     }
   },
   {
-    "id": "L01",
-    "course": "CMPE355",
-    "name": "Data Communication & Networks I",
+    "classId": "L01",
+    "courseId": "CMPE355",
     "status": "open",
     "instructors": "Peter Parker",
     "capacity": 40,
@@ -325,9 +300,8 @@
     }
   },
   {
-    "id": "L02",
-    "course": "CMPE355",
-    "name": "Data Communication & Networks I",
+    "classId": "L02",
+    "courseId": "CMPE355",
     "status": "open",
     "instructors": "Robert Downey",
     "capacity": 40,
@@ -338,9 +312,8 @@
     }
   },
   {
-    "id": "L01",
-    "course": "CMPS307",
-    "name": "Introduction to Project Management and Entrepreneurship",
+    "classId": "L01",
+    "courseId": "CMPS307",
     "status": "open",
     "instructors": "Christian Bale",
     "capacity": 40,
@@ -351,9 +324,8 @@
     }
   },
   {
-    "id": "L02",
-    "course": "CMPS307",
-    "name": "Introduction to Project Management and Entrepreneurship",
+    "classId": "L02",
+    "courseId": "CMPS307",
     "status": "open",
     "instructors": "Hugh Jackman",
     "capacity": 40,
@@ -364,9 +336,8 @@
     }
   },
   {
-    "id": "L01",
-    "course": "CMPS493",
-    "name": "Senior Project I",
+    "classId": "L01",
+    "courseId": "CMPS493",
     "status": "open",
     "instructors": "Christian Bale",
     "capacity": 4,
@@ -377,9 +348,8 @@
     }
   },
   {
-    "id": "L02",
-    "course": "CMPS493",
-    "name": "Senior Project I",
+    "classId": "L02",
+    "courseId": "CMPS493",
     "status": "open",
     "instructors": "Hugh Jackman",
     "capacity": 4,
@@ -390,9 +360,8 @@
     }
   },
   {
-    "id": "L01",
-    "course": "CMPS499",
-    "name": "Senior Project II",
+    "classId": "L01",
+    "courseId": "CMPS499",
     "status": "open",
     "instructors": "Christian Bale",
     "capacity": 4,
@@ -403,9 +372,8 @@
     }
   },
   {
-    "id": "L02",
-    "course": "CMPS499",
-    "name": "Senior Project II",
+    "classId": "L02",
+    "courseId": "CMPS499",
     "status": "open",
     "instructors": "Christian Bale",
     "capacity": 4,

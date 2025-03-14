@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     };
 
     for (const enrolledCourse of enrolledCourses) {
-        const course = courses.find(course => course.id === enrolledCourse.courseID);
+        const course = courses.find(course => course.courseId === enrolledCourse.courseID);
         if (course) {
             learningPath.enrolled.push({
                 name: course.name,
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     for (const completedCourse of completedCourses) {
-        const course = courses.find(course => course.id === completedCourse.courseID);
+        const course = courses.find(course => course.courseId === completedCourse.courseID);
         if (course) {
             learningPath.completed.push({
                 name: course.name,

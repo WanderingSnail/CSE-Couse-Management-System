@@ -1,22 +1,26 @@
 export class Course {
-    #id;
+    #courseId;
     #name;
     #category;
     #description;
     #prerequisites;
+    #creditHours;
     #minStudents;
     #maxStudents;
 
-    constructor(id, name, category, description, prerequisites) {
-        this.#id = id;
+    constructor(courseId, name, category, description, prerequisites, creditHours, minStudents, maxStudents) {
+        this.#courseId = courseId;
         this.#name = name;
         this.#category = category;
         this.#description = description;
         this.#prerequisites = prerequisites;
+        this.#creditHours = creditHours;
+        this.#minStudents = minStudents;
+        this.#maxStudents = maxStudents;
     }
 
-    get id() {
-        return this.#id;
+    get courseId() {
+        return this.#courseId;
     }
 
     get name() {
@@ -44,6 +48,6 @@ export class Course {
     }
 
     static fromJson(json) {
-        return new Course(json.id, json.name, json.category, json.description, json.prerequisites);
+        return new Course(json.courseId, json.name, json.category, json.description, json.prerequisites, json.creditHours, json.minStudents, json.maxStudents);
     }
 }

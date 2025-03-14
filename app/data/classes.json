@@ -9,7 +9,8 @@
       "room.NO": "101",
       "day": ["Monday", "Wednesday"],
       "time": "08:00 - 09:00"
-    }
+    },
+    "studentList": ["012025001"]
   },
   {
     "classId": "L02",
@@ -21,7 +22,7 @@
       "room.NO": "102",
       "day": ["Monday", "Wednesday"],
       "time": "09:00 - 10:00"
-    }
+    }    
   },
   {
     "classId": "L01",

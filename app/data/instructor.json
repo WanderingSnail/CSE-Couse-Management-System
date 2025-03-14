@@ -6,7 +6,7 @@
     "password": "10bp045",
     "role": "instructor",
     "expertise_area": ["Programming"],
-    "assignedCourses": ["CMPS151", "CMPS251", "CMPS323"]
+    "assignedCourses": [{"courseId": "CMPS151", "classId": "L01"}, {"courseId": "CMPS251", "classId": "L02"}, {"courseId": "CMPS323", "classId": "L03"}]
   },
   {
     "id": "102015167",
@@ -15,7 +15,7 @@
     "password": "10ts167",
     "role": "instructor",
     "expertise_area": ["Programming", "Computing Systems"],
-    "assignedCourses": ["CMPS205", "CMPS303"]
+    "assignedCourses": [{"courseId": "CMPS205", "classId": "L01"}, {"courseId": "CMPS303", "classId": "L02"}]
   },
   {
     "id": "102018329",
@@ -24,7 +24,7 @@
     "password": "10bw329",
     "role": "instructor",
     "expertise_area": ["Software Engineering"],
-    "assignedCourses": ["CMPS200", "CMPS310"]
+    "assignedCourses": [{"courseId": "CMPS200", "classId": "L01"}, {"courseId": "CMPS310", "classId": "L02"}]
   },
   {
     "id": "102013508",
@@ -33,7 +33,7 @@
     "password": "10km508",
     "role": "instructor",
     "expertise_area": ["Programming", "Computing Systems", "Software Engineering"],
-    "assignedCourses": ["CMPS351", "CMPS350", "CMPS323"]
+    "assignedCourses": [{"courseId": "CMPS351", "classId": "L01"}, {"courseId": "CMPS350", "classId": "L02"}, {"courseId": "CMPS323", "classId": "L03"}]
   },
   {
     "id": "102016274",
@@ -42,7 +42,7 @@
     "password": "10ld274",
     "role": "instructor",
     "expertise_area": ["Computing Systems"],
-    "assignedCourses": ["CMPE263", "CMPS405"]
+    "assignedCourses": [{"courseId": "CMPE263", "classId": "L01"}, {"courseId": "CMPS405", "classId": "L02"}]
   },
   {
     "id": "102020835",
@@ -51,7 +51,7 @@
     "password": "10pp835",
     "role": "instructor",
     "expertise_area": ["Security", "Computing Systems"],
-    "assignedCourses": ["CMPE355", "CMPS380"]
+    "assignedCourses": [{"courseId": "CMPE355", "classId": "L01"}, {"courseId": "CMPS380", "classId": "L02"}]
   },
   {
     "id": "102019472",
@@ -60,7 +60,7 @@
     "password": "10cb472",
     "role": "instructor",
     "expertise_area": ["Project", "Software Engineering"],
-    "assignedCourses": ["CMPS307", "CMPS493", "CMPS499"]
+    "assignedCourses": [{"courseId": "CMPS307", "classId": "L01"}, {"courseId": "CMPS493", "classId": "L02"}, {"courseId": "CMPS499", "classId": "L03"}]
   },
   {
     "id": "102017842",
@@ -69,7 +69,7 @@
     "password": "10sj842",
     "role": "instructor",
     "expertise_area": ["Programming", "Computing Systems"],
-    "assignedCourses": ["CMPS151", "CMPS205"]
+    "assignedCourses": [{"courseId": "CMPS151", "classId": "L01"}, {"courseId": "CMPS205", "classId": "L02"}]
   },
   {
     "id": "102013315",
@@ -78,7 +78,7 @@
     "password": "10rd315",
     "role": "instructor",
     "expertise_area": ["Security", "Computing Systems"],
-    "assignedCourses": ["CMPS380", "CMPE355"]
+    "assignedCourses": [{"courseId": "CMPS380", "classId": "L01"}, {"courseId": "CMPE355", "classId": "L02"}]
   },
   {
     "id": "102020958",
@@ -87,7 +87,7 @@
     "password": "10hj958",
     "role": "instructor",
     "expertise_area": ["Project", "Software Engineering"],
-    "assignedCourses": ["CMPS307", "CMPS493"]
+    "assignedCourses": [{"courseId": "CMPS307", "classId": "L01"}, {"courseId": "CMPS493", "classId": "L02"}]
   }
 ]
 

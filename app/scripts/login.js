@@ -2,6 +2,7 @@ import { User } from "./class/user.js";
 
 //Get users from json file
 document.addEventListener("DOMContentLoaded", async () => {
+    try {
         const response = await fetch("../data/users.json");
         const userJSON = await response.json();
         const users = userJSON.map(User.fromJson);
@@ -13,30 +14,30 @@ document.addEventListener("DOMContentLoaded", async () => {
             const username = document.querySelector(".input-user-username").value;
             const password = document.querySelector(".input-user-password").value;
             
-            let flag = false;
-            for (const user of users) {
-                if (user.login(username, password)) {
-                    //Store the user's ID in local storage
-                    localStorage.setItem("id", user.id);
-                    flag = true;
-                    //Redirect to the appropriate page based on the user's role
-                    switch (user.role) {
-                        case "admin":
-                            window.location.href = "../html/admin_dashboard.html";
-                            break;
-                        case "instructor":
-                            window.location.href = "../html/instructor_dashboard.html";
-                            break;
-                        case "student":
-                            window.location.href = "../html/main.html";
-                            break;
-                    }
-                    break;
+            const user = users.find(user => user.login(username, password));
+            
+            if (user) {
+                //Store the user's ID in local storage
+                localStorage.setItem("id", user.id);
+                
+                //Redirect to the appropriate page based on the user's role
+                switch (user.role) {
+                    case "admin":
+                        window.location.href = "../html/admin_dashboard.html";
+                        break;
+                    case "instructor":
+                        window.location.href = "../html/instructor_dashboard.html";
+                        break;
+                    case "student":
+                        window.location.href = "../html/main.html";
+                        break;
                 }
-            }
-            if (!flag) {
+            } else {
                 alert("Invalid username or password");
             }
         });
+    } catch (error) {
+        console.error("Error during login:", error);
+        alert("An error occurred during login. Please try again.");
     }
-);
+});

@@ -1,67 +1,194 @@
 import { Student } from "./class/student.js";
+import { Class } from "./class/class.js";
+import { Instructor } from "./class/instructor.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
-     // Fetch and load courses
-    const coursesResponse = await fetch("../data/courses.json");
-    const coursesJSON = await coursesResponse.json();
-    const courses = coursesJSON.map(Course.fromJson);
+        // Fetch and load instructors data
+        const instructorsResponse = await fetch("../data/instructor.json");
+        const instructorsJSON = await instructorsResponse.json();
+        const instructors = instructorsJSON.map(Instructor.fromJson);
+        const instructorID = localStorage.getItem("id");
+        const instructor = instructors.find(instructor => instructor.id === instructorID);
+        if (!instructor) {
+            console.error("Instructor not found:", instructorID);
+            return;
+        }
 
-    // Get DOM elements
-    const coursesTable = document.getElementById("coursesTable").querySelector("tbody");
-    const searchByName = document.getElementById("searchByName");
-    const searchByCategory = document.getElementById("searchByCategory");
-    const searchBtn = document.getElementById("searchBtn");    
-   
-    // Function to display courses
-    function displayCourses(courses) {
-      coursesTable.innerHTML = ""; // Clear table before inserting new rows
-  
-      if (courses.length === 0) {
-        coursesTable.innerHTML = "<tr><td colspan='3'>No courses found.</td></tr>";
-        return;
-      }
-  
-      courses.forEach((course) => {
-        const row = document.createElement("tr");
-        const L01 =  
-        row.classList.add("course-row");
-        row.innerHTML = `
-          <td><input type="checkbox" class="course-checkbox" value="${course.id}"></td>
-          <td>${course.name}</td>
-          <td>${course.category.join(", ")}</td>
-          <td></td>
-          <td></td>
-          <td>
-            <select class="class-dropdown">
-            <option value="L01" selected>L01</option>
-            <option value="L02">L02</option>
-            </select>
-          </td>
-        `;
-        coursesTable.appendChild(row);
-      });
-    }
-  
-    // Filter courses
-    function filterCourses() {
-      const nameFilter = searchByName.value.toLowerCase();
-      const categoryFilter = searchByCategory.value;
-  
-      const filteredCourses = courses.filter((course) => {
-        const matchesName = course.name.toLowerCase().includes(nameFilter);
-        const matchesCategory = categoryFilter === "" || course.category.includes(categoryFilter);
-        return matchesName && matchesCategory;
-      });
-      
-      displayCourses(filteredCourses);
-    }
-  
-    // Event Listeners
-    searchBtn.addEventListener("click", filterCourses);
-    searchByName.addEventListener("input", filterCourses);
-    searchByCategory.addEventListener("change", filterCourses);
+        // Fetch students data
+        const studentsResponse = await fetch("../data/students.json");
+        const studentsJSON = await studentsResponse.json();
+        const students = studentsJSON.map(Student.fromJson);
 
-    // Initial display
-    displayCourses(courses);
-  });
+        // Fetch classes data
+        const classesResponse = await fetch("../data/classes.json");
+        const classesJSON = await classesResponse.json();
+        const assignedClasses = classesJSON.map(Class.fromJson).filter(classItem => {
+            const assignedClass = instructor.assignedCourses.find(
+                assigned => assigned.courseId === classItem.courseId && 
+                           assigned.classId === classItem.classId
+            );
+            return assignedClass && classItem.instructors === instructor.name;
+        });  
+
+        // Get DOM elements
+        const courseSelect = document.querySelector("#courseSelect");
+        const gradesTable = document.querySelector(".grades-submission table tbody");
+        const searchBtn = document.querySelector("#searchBtn"); 
+        const submitGradesBtn = document.querySelector("#submitGradesBtn");
+
+        //Course selector
+        assignedClasses.forEach(classItem => {
+            const option = document.createElement("option");
+            option.value = classItem.courseId;
+            option.textContent = classItem.courseName;
+            courseSelect.appendChild(option);
+        });
+
+        //Display students
+        function displayStudents(selectedClasses = assignedClasses) {
+            gradesTable.innerHTML = "";
+            
+            if (!selectedClasses || selectedClasses.length === 0) {
+                gradesTable.innerHTML = "<tr><td colspan='4'>No students found</td></tr>";
+                return;
+            }
+
+            let hasStudents = false;
+            selectedClasses.forEach(classItem => {     
+                const classStudents = students.filter(student => 
+                    student.enrolledCourses.some(course => 
+                        course.courseId === classItem.courseId
+                    )
+                );
+
+                if (classStudents.length > 0) {
+                    hasStudents = true;
+                    classStudents.forEach(student => {
+                        const row = document.createElement("tr");
+                        row.innerHTML = `
+                            <td>${student.id}</td>
+                            <td>${student.name}</td>
+                            <td>${classItem.classId}</td>
+                            <td>
+                                <input type="text" class="grade-input" 
+                                       data-student-id="${student.id}" 
+                                       data-class-id="${classItem.classId}"
+                                       data-course-id="${classItem.courseId}"
+                                       data-course-name="${classItem.courseName}"
+                                       data-category="${classItem.category}"
+                                       pattern="[A-F][+-]?|F"
+                                       title="Please enter a valid grade (A+, A, A-, B+, B, B-, C+, C, C-, D+, D, D-, F)"
+                                       required>
+                            </td>
+                        `;
+                        gradesTable.appendChild(row);
+                    });
+                }
+            });
+
+            if (!hasStudents) {
+                gradesTable.innerHTML = "<tr><td colspan='4'>No students enrolled in your classes</td></tr>";
+            }
+        }
+
+        // Filter classes by course
+        function filterClasses() {
+            const courseFilter = courseSelect.value;
+            
+            let filteredClasses;
+            if (courseFilter === "") {
+                filteredClasses = assignedClasses;
+            } else {
+                filteredClasses = assignedClasses.filter(classItem => 
+                    classItem.courseId === courseFilter
+                );
+            }        
+            displayStudents(filteredClasses);
+        }
+
+        // Submit grades to students' completedCourses
+        async function submitGrades() {
+            const gradeInputs = document.querySelectorAll(".grade-input");
+            const updatedStudents = new Set();
+            
+            for (const gradeInput of gradeInputs) {
+                if (!gradeInput.value) continue;
+                
+                const grade = gradeInput.value.trim().toUpperCase();
+
+                const studentId = gradeInput.dataset.studentId;
+                const student = students.find(s => s.id === studentId);
+                
+                //Update student's enrolled courses to completed courses
+                if (student) {
+                    const enrolledIndex = student.enrolledCourses.findIndex(
+                        course => course.courseId === gradeInput.dataset.courseId &&
+                                course.classId === gradeInput.dataset.classId
+                    );
+                    
+                    if (enrolledIndex !== -1) {
+                        const enrolledCourse = student.enrolledCourses[enrolledIndex];
+                        student.enrolledCourses.splice(enrolledIndex, 1);
+                        
+                        student.completedCourses.push({
+                            courseId: gradeInput.dataset.courseId,
+                            classId: gradeInput.dataset.classId,
+                            courseName: gradeInput.dataset.courseName,
+                            category: gradeInput.dataset.category.split(','),
+                            instructor: instructor.name,
+                            grade: grade
+                        });
+                        
+                        //Update students JSON file
+                        const studentIndex = studentsJSON.findIndex(s => s.id === studentId);
+                        if (studentIndex !== -1) {
+                            studentsJSON[studentIndex] = {
+                                id: student.id,
+                                name: student.name,
+                                username: student.username,
+                                role: student.role,
+                                enrolledCourses: student.enrolledCourses,
+                                completedCourses: student.completedCourses
+                            };
+                        }
+                        
+                        updatedStudents.add(student);
+                    }
+                }
+            }
+            
+            if (updatedStudents.size > 0) {
+                try {
+                    // Send updated data to database
+                    const response = await fetch('../data/students.json', {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(studentsJSON, null, 2)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Failed to update students.json');
+                    }
+
+                    alert("Grades submitted successfully!");
+                    filterClasses();
+                } catch (error) {
+                    console.error('Error updating students.json:', error);
+                    alert("Error saving grades. Please try again.");
+                }
+            } else {
+                alert("No grades to submit.");
+            }
+        }
+
+        // Event Listeners
+        courseSelect.addEventListener("change", filterClasses);
+        searchBtn.addEventListener("click", filterClasses);
+        submitGradesBtn.addEventListener("click", submitGrades);
+
+        // Initial display
+        displayStudents();
+});
   

@@ -96,6 +96,16 @@ main {
     width: 200px;
 }
 
+.selection-container button {
+    padding: 0.5rem 1rem;
+    background-color: #121414;
+    color: #fff;
+    border: none;
+    border-radius: 5rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
 .grades-submission {
     margin-top: 2rem;
 }

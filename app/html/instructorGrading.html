@@ -25,22 +25,11 @@
 
   <main>
     <section class="instructor-section">
-      <h2>Instructor Grading</h2>
-
+      <h2>Instructor Grading</h2>      
       <div class="selection-container">
         <label for="courseSelect">Select Course:</label>
-        <select id="courseSelect">
-          <!-- Inject from JSON into here -->
-          <option value="web-dev" selected>Web Development</option>
-          <option value="ai">Artificial Intelligence</option>
-        </select>
-
-        <label for="classSelect">Select Class:</label>
-        <select id="classSelect">
-          <!-- Inject from JSON into here based on value of course above-->
-          <option value="class123" selected>Class #123</option>
-          <option value="class124">Class #124</option>
-        </select>
+        <select id="courseSelect"></select>
+        <button id="searchBtn">Search</button>
       </div>
 
       <div class="grades-submission">
@@ -49,21 +38,11 @@
             <tr>
               <th>Student ID</th>
               <th>Name</th>
-              <th>Final Grade</th>
+              <th>Class ID</th>
+              <th class="grade-input">Final Grade</th>
             </tr>
           </thead>
-          <tbody>
-            <!-- Inject from JSON into here -->
-            <tr>
-              <td>20112345</td>
-              <td>John Doe</td>
-              <td><input type="text" class="grade-input" placeholder="A, B+, etc." /></td>
-            </tr>
-            <tr>
-              <td>20112346</td>
-              <td>Jane Smith</td>
-              <td><input type="text" class="grade-input" placeholder="A, B+, etc." /></td>
-            </tr>
+          <tbody>            
           </tbody>
         </table>
         <div class="submit-container">

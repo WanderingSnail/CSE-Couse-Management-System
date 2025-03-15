@@ -1,16 +1,39 @@
-import { User } from "./user.js";
-
-export class Instructor extends User {
+export class Instructor {
+    #id;
+    #name;
+    #username;
+    #password;
+    #role;
     #expertise_area;
     #assignedCourses;
 
-    constructor(username, password, role="instructor", id) {
-        super(username, password, role, id);
-        this.#expertise_area = [];
-        this.#assignedCourses = [];
+    constructor(id, name, username, password, role="instructor", expertise_area=[], assignedCourses=[]) {
+        this.#id = id;
+        this.#name = name;
+        this.#username = username;
+        this.#password = password;
+        this.#role = role;
+        this.#expertise_area = expertise_area;
+        this.#assignedCourses = assignedCourses;
     }
 
-    //Assigned courses with courseID
+    get id() {
+        return this.#id;
+    }
+
+    get name() {
+        return this.#name;
+    }
+
+    get username() {
+        return this.#username;
+    }
+
+    get role() {
+        return this.#role;
+    }
+
+    //Assigned courses with courseId, classId
     get assignedCourses() {
         return this.#assignedCourses;
     }
@@ -20,5 +43,15 @@ export class Instructor extends User {
         return this.#expertise_area;
     }
 
-
+    static fromJson(json) {
+        return new Instructor(
+            json.id,
+            json.name,
+            json.username,
+            json.password,
+            json.role,
+            json.expertise_area,
+            json.assignedCourses
+        );
+    }
 }

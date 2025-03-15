@@ -2,7 +2,13 @@
   {
     "classId": "L01",
     "courseId": "CMPS151",
-    "status": "open",
+    "courseName": "Programming Concept",
+    "category": ["Programming"],
+    "description": "Learn the fundamentals and basic techniques of programming.",
+    "prerequisites": [],
+    "creditHours": 3,
+    "minStudents": 4,
+    "status": "inProgress",
     "instructors": "Brad Peter",
     "capacity": 20,
     "schedule": {
@@ -11,19 +17,25 @@
       "time": "08:00 - 09:00"
     },
     "studentList": [
-    { "name": "Ibrahim Al-Hassan", "id": "012020012" },
-    { "name": "Hassan Al-Rashid", "id": "012020013" },
-    { "name": "Rashid Al-Maktoum", "id": "012020014" },
-    { "name": "Tariq Al-Salem", "id": "012020015" },
-    { "name": "Khalid Al-Omari", "id": "012020016" },
-    { "name": "Omar Al-Farid", "id": "012020017" },
-    { "name": "Saif Al-Amin", "id": "012020018" },
-    { "name": "Nasser Al-Rawi", "id": "012020019" }
+      { "name": "Ibrahim Al-Hassan", "id": "012020012" },
+      { "name": "Hassan Al-Rashid", "id": "012020013" },
+      { "name": "Rashid Al-Maktoum", "id": "012020014" },
+      { "name": "Tariq Al-Salem", "id": "012020015" },
+      { "name": "Khalid Al-Omari", "id": "012020016" },
+      { "name": "Omar Al-Farid", "id": "012020017" },
+      { "name": "Saif Al-Amin", "id": "012020018" },
+      { "name": "Nasser Al-Rawi", "id": "012020019" }
     ]
   },
   {
     "classId": "L02",
     "courseId": "CMPS151",
+    "courseName": "Programming Concept",
+    "category": ["Programming"],
+    "description": "Learn the fundamentals and basic techniques of programming.",
+    "prerequisites": [],
+    "creditHours": 3,
+    "minStudents": 4,
     "status": "open",
     "instructors": "Scarlett Johansson",
     "capacity": 20,
@@ -32,13 +44,17 @@
       "day": ["Monday", "Wednesday"],
       "time": "09:00 - 10:00"
     },
-    "studentList": [
-
-    ]
+    "studentList": []
   },
   {
     "classId": "L01",
     "courseId": "CMPS205",
+    "courseName": "Discrete Structures",
+    "category": ["Programming", "Computing Systems"],
+    "description": "Study the fundamental discrete mathematical structures used in computing.",
+    "prerequisites": ["CMPS151"],
+    "creditHours": 3,
+    "minStudents": 4,
     "status": "open",
     "instructors": "Tony Stark",
     "capacity": 20,
@@ -47,13 +63,17 @@
       "day": ["Monday", "Wednesday"],
       "time": "10:00 - 11:00"
     },
-    "studentList": [
-
-    ]
+    "studentList": []
   },
   {
     "classId": "L02",
     "courseId": "CMPS205",
+    "courseName": "Discrete Structures",
+    "category": ["Programming", "Computing Systems"],
+    "description": "Study the fundamental discrete mathematical structures used in computing.",
+    "prerequisites": ["CMPS151"],
+    "creditHours": 3,
+    "minStudents": 4,
     "status": "open",
     "instructors": "Scarlett Johansson",
     "capacity": 20,
@@ -62,13 +82,17 @@
       "day": ["Monday", "Wednesday"],
       "time": "11:00 - 12:00"
     },
-    "studentList": [
-
-    ]
+    "studentList": []
   },
   {
     "classId": "L01",
     "courseId": "CMPS200",
+    "courseName": "Computer Ethics",
+    "category": ["Software Engineering"],
+    "description": "Explore ethical considerations and responsibilities in computing.",
+    "prerequisites": [],
+    "creditHours": 3,
+    "minStudents": 4,
     "status": "open",
     "instructors": "Bruce Wayne",
     "capacity": 20,
@@ -77,13 +101,17 @@
       "day": ["Tuesday", "Thursday"],
       "time": "08:00 - 09:00"
     },
-    "studentList": [
-      
-    ]
+    "studentList": []
   },
   {
     "classId": "L02",
     "courseId": "CMPS200",
+    "courseName": "Computer Ethics",
+    "category": ["Software Engineering"],
+    "description": "Explore ethical considerations and responsibilities in computing.",
+    "prerequisites": [],
+    "creditHours": 3,
+    "minStudents": 4,
     "status": "open",
     "instructors": "Bruce Wayne",
     "capacity": 20,
@@ -92,13 +120,17 @@
       "day": ["Tuesday", "Thursday"],
       "time": "09:00 - 10:00"
     },
-    "studentList": [
-      
-    ]
+    "studentList": []
   },
   {
     "classId": "L01",
     "courseId": "CMPS251",
+    "courseName": "Object Oriented Programming",
+    "category": ["Programming"],
+    "description": "Learn object-oriented programming concepts and design patterns.",
+    "prerequisites": ["CMPS151"],
+    "creditHours": 3,
+    "minStudents": 4,
     "status": "open",
     "instructors": "Brad Peter",
     "capacity": 20,
@@ -107,13 +139,17 @@
       "day": ["Tuesday", "Thursday"],
       "time": "10:00 - 11:00"
     },
-    "studentList": [
-      
-    ]
+    "studentList": []
   },
   {
     "classId": "L02",
     "courseId": "CMPS251",
+    "courseName": "Object Oriented Programming",
+    "category": ["Programming"],
+    "description": "Learn object-oriented programming concepts and design patterns.",
+    "prerequisites": ["CMPS151"],
+    "creditHours": 3,
+    "minStudents": 4,
     "status": "open",
     "instructors": "Brad Peter",
     "capacity": 20,
@@ -122,14 +158,18 @@
       "day": ["Tuesday", "Thursday"],
       "time": "11:00 - 12:00"
     },
-    "studentList": [
-      
-    ]
+    "studentList": []
   },
   {
     "classId": "L01",
     "courseId": "CMPS303",
-    "status": "open",
+    "courseName": "Data Structures",
+    "category": ["Programming"],
+    "description": "Study various data structures and their applications in software development.",
+    "prerequisites": ["CMPS251"],
+    "creditHours": 3,
+    "minStudents": 4,
+    "status": "completed",
     "instructors": "Tony Stark",
     "capacity": 20,
     "schedule": {
@@ -144,7 +184,13 @@
   {
     "classId": "L02",
     "courseId": "CMPS303",
-    "status": "open",
+    "courseName": "Data Structures",
+    "category": ["Programming"],
+    "description": "Study various data structures and their applications in software development.",
+    "prerequisites": ["CMPS251"],
+    "creditHours": 3,
+    "minStudents": 4,
+    "status": "completed",
     "instructors": "Tony Stark",
     "capacity": 20,
     "schedule": {
@@ -159,6 +205,12 @@
   {
     "classId": "L01",
     "courseId": "CMPS323",
+    "courseName": "Design & Analysis of Algorithms",
+    "category": ["Programming"],
+    "description": "Learn techniques for algorithm design and performance analysis.",
+    "prerequisites": ["CMPS303"],
+    "creditHours": 3,
+    "minStudents": 4,
     "status": "open",
     "instructors": "Brad Peter",
     "capacity": 20,
@@ -167,14 +219,18 @@
       "day": ["Wednesday", "Friday"],
       "time": "10:00 - 11:00"
     },
-    "studentList": [
-      
-    ]
+    "studentList": []
   },
   {
     "classId": "L02",
     "courseId": "CMPS323",
-    "status": "open",
+    "courseName": "Design & Analysis of Algorithms",
+    "category": ["Programming"],
+    "description": "Learn techniques for algorithm design and performance analysis.",
+    "prerequisites": ["CMPS303"],
+    "creditHours": 3,
+    "minStudents": 4,
+    "status": "completed",
     "instructors": "Kylian Memphis",
     "capacity": 20,
     "schedule": {
@@ -189,7 +245,13 @@
   {
     "classId": "L01",
     "courseId": "CMPS351",
-    "status": "open",
+    "courseName": "Fundamentals of Database",
+    "category": ["Programming", "Computing Systems"],
+    "description": "Learn about database design, SQL, and database management systems.",
+    "prerequisites": ["CMPS251"],
+    "creditHours": 3,
+    "minStudents": 4,
+    "status": "inProgress",
     "instructors": "Kylian Memphis",
     "capacity": 20,
     "schedule": {
@@ -204,6 +266,12 @@
   {
     "classId": "L02",
     "courseId": "CMPS351",
+    "courseName": "Fundamentals of Database",
+    "category": ["Programming", "Computing Systems"],
+    "description": "Learn about database design, SQL, and database management systems.",
+    "prerequisites": ["CMPS251"],
+    "creditHours": 3,
+    "minStudents": 4,
     "status": "open",
     "instructors": "Kylian Memphis",
     "capacity": 20,
@@ -212,13 +280,17 @@
       "day": ["Thursday", "Saturday"],
       "time": "09:00 - 10:00"
     },
-    "studentList": [
-      
-    ]
+    "studentList": []
   },
   {
     "classId": "L01",
     "courseId": "CMPE263",
+    "courseName": "Computer Architecture & Organization",
+    "category": ["Computing Systems"],
+    "description": "Study the fundamental architecture of computer systems and processors.",
+    "prerequisites": ["CMPS151"],
+    "creditHours": 3,
+    "minStudents": 4,
     "status": "open",
     "instructors": "Leonardo DiMaria",
     "capacity": 20,
@@ -227,13 +299,17 @@
       "day": ["Thursday", "Saturday"],
       "time": "10:00 - 11:00"
     },
-    "studentList": [
-      
-    ]
+    "studentList": []
   },
   {
     "classId": "L02",
     "courseId": "CMPE263",
+    "courseName": "Computer Architecture & Organization",
+    "category": ["Computing Systems"],
+    "description": "Study the fundamental architecture of computer systems and processors.",
+    "prerequisites": ["CMPS151"],
+    "creditHours": 3,
+    "minStudents": 4,
     "status": "open",
     "instructors": "Leonardo DiMaria",
     "capacity": 20,
@@ -242,20 +318,24 @@
       "day": ["Thursday", "Saturday"],
       "time": "11:00 - 12:00"
     },
-    "studentList": [
-      
-    ]
+    "studentList": []
   },
   {
     "classId": "L01",
     "courseId": "CMPS310",
-    "status": "open",
+    "courseName": "Software Engineering",
+    "category": ["Software Engineering"],
+    "description": "Understand the principles of software engineering, design, and development.",
+    "prerequisites": ["CMPS251"],
+    "creditHours": 3,
+    "minStudents": 4,
+    "status": "inProgress",
     "instructors": "Bruce Wayne",
     "capacity": 20,
     "schedule": {
-      "room.NO": "202",
-      "day": ["Sunday", "Tuesday"],
-      "time": "08:00 - 09:00"
+      "room.NO": "115",
+      "day": ["Thursday", "Saturday"],
+      "time": "10:00 - 11:00"
     },
     "studentList": [
       { "name": "Yousef Karim", "id": "012024007" }
@@ -264,6 +344,12 @@
   {
     "classId": "L02",
     "courseId": "CMPS310",
+    "courseName": "Software Engineering",
+    "category": ["Software Engineering"],
+    "description": "Understand the principles of software engineering, design, and development.",
+    "prerequisites": ["CMPS251"],
+    "creditHours": 3,
+    "minStudents": 4,
     "status": "open",
     "instructors": "Bruce Wayne",
     "capacity": 20,
@@ -272,13 +358,17 @@
       "day": ["Sunday", "Tuesday"],
       "time": "09:00 - 10:00"
     },
-    "studentList": [
-      
-    ]
+    "studentList": []
   },
   {
     "classId": "L01",
     "courseId": "CMPS350",
+    "courseName": "Web Development Fundamentals",
+    "category": ["Programming", "Software Engineering"],
+    "description": "Develop foundational web development skills including HTML, CSS, and JavaScript.",
+    "prerequisites": ["CMPS251"],
+    "creditHours": 3,
+    "minStudents": 4,
     "status": "open",
     "instructors": "Kylian Memphis",
     "capacity": 20,
@@ -287,13 +377,17 @@
       "day": ["Sunday", "Tuesday"],
       "time": "10:00 - 11:00"
     },
-    "studentList": [
-      
-    ]
+    "studentList": []
   },
   {
     "classId": "L02",
     "courseId": "CMPS350",
+    "courseName": "Web Development Fundamentals",
+    "category": ["Programming", "Software Engineering"],
+    "description": "Develop foundational web development skills including HTML, CSS, and JavaScript.",
+    "prerequisites": ["CMPS251"],
+    "creditHours": 3,
+    "minStudents": 4,
     "status": "open",
     "instructors": "Kylian Memphis",
     "capacity": 20,
@@ -302,13 +396,17 @@
       "day": ["Sunday", "Tuesday"],
       "time": "11:00 - 12:00"
     },
-    "studentList": [
-      
-    ]
+    "studentList": []
   },
   {
     "classId": "L01",
     "courseId": "CMPS380",
+    "courseName": "Cybersecurity Fundamentals",
+    "category": ["Security"],
+    "description": "Introduction to cybersecurity principles and best practices.",
+    "prerequisites": ["CMPS251"],
+    "creditHours": 3,
+    "minStudents": 4,
     "status": "open",
     "instructors": "Peter Parker",
     "capacity": 20,
@@ -317,13 +415,17 @@
       "day": ["Monday", "Friday"],
       "time": "08:00 - 09:00"
     },
-    "studentList": [
-      
-    ]
+    "studentList": []
   },
   {
     "classId": "L02",
     "courseId": "CMPS380",
+    "courseName": "Cybersecurity Fundamentals",
+    "category": ["Security"],
+    "description": "Introduction to cybersecurity principles and best practices.",
+    "prerequisites": ["CMPS251"],
+    "creditHours": 3,
+    "minStudents": 4,
     "status": "open",
     "instructors": "Robert Downey",
     "capacity": 20,
@@ -332,13 +434,17 @@
       "day": ["Monday", "Friday"],
       "time": "09:00 - 10:00"
     },
-    "studentList": [
-      
-    ]
+    "studentList": []
   },
   {
     "classId": "L01",
     "courseId": "CMPS405",
+    "courseName": "Operating Systems",
+    "category": ["Computing Systems"],
+    "description": "Understand the fundamentals of modern operating systems and their components.",
+    "prerequisites": ["CMPS303"],
+    "creditHours": 3,
+    "minStudents": 4,
     "status": "open",
     "instructors": "Leonardo DiMaria",
     "capacity": 20,
@@ -347,13 +453,17 @@
       "day": ["Monday", "Friday"],
       "time": "10:00 - 11:00"
     },
-    "studentList": [
-      
-    ]
+    "studentList": []
   },
   {
     "classId": "L02",
     "courseId": "CMPS405",
+    "courseName": "Operating Systems",
+    "category": ["Computing Systems"],
+    "description": "Understand the fundamentals of modern operating systems and their components.",
+    "prerequisites": ["CMPS303"],
+    "creditHours": 3,
+    "minStudents": 4,
     "status": "open",
     "instructors": "Leonardo DiMaria",
     "capacity": 20,
@@ -362,28 +472,38 @@
       "day": ["Monday", "Friday"],
       "time": "11:00 - 12:00"
     },
-    "studentList": [
-      
-    ]
+    "studentList": []
   },
   {
     "classId": "L01",
     "courseId": "CMPE355",
-    "status": "open",
+    "courseName": "Computer Networks",
+    "category": ["Computing Systems", "Security"],
+    "description": "Understand the principles of data communication and networking.",
+    "prerequisites": ["CMPS251"],
+    "creditHours": 3,
+    "minStudents": 4,
+    "status": "inProgress",
     "instructors": "Peter Parker",
     "capacity": 20,
     "schedule": {
-      "room.NO": "210",
-      "day": ["Tuesday", "Friday"],
-      "time": "08:00 - 09:00",
-      "studentList": [
+      "room.NO": "125",
+      "day": ["Sunday", "Tuesday"],
+      "time": "08:00 - 09:00"
+    },
+    "studentList": [
       { "name": "Yousef Karim", "id": "012024007" }
     ]
-    }
   },
   {
     "classId": "L02",
     "courseId": "CMPE355",
+    "courseName": "Data Communication & Networks I",
+    "category": ["Computing Systems", "Security"],
+    "description": "Understand the principles of data communication and networking.",
+    "prerequisites": ["CMPS251"],
+    "creditHours": 3,
+    "minStudents": 4,
     "status": "open",
     "instructors": "Robert Downey",
     "capacity": 20,
@@ -392,13 +512,17 @@
       "day": ["Tuesday", "Friday"],
       "time": "09:00 - 10:00"
     },
-    "studentList": [
-      
-    ]
+    "studentList": []
   },
   {
     "classId": "L01",
     "courseId": "CMPS307",
+    "courseName": "Introduction to Project Management and Entrepreneurship",
+    "category": ["Software Engineering", "Project"],
+    "description": "Gain knowledge of project management principles and entrepreneurial skills.",
+    "prerequisites": ["CMPS310"],
+    "creditHours": 3,
+    "minStudents": 4,
     "status": "open",
     "instructors": "Christian Bale",
     "capacity": 20,
@@ -407,13 +531,17 @@
       "day": ["Tuesday", "Friday"],
       "time": "10:00 - 11:00"
     },
-    "studentList": [
-      
-    ]
+    "studentList": []
   },
   {
     "classId": "L02",
     "courseId": "CMPS307",
+    "courseName": "Introduction to Project Management and Entrepreneurship",
+    "category": ["Software Engineering", "Project"],
+    "description": "Gain knowledge of project management principles and entrepreneurial skills.",
+    "prerequisites": ["CMPS310"],
+    "creditHours": 3,
+    "minStudents": 4,
     "status": "open",
     "instructors": "Hugh Jackman",
     "capacity": 20,
@@ -422,13 +550,17 @@
       "day": ["Tuesday", "Friday"],
       "time": "11:00 - 12:00"
     },
-    "studentList": [
-      
-    ]
+    "studentList": []
   },
   {
     "classId": "L01",
     "courseId": "CMPS493",
+    "courseName": "Senior Project I",
+    "category": ["Project"],
+    "description": "First part of the capstone project for final-year students.",
+    "prerequisites": ["CMPS307", "CMPS310"],
+    "creditHours": 3,
+    "minStudents": 1,
     "status": "open",
     "instructors": "Christian Bale",
     "capacity": 4,
@@ -437,13 +569,17 @@
       "day": ["Wednesday", "Saturday"],
       "time": "08:00 - 09:00"
     },
-    "studentList": [
-      
-    ]
+    "studentList": []
   },
   {
     "classId": "L02",
     "courseId": "CMPS493",
+    "courseName": "Senior Project I",
+    "category": ["Project"],
+    "description": "First part of the capstone project for final-year students.",
+    "prerequisites": ["CMPS307", "CMPS310"],
+    "creditHours": 3,
+    "minStudents": 1,
     "status": "open",
     "instructors": "Hugh Jackman",
     "capacity": 4,
@@ -452,13 +588,17 @@
       "day": ["Wednesday", "Saturday"],
       "time": "09:00 - 10:00"
     },
-    "studentList": [
-      
-    ]
+    "studentList": []
   },
   {
     "classId": "L01",
     "courseId": "CMPS499",
+    "courseName": "Senior Project II",
+    "category": ["Project"],
+    "description": "Final part of the capstone project for final-year students.",
+    "prerequisites": ["CMPS493"],
+    "creditHours": 3,
+    "minStudents": 1,
     "status": "open",
     "instructors": "Christian Bale",
     "capacity": 4,
@@ -467,13 +607,17 @@
       "day": ["Wednesday", "Saturday"],
       "time": "10:00 - 11:00"
     },
-    "studentList": [
-      
-    ]
+    "studentList": []
   },
   {
     "classId": "L02",
     "courseId": "CMPS499",
+    "courseName": "Senior Project II",
+    "category": ["Project"],
+    "description": "Final part of the capstone project for final-year students.",
+    "prerequisites": ["CMPS493"],
+    "creditHours": 3,
+    "minStudents": 1,
     "status": "open",
     "instructors": "Christian Bale",
     "capacity": 4,
@@ -482,8 +626,6 @@
       "day": ["Wednesday", "Saturday"],
       "time": "11:00 - 12:00"
     },
-    "studentList": [
-      
-    ]
+    "studentList": []
   }
 ]

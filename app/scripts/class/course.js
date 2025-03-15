@@ -8,7 +8,16 @@ export class Course {
     #minStudents;
     #maxStudents;
 
-    constructor(courseId, name, category, description, prerequisites, creditHours, minStudents, maxStudents) {
+    constructor(
+        courseId,
+        name,
+        category,
+        description,
+        prerequisites,
+        creditHours,
+        minStudents,
+        maxStudents
+    ) {
         this.#courseId = courseId;
         this.#name = name;
         this.#category = category;
@@ -39,6 +48,10 @@ export class Course {
         return this.#prerequisites;
     }
 
+    get creditHours() {
+        return this.#creditHours;
+    }
+
     get minStudents() {
         return this.#minStudents;
     }
@@ -48,6 +61,15 @@ export class Course {
     }
 
     static fromJson(json) {
-        return new Course(json.courseId, json.name, json.category, json.description, json.prerequisites, json.creditHours, json.minStudents, json.maxStudents);
+        return new Course(
+            json.courseId,
+            json.name,
+            json.category,
+            json.description,
+            json.prerequisites,
+            json.creditHours,
+            json.minStudents,
+            json.maxStudents
+        );
     }
 }

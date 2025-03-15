@@ -1,59 +1,45 @@
-import { Course } from "./class/course.js";
 import { Student } from "./class/student.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
-     // Fetch and load courses
-    const response1 = await fetch("../data/courses.json");
-    const coursesJSON = await response1.json();
-    const courses = coursesJSON.map(Course.fromJson);
-
     // Fetch and load student's information
-    const response2 = await fetch("../data/students.json");
-    const studentsJSON = await response2.json();
+    const response = await fetch("../data/students.json");
+    const studentsJSON = await response.json();
     const students = studentsJSON.map(Student.fromJson);
     const studentID = localStorage.getItem("id");
     const student = students.find(student => student.id === studentID);
-    let enrolledCourses = student.enrolledCourses;
-    let completedCourses = student.completedCourses;
+    
+    if (!student) {
+        console.error("Student not found:", studentID);
+        return;
+    }
+    console.log("Current student:", student);
 
-    //Construct the learning path
+    //Construct the learning path directly from student data
     const learningPath = {
-        enrolled: [],
-        completed: []
+        enrolled: student.enrolledCourses.map(course => ({
+            name: course.courseName,
+            category: course.category,
+            instructor: [course.instructor],
+            classId: course.classId,
+            status: course.status
+        })),
+        completed: student.completedCourses.map(course => ({
+            name: course.courseName,
+            category: course.category,
+            instructor: [course.instructor],
+            classId: course.classId,
+            grade: course.grade
+        }))
     };
-
-    for (const enrolledCourse of enrolledCourses) {
-        const course = courses.find(course => course.courseId === enrolledCourse.courseID);
-        if (course) {
-            learningPath.enrolled.push({
-                name: course.name,
-                category: course.category,
-                instructor: enrolledCourse.instructor,
-                status: enrolledCourse.status
-            });
-        }
-    }
-
-    for (const completedCourse of completedCourses) {
-        const course = courses.find(course => course.courseId === completedCourse.courseID);
-        if (course) {
-            learningPath.completed.push({
-                name: course.name,
-                category: course.category,
-                instructor: completedCourse.instructor,
-                grade: completedCourse.grade
-            });
-        }
-    }
     
     // Get DOM elements
-    const enrolledCoursesTable = document.getElementById("enrolledCoursesTable").querySelector("tbody");
-    const completedCoursesTable = document.getElementById("completedCoursesTable").querySelector("tbody");
-    const searchByName = document.getElementById("searchByName");
-    const searchByCategory = document.getElementById("searchByCategory");
-    const searchBtn = document.getElementById("searchBtn");    
+    const enrolledCoursesTable = document.querySelector("#enrolledCoursesTable").querySelector("tbody");
+    const completedCoursesTable = document.querySelector("#completedCoursesTable").querySelector("tbody");
+    const searchByName = document.querySelector("#searchByName");
+    const searchByCategory = document.querySelector("#searchByCategory");
+    const searchBtn = document.querySelector("#searchBtn");    
    
-    // Function to display courses
+    // Function to display enrolled courses
     function displayEnrolledCourses(coursesToDisplay = learningPath.enrolled) {
         enrolledCoursesTable.innerHTML = ""; // Clear table before inserting new rows
   
@@ -68,13 +54,14 @@ document.addEventListener("DOMContentLoaded", async () => {
             row.innerHTML = `
                 <td>${course.name}</td>
                 <td>${course.category.join(", ")}</td>
-                <td>${course.instructor.join(", ")}</td>
+                <td>${course.instructor.join(", ")} (${course.classId})</td>
                 <td>${course.status}</td>
             `;
             enrolledCoursesTable.appendChild(row);
         });
     }
 
+    // Function to display completed courses
     function displayCompletedCourses(coursesToDisplay = learningPath.completed) {
         completedCoursesTable.innerHTML = ""; // Clear table before inserting new rows
   
@@ -89,7 +76,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             row.innerHTML = `
                 <td>${course.name}</td>
                 <td>${course.category.join(", ")}</td>
-                <td>${course.instructor.join(", ")}</td>
+                <td>${course.instructor.join(", ")} (${course.classId})</td>
                 <td>${course.grade}</td>
             `;
             completedCoursesTable.appendChild(row);
@@ -98,18 +85,18 @@ document.addEventListener("DOMContentLoaded", async () => {
   
     // Filter courses
     function filterCourses() {
-        const nameFilter = searchByName.value.toLowerCase();
-        const categoryFilter = searchByCategory.value;
+        const nameFilter = searchByName.value.toLowerCase().trim();
+        const categoryFilter = searchByCategory.value.trim();
   
         const filteredEnrolled = learningPath.enrolled.filter((course) => {
             const matchesName = course.name.toLowerCase().includes(nameFilter);
-            const matchesCategory = categoryFilter === "" || course.category.includes(categoryFilter);
+            const matchesCategory = !categoryFilter || course.category.includes(categoryFilter);
             return matchesName && matchesCategory;
         });
         
         const filteredCompleted = learningPath.completed.filter((course) => {
             const matchesName = course.name.toLowerCase().includes(nameFilter);
-            const matchesCategory = categoryFilter === "" || course.category.includes(categoryFilter);
+            const matchesCategory = !categoryFilter || course.category.includes(categoryFilter);
             return matchesName && matchesCategory;
         });
       
@@ -125,5 +112,5 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Initial display
     displayEnrolledCourses();
     displayCompletedCourses();
-  });
+});
   

@@ -3,8 +3,17 @@ import { User } from "./class/user.js";
 //Get users from json file
 document.addEventListener("DOMContentLoaded", async () => {
     try {
-        const response = await fetch("../data/users.json");
-        const userJSON = await response.json();
+        let userJSON;
+
+        //load users data
+        const storedUsers = localStorage.getItem('users');
+        if (storedUsers) {
+            userJSON = JSON.parse(storedUsers);
+        } else {
+            const response = await fetch("../data/users.json");
+            userJSON = await response.json();
+            localStorage.setItem('users', JSON.stringify(userJSON, null, 2));
+        }
         const users = userJSON.map(User.fromJson);
         
         const loginForm = document.querySelector("#login-Form");

@@ -1,9 +1,17 @@
 import { Student } from "./class/student.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
-    // Fetch and load student's information
-    const response = await fetch("../data/students.json");
-    const studentsJSON = await response.json();
+    let studentsJSON;
+
+    //load students data
+    const storedStudents = localStorage.getItem('students');
+    if (storedStudents) {
+        studentsJSON = JSON.parse(storedStudents);
+    } else {
+        const studentsResponse = await fetch("../data/students.json");
+        studentsJSON = await studentsResponse.json();
+        localStorage.setItem('students', JSON.stringify(studentsJSON, null, 2));
+    }
     const students = studentsJSON.map(Student.fromJson);
     const studentID = localStorage.getItem("id");
     const student = students.find(student => student.id === studentID);
@@ -41,8 +49,7 @@ document.addEventListener("DOMContentLoaded", async () => {
    
     // Function to display enrolled courses
     function displayEnrolledCourses(coursesToDisplay = learningPath.enrolled) {
-        enrolledCoursesTable.innerHTML = ""; // Clear table before inserting new rows
-  
+        enrolledCoursesTable.innerHTML = "";
         if (coursesToDisplay.length === 0) {
             enrolledCoursesTable.innerHTML = "<tr><td colspan='4'>No enrolled courses found.</td></tr>";
             return;

@@ -1,9 +1,17 @@
 import { Class } from "./class/class.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
-    // Fetch and load classes
-    const classesResponse = await fetch("../data/classes.json");
-    const classesJSON = await classesResponse.json();
+    let classesJSON;
+
+    //load classes data
+    const storedClasses = localStorage.getItem('classes');
+    if (storedClasses) {
+        classesJSON = JSON.parse(storedClasses);
+    } else {
+        const classesResponse = await fetch("../data/classes.json");
+        classesJSON = await classesResponse.json();
+        localStorage.setItem('classes', JSON.stringify(classesJSON, null, 2));
+    }
     const classes = classesJSON.map(Class.fromJson);
 
     // Get DOM elements
@@ -35,26 +43,26 @@ document.addEventListener("DOMContentLoaded", async () => {
    
     // Function to display courses
     function displayCourses(classesByCourse) {
-        coursesTable.innerHTML = ""; // Clear table before inserting new rows
+        coursesTable.innerHTML = "";
     
         if (Object.keys(classesByCourse).length === 0) {
             coursesTable.innerHTML = "<tr><td colspan='7'>No courses found.</td></tr>";
             return;
         }
     
-        Object.entries(classesByCourse).forEach(([courseId, data]) => {
+        Object.entries(classesByCourse).forEach((data) => {
             const course = data.course;
             const courseClasses = data.classes;
             
             const row = document.createElement("tr");
             row.classList.add("course-row");
             row.innerHTML = `
-                <td><input type="checkbox" class="course-checkbox" value="${courseId}"></td>
-                <td>${courseId}</td>
+                <td><input type="checkbox" class="course-checkbox" value="${course.courseId}"></td>
+                <td>${course.courseId}</td>
                 <td>${course.name}</td>
                 <td>${course.category.join(", ")}</td>
                 <td>
-                    <select class="class-dropdown" data-course-id="${courseId}">
+                    <select class="class-dropdown" data-course-id="${course.courseId}">
                         ${courseClasses.map(classItem => 
                             `<option value="${classItem.classId}">${classItem.classId}</option>`
                         ).join('')}
@@ -85,7 +93,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const nameFilter = searchByName.value.toLowerCase();
         const categoryFilter = searchByCategory.value;
     
-        const filteredCourses = Object.entries(classesByCourse).filter(([courseId, data]) => {
+        const filteredCourses = Object.entries(classesByCourse).filter((data) => {
             const course = data.course;
             const matchesName = course.name.toLowerCase().includes(nameFilter);
             const matchesCategory = categoryFilter === "" || course.category.includes(categoryFilter);

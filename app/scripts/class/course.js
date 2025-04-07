@@ -72,4 +72,18 @@ export class Course {
             json.maxStudents
         );
     }
+
+    static async load() {
+        const storedCourses = localStorage.getItem('courses');
+        if (storedCourses) {
+            return JSON.parse(storedCourses).map(Course.fromJson);
+        }
+
+        const response = await fetch('../data/courses.json');
+        const coursesJSON = await response.json();
+        
+        localStorage.setItem('courses', JSON.stringify(coursesJSON, null, 2));
+        
+        return coursesJSON.map(Course.fromJson);
+    }
 }

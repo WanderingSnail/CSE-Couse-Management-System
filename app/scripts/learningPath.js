@@ -1,18 +1,7 @@
 import { Student } from "./class/student.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
-    let studentsJSON;
-
-    //load students data
-    const storedStudents = localStorage.getItem('students');
-    if (storedStudents) {
-        studentsJSON = JSON.parse(storedStudents);
-    } else {
-        const studentsResponse = await fetch("../data/students.json");
-        studentsJSON = await studentsResponse.json();
-        localStorage.setItem('students', JSON.stringify(studentsJSON, null, 2));
-    }
-    const students = studentsJSON.map(Student.fromJson);
+    const students = await Student.load();
     const studentID = localStorage.getItem("id");
     const student = students.find(student => student.id === studentID);
     

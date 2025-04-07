@@ -54,4 +54,18 @@ export class Instructor {
             json.assignedCourses
         );
     }
+
+    static async load() {
+        const storedInstructors = localStorage.getItem('instructors');
+        if (storedInstructors) {
+            return JSON.parse(storedInstructors).map(Instructor.fromJson);
+        }
+
+        const response = await fetch('../data/instructor.json');
+        const instructorsJSON = await response.json();
+        
+        localStorage.setItem('instructors', JSON.stringify(instructorsJSON, null, 2));
+        
+        return instructorsJSON.map(Instructor.fromJson);
+    }
 }

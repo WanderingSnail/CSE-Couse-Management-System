@@ -25,7 +25,8 @@
       { "name": "Omar Al-Farid", "id": "012020017" },
       { "name": "Saif Al-Amin", "id": "012020018" },
       { "name": "Nasser Al-Rawi", "id": "012020019" }
-    ]
+    ],
+    "currentStudents": 8
   },
   {
     "classId": "L02",
@@ -44,7 +45,8 @@
       "day": ["Monday", "Wednesday"],
       "time": "09:00 - 10:00"
     },
-    "studentList": []
+    "studentList": [],
+    "currentStudents": 0
   },
   {
     "classId": "L01",
@@ -63,7 +65,8 @@
       "day": ["Monday", "Wednesday"],
       "time": "10:00 - 11:00"
     },
-    "studentList": []
+    "studentList": [],
+    "currentStudents": 0
   },
   {
     "classId": "L02",
@@ -82,7 +85,8 @@
       "day": ["Monday", "Wednesday"],
       "time": "11:00 - 12:00"
     },
-    "studentList": []
+    "studentList": [],
+    "currentStudents": 0
   },
   {
     "classId": "L01",
@@ -101,7 +105,8 @@
       "day": ["Tuesday", "Thursday"],
       "time": "08:00 - 09:00"
     },
-    "studentList": []
+    "studentList": [],
+    "currentStudents": 0
   },
   {
     "classId": "L02",
@@ -120,7 +125,8 @@
       "day": ["Tuesday", "Thursday"],
       "time": "09:00 - 10:00"
     },
-    "studentList": []
+    "studentList": [],
+    "currentStudents": 0
   },
   {
     "classId": "L01",
@@ -139,7 +145,8 @@
       "day": ["Tuesday", "Thursday"],
       "time": "10:00 - 11:00"
     },
-    "studentList": []
+    "studentList": [],
+    "currentStudents": 0
   },
   {
     "classId": "L02",
@@ -158,7 +165,8 @@
       "day": ["Tuesday", "Thursday"],
       "time": "11:00 - 12:00"
     },
-    "studentList": []
+    "studentList": [],
+    "currentStudents": 0
   },
   {
     "classId": "L01",
@@ -179,7 +187,8 @@
     },
     "studentList": [
       { "name": "Khalid Mansour", "id": "012024005" }
-    ]
+    ],
+    "currentStudents": 1
   },
   {
     "classId": "L02",
@@ -200,7 +209,8 @@
     },
     "studentList": [
       { "name": "Mohmmed Mohsin", "id": "012025001" }
-    ]
+    ],
+    "currentStudents": 1
   },
   {
     "classId": "L01",
@@ -219,7 +229,8 @@
       "day": ["Wednesday", "Friday"],
       "time": "10:00 - 11:00"
     },
-    "studentList": []
+    "studentList": [],
+    "currentStudents": 0
   },
   {
     "classId": "L02",
@@ -240,7 +251,8 @@
     },
     "studentList": [
       { "name": "Khalid Mansour", "id": "012024005" }
-    ]
+    ],
+    "currentStudents": 1
   },
   {
     "classId": "L01",
@@ -261,7 +273,8 @@
     },
     "studentList": [
       { "name": "Mohmmed Mohsin", "id": "012025001" }
-    ]
+    ],
+    "currentStudents": 1
   },
   {
     "classId": "L02",
@@ -280,7 +293,8 @@
       "day": ["Thursday", "Saturday"],
       "time": "09:00 - 10:00"
     },
-    "studentList": []
+    "studentList": [],
+    "currentStudents": 0
   },
   {
     "classId": "L01",
@@ -299,7 +313,8 @@
       "day": ["Thursday", "Saturday"],
       "time": "10:00 - 11:00"
     },
-    "studentList": []
+    "studentList": [],
+    "currentStudents": 0
   },
   {
     "classId": "L02",
@@ -318,7 +333,8 @@
       "day": ["Thursday", "Saturday"],
       "time": "11:00 - 12:00"
     },
-    "studentList": []
+    "studentList": [],
+    "currentStudents": 0
   },
   {
     "classId": "L01",
@@ -339,7 +355,8 @@
     },
     "studentList": [
       { "name": "Yousef Karim", "id": "012024007" }
-    ]
+    ],
+    "currentStudents": 1
   },
   {
     "classId": "L02",
@@ -358,7 +375,8 @@
       "day": ["Sunday", "Tuesday"],
       "time": "09:00 - 10:00"
     },
-    "studentList": []
+    "studentList": [],
+    "currentStudents": 0
   },
   {
     "classId": "L01",
@@ -377,7 +395,8 @@
       "day": ["Sunday", "Tuesday"],
       "time": "10:00 - 11:00"
     },
-    "studentList": []
+    "studentList": [],
+    "currentStudents": 0
   },
   {
     "classId": "L02",
@@ -396,7 +415,8 @@
       "day": ["Sunday", "Tuesday"],
       "time": "11:00 - 12:00"
     },
-    "studentList": []
+    "studentList": [],
+    "currentStudents": 0
   },
   {
     "classId": "L01",
@@ -415,7 +435,8 @@
       "day": ["Monday", "Friday"],
       "time": "08:00 - 09:00"
     },
-    "studentList": []
+    "studentList": [],
+    "currentStudents": 0
   },
   {
     "classId": "L02",
@@ -434,7 +455,8 @@
       "day": ["Monday", "Friday"],
       "time": "09:00 - 10:00"
     },
-    "studentList": []
+    "studentList": [],
+    "currentStudents": 0
   },
   {
     "classId": "L01",
@@ -453,7 +475,8 @@
       "day": ["Monday", "Friday"],
       "time": "10:00 - 11:00"
     },
-    "studentList": []
+    "studentList": [],
+    "currentStudents": 0
   },
   {
     "classId": "L02",
@@ -472,7 +495,8 @@
       "day": ["Monday", "Friday"],
       "time": "11:00 - 12:00"
     },
-    "studentList": []
+    "studentList": [],
+    "currentStudents": 0
   },
   {
     "classId": "L01",
@@ -493,7 +517,8 @@
     },
     "studentList": [
       { "name": "Yousef Karim", "id": "012024007" }
-    ]
+    ],
+    "currentStudents": 1
   },
   {
     "classId": "L02",
@@ -512,7 +537,8 @@
       "day": ["Tuesday", "Friday"],
       "time": "09:00 - 10:00"
     },
-    "studentList": []
+    "studentList": [],
+    "currentStudents": 0
   },
   {
     "classId": "L01",
@@ -531,7 +557,8 @@
       "day": ["Tuesday", "Friday"],
       "time": "10:00 - 11:00"
     },
-    "studentList": []
+    "studentList": [],
+    "currentStudents": 0
   },
   {
     "classId": "L02",
@@ -550,7 +577,8 @@
       "day": ["Tuesday", "Friday"],
       "time": "11:00 - 12:00"
     },
-    "studentList": []
+    "studentList": [],
+    "currentStudents": 0
   },
   {
     "classId": "L01",
@@ -569,7 +597,8 @@
       "day": ["Wednesday", "Saturday"],
       "time": "08:00 - 09:00"
     },
-    "studentList": []
+    "studentList": [],
+    "currentStudents": 0
   },
   {
     "classId": "L02",
@@ -588,7 +617,8 @@
       "day": ["Wednesday", "Saturday"],
       "time": "09:00 - 10:00"
     },
-    "studentList": []
+    "studentList": [],
+    "currentStudents": 0
   },
   {
     "classId": "L01",
@@ -607,7 +637,8 @@
       "day": ["Wednesday", "Saturday"],
       "time": "10:00 - 11:00"
     },
-    "studentList": []
+    "studentList": [],
+    "currentStudents": 0
   },
   {
     "classId": "L02",
@@ -626,6 +657,7 @@
       "day": ["Wednesday", "Saturday"],
       "time": "11:00 - 12:00"
     },
-    "studentList": []
+    "studentList": [],
+    "currentStudents": 0
   }
 ]

@@ -3,46 +3,10 @@ import { Class } from "./class/class.js";
 import { Instructor } from "./class/instructor.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
-    let instructorsJSON, studentsJSON, classesJSON;
     
-    //load instructors data
-    const storedInstructors = localStorage.getItem('instructors');
-    if (storedInstructors) {
-        instructorsJSON = JSON.parse(storedInstructors);
-    } else {
-        const instructorsResponse = await fetch("../data/instructor.json");
-        instructorsJSON = await instructorsResponse.json();
-        localStorage.setItem('instructors', JSON.stringify(instructorsJSON, null, 2));
-    }
-    const instructors = instructorsJSON.map(Instructor.fromJson);
-
-    //load students data
-    const storedStudents = localStorage.getItem('students');
-    if (storedStudents) {
-        studentsJSON = JSON.parse(storedStudents);
-    } else {
-        const studentsResponse = await fetch("../data/students.json");
-        studentsJSON = await studentsResponse.json();
-        localStorage.setItem('students', JSON.stringify(studentsJSON, null, 2));
-    }
-    const students = studentsJSON.map(Student.fromJson);
-
-    //load classes data
-    const storedClasses = localStorage.getItem('classes');
-    if (storedClasses) {
-        classesJSON = JSON.parse(storedClasses);
-    } else {
-        const classesResponse = await fetch("../data/classes.json");
-        classesJSON = await classesResponse.json();
-        localStorage.setItem('classes', JSON.stringify(classesJSON, null, 2));
-    }
-    const assignedClasses = classesJSON.map(Class.fromJson).filter(classItem => {
-        const assignedClass = instructor.assignedCourses.find(
-            assigned => assigned.courseId === classItem.courseId && 
-                       assigned.classId === classItem.classId
-        );
-        return assignedClass && classItem.instructors === instructor.name;
-    });
+    const students = await Student.load();
+    const classes = await Class.load();
+    const instructors = await Instructor.load();
 
     const instructorID = localStorage.getItem("id");
     const instructor = instructors.find(instructor => instructor.id === instructorID);
@@ -50,6 +14,14 @@ document.addEventListener("DOMContentLoaded", async () => {
         console.error("Instructor not found:", instructorID);
         return;
     }
+
+    const assignedClasses = classes.filter(classItem => {
+        const assignedClass = instructor.assignedCourses.find(
+            assigned => assigned.courseId === classItem.courseId && 
+                       assigned.classId === classItem.classId
+        );
+        return assignedClass && classItem.instructors === instructor.name;
+    });
 
     // Get DOM elements
     const courseSelect = document.querySelector("#courseSelect");
@@ -160,33 +132,18 @@ document.addEventListener("DOMContentLoaded", async () => {
                         grade: grade
                     });
                     
-                    //Update students JSON file
-                    const studentIndex = studentsJSON.findIndex(s => s.id === studentId);
-                    if (studentIndex !== -1) {
-                        studentsJSON[studentIndex] = {
-                            id: student.id,
-                            name: student.name,
-                            username: student.username,
-                            role: student.role,
-                            enrolledCourses: student.enrolledCourses,
-                            completedCourses: student.completedCourses
-                        };
-                    }
-                    
                     updatedStudents.add(student);
                 }
             }
         }
         
-        //Save updated students to localStorage
+        //Save updated students
         if (updatedStudents.size > 0) {
             try {
-                localStorage.setItem('students', JSON.stringify(studentsJSON, null, 2));
-                console.log("Grades saved to localStorage");
+                await Student.save(students);                
                 alert("Grades submitted successfully!");
                 filterClasses();
-            } catch (error) {
-                console.error('Error saving grades:', error);
+            } catch (error) {                
                 alert("Error saving grades. Please try again.");
             }
         } else {

@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QU Student Management - Course Registration</title>
-  <link rel="stylesheet" href="../styles/styles.css"/>
-  <script src="scripts/app.js" defer></script>
+  <link rel="stylesheet" href="../styles/mainStyle.css" />
+  <script src="../scripts/course_registration.js" type="module" defer></script>
 </head>
 <body>
   <header>
@@ -20,20 +20,48 @@
 
   <main>
     <section class="registration-section">
-      <h2>Register for Course</h2>
-      <div class="course-details">
-        <h3 id="courseName">Course Name</h3>
-        <p id="courseCategory">Category: Programming</p>
-        <p id="coursePrerequisites">Prerequisites: <span>OOP Basics</span></p>
-        <p id="courseStatus">Open for Registration: <span>Yes</span></p>
-        <p id="courseInstructors">Select Instructor:</p>
-        <select id="instructorList" title="Select Instructor">
-          <option value="instructor1">Instructor 1</option>
-          <option value="instructor2">Instructor 2</option>
-        </select>
+      <h2>Course Registration Imformation</h2>
+      <div class="courses-container">
+        <table id="coursesTable">
+          <thead>
+            <tr>
+              <th>Select</th>
+              <th>Course ID</th>
+              <th>Course Name</th>        
+              <th>Prerequisites</th>
+              <th>Class</th>
+              <th>Instructor</th>
+              <th>Time</th>
+              <th>Status</th>
+              <th>Current Students</th>
+              <th>Max Students</th>
+              <th>Availability</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="course-row">
+              <td>
+                <label>
+                  <input type="checkbox" class="course-checkbox" value="course1">
+                </label>
+              </td>
+              <td>CMPS25</td>
+              <td>Object Oriented Programming</td>
+              <td>CMPS151</td>
+              <td>L01</td>
+              <td>Brad Peter</td>
+              <td>10:00 - 11:00</td>
+              <td>Open</td>
+              <td>0</td>
+              <td>30</td>
+              <td>Available</td> <!-- meet Prerequisites and current students < max students -->
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <button id="btnSubmitRegistration">Submit Registration</button>
-      <div id="registrationResult"></div>
+      <div class="register-button-container">
+        <button id="registerBtn" class="btn-register">Confirm Registration</button>
+      </div>
     </section>
   </main>
 

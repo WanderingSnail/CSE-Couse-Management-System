@@ -6,11 +6,11 @@ export class User {
     #role;
 
     constructor(id, name, username, password, role) {
-        this.#username = username;
+        this.#id = id;
         this.#name = name;
+        this.#username = username;
         this.#password = password;
         this.#role = role;
-        this.#id = id;
     }
 
     get id() {
@@ -36,5 +36,20 @@ export class User {
 
     static fromJson(json) {
         return new User(json.id, json.name, json.username, json.password, json.role);
+    }
+
+    //Load users from json file
+    static async load() {
+        const storedUsers = localStorage.getItem('users');
+        if (storedUsers) {
+            return JSON.parse(storedUsers).map(User.fromJson);
+        }
+        
+        const response = await fetch('../data/users.json');
+        const userJSON = await response.json();        
+        
+        localStorage.setItem('users', JSON.stringify(userJSON, null, 2));
+        
+        return userJSON.map(User.fromJson);
     }
 }

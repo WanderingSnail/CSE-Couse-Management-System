@@ -45,6 +45,18 @@ export class Student {
         return this.#completedCourses;
     }
 
+    toJSON() {
+        return {
+            id: this.#id,
+            name: this.#name,
+            username: this.#username,
+            password: this.#password,
+            role: this.#role,
+            enrolledCourses: this.#enrolledCourses,
+            completedCourses: this.#completedCourses
+        };
+    }
+
     static fromJson(json) {
         return new Student(
             json.id,
@@ -55,5 +67,24 @@ export class Student {
             json.enrolledCourses,
             json.completedCourses
         );
+    }
+
+    static async load() {        
+        const storedStudents = localStorage.getItem('students');
+        if (storedStudents) {
+            return JSON.parse(storedStudents).map(Student.fromJson);
+        }
+
+        const response = await fetch('../data/students.json');
+        const studentsJSON = await response.json();
+        
+        localStorage.setItem('students', JSON.stringify(studentsJSON, null, 2));
+        
+        return studentsJSON.map(Student.fromJson);
+    }
+
+    static async save(students) {
+        const studentsJSON = students.map(student => student.toJSON());
+        localStorage.setItem('students', JSON.stringify(studentsJSON, null, 2));
     }
 }

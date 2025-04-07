@@ -1,24 +1,16 @@
 import { Class } from "./class/class.js";
+import { Student } from "./class/student.js";
 
-document.addEventListener("DOMContentLoaded", async () => {
-    let classesJSON;
-
-    //load classes data
-    const storedClasses = localStorage.getItem('classes');
-    if (storedClasses) {
-        classesJSON = JSON.parse(storedClasses);
-    } else {
-        const classesResponse = await fetch("../data/classes.json");
-        classesJSON = await classesResponse.json();
-        localStorage.setItem('classes', JSON.stringify(classesJSON, null, 2));
-    }
-    const classes = classesJSON.map(Class.fromJson);
+document.addEventListener("DOMContentLoaded", async () => {    
+    const classes = await Class.load();
+    const students = await Student.load();
 
     // Get DOM elements
     const coursesTable = document.querySelector("#coursesTable").querySelector("tbody");
     const searchByName = document.querySelector("#searchByName");
     const searchByCategory = document.querySelector("#searchByCategory");
-    const searchBtn = document.querySelector("#searchBtn"); 
+    const searchBtn = document.querySelector("#searchBtn");
+    const registerBtn = document.querySelector("#registerBtn");
     
     // Initialize courses array with unique course IDs
     const classesByCourse = {};
@@ -50,7 +42,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             return;
         }
     
-        Object.entries(classesByCourse).forEach((data) => {
+        Object.entries(classesByCourse).forEach(([courseId, data]) => {
             const course = data.course;
             const courseClasses = data.classes;
             
@@ -93,7 +85,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const nameFilter = searchByName.value.toLowerCase();
         const categoryFilter = searchByCategory.value;
     
-        const filteredCourses = Object.entries(classesByCourse).filter((data) => {
+        const filteredCourses = Object.entries(classesByCourse).filter(([courseId, data]) => {
             const course = data.course;
             const matchesName = course.name.toLowerCase().includes(nameFilter);
             const matchesCategory = categoryFilter === "" || course.category.includes(categoryFilter);
@@ -103,6 +95,35 @@ document.addEventListener("DOMContentLoaded", async () => {
         const filteredClassesByCourse = Object.fromEntries(filteredCourses);
         displayCourses(filteredClassesByCourse);
     }
+
+    // Handle course registration
+    registerBtn.addEventListener('click', () => {
+        const selectedCourses = [];
+        const checkboxes = document.querySelectorAll('.course-checkbox:checked');
+        
+        checkboxes.forEach(checkbox => {
+            const courseId = checkbox.value;
+            const row = checkbox.closest('tr');
+            const classDropdown = row.querySelector('.class-dropdown');
+            const selectedClassId = classDropdown.value;
+            
+            selectedCourses.push({
+                courseId: courseId,
+                classId: selectedClassId
+            });
+        });
+
+        console.log('Selected courses:', selectedCourses);
+
+        if (selectedCourses.length > 0) {
+            // Store selected courses in localStorage
+            localStorage.setItem('selectedCourses', JSON.stringify(selectedCourses));
+            
+            window.location.href = '../html/course_registration.html';
+        } else {
+            alert('Please select at least one course');
+        }
+    });
   
     // Event Listeners
     searchBtn.addEventListener("click", filterCourses);

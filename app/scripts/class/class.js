@@ -12,6 +12,7 @@ export class Class {
     #capacity;
     #schedule;
     #studentList;
+    #currentStudents;
     
     constructor(
         classId,
@@ -26,7 +27,8 @@ export class Class {
         instructors,
         capacity,
         schedule,
-        studentList
+        studentList,
+        currentStudents
     ) {
         this.#classId = classId;
         this.#courseId = courseId;
@@ -41,6 +43,7 @@ export class Class {
         this.#capacity = capacity;
         this.#schedule = schedule;
         this.#studentList = studentList || [];
+        this.#currentStudents = currentStudents || 0;
     }
     
     get classId() {
@@ -95,6 +98,33 @@ export class Class {
         return this.#studentList;
     }
 
+    get currentStudents() {
+        return this.#currentStudents;
+    }
+
+    set currentStudents(value) {
+        this.#currentStudents = value;
+    }
+
+    toJSON() {
+        return {
+            classId: this.#classId,
+            courseId: this.#courseId,
+            courseName: this.#courseName,
+            category: this.#category,
+            description: this.#description,
+            prerequisites: this.#prerequisites,
+            creditHours: this.#creditHours,
+            minStudents: this.#minStudents,
+            status: this.#status,
+            instructors: this.#instructors,
+            capacity: this.#capacity,
+            schedule: this.#schedule,
+            studentList: this.#studentList,
+            currentStudents: this.#currentStudents
+        };
+    }
+
     static fromJson(json) {
         return new Class(
             json.classId,
@@ -109,7 +139,27 @@ export class Class {
             json.instructors,
             json.capacity,
             json.schedule,
-            json.studentList
+            json.studentList,
+            json.currentStudents
         );
+    }
+
+    static async load() {
+        const storedClasses = localStorage.getItem('classes');
+        if (storedClasses) {
+            return JSON.parse(storedClasses).map(Class.fromJson);
+        }
+
+        const response = await fetch('../data/classes.json');
+        const classesJSON = await response.json();
+        
+        localStorage.setItem('classes', JSON.stringify(classesJSON, null, 2));
+        
+        return classesJSON.map(Class.fromJson);
+    }
+
+    static async save(classes) {
+        const classesJSON = classes.map(classItem => classItem.toJSON());
+        localStorage.setItem('classes', JSON.stringify(classesJSON, null, 2));
     }
 }

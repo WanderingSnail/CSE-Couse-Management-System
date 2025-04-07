@@ -18,90 +18,70 @@
     "name": "Brad Peter",
     "username": "bp120045",
     "password": "10bp045",
-    "role": "instructor",
-    "expertise_area": ["Programming"],
-    "assignedCourses": ["CMPS151", "CMPS251", "CMPS323"]
+    "role": "instructor"
   },
   {
     "id": "102015167",
     "name": "Tony Stark",
     "username": "ts150167",
     "password": "10ts167",
-    "role": "instructor",
-    "expertise_area": ["Programming", "Computing Systems"],
-    "assignedCourses": ["CMPS205", "CMPS303"]
+    "role": "instructor"
   },
   {
     "id": "102018329",
     "name": "Bruce Wayne",
     "username": "bw180329",
     "password": "10bw329",
-    "role": "instructor",
-    "expertise_area": ["Software Engineering"],
-    "assignedCourses": ["CMPS200", "CMPS310"]
+    "role": "instructor"
   },
   {
     "id": "102013508",
     "name": "Kylian Memphis",
     "username": "km130508",
     "password": "10km508",
-    "role": "instructor",
-    "expertise_area": ["Programming", "Computing Systems", "Software Engineering"],
-    "assignedCourses": ["CMPS351", "CMPS350", "CMPS323"]
+    "role": "instructor"
   },
   {
     "id": "102016274",
     "name": "Leonardo DiMaria",
     "username": "ld160274",
     "password": "10ld274",
-    "role": "instructor",
-    "expertise_area": ["Computing Systems"],
-    "assignedCourses": ["CMPE263", "CMPS405"]
+    "role": "instructor"
   },
   {
     "id": "102020835",
     "name": "Peter Parker",
     "username": "pp200835",
     "password": "10pp835",
-    "role": "instructor",
-    "expertise_area": ["Security", "Computing Systems"],
-    "assignedCourses": ["CMPE355", "CMPS380"]
+    "role": "instructor"
   },
   {
     "id": "102019472",
     "name": "Christian Bale",
     "username": "cb190472",
     "password": "10cb472",
-    "role": "instructor",
-    "expertise_area": ["Project", "Software Engineering"],
-    "assignedCourses": ["CMPS307", "CMPS493", "CMPS499"]
+    "role": "instructor"
   },
   {
     "id": "102017842",
     "name": "Scarlett Johansson",
     "username": "sj170842",
     "password": "10sj842",
-    "role": "instructor",
-    "expertise_area": ["Programming", "Computing Systems"],
-    "assignedCourses": ["CMPS151", "CMPS205"]
+    "role": "instructor"
   },
   {
     "id": "102013315",
     "name": "Robert Downey",
     "username": "rd130315",
     "password": "10rd315",
-    "role": "instructor",
-    "expertise_area": ["Security", "Computing Systems"],
-    "assignedCourses": ["CMPS380", "CMPE355"]
+    "role": "instructor"
   },
   {
     "id": "102020958",
     "name": "Hugh Jackman",
     "username": "hj200958",
     "password": "10hj958",
-    "role": "instructor",
-    "expertise_area": ["Project", "Software Engineering"],
-    "assignedCourses": ["CMPS307", "CMPS493"]
+    "role": "instructor"
   },
   {
     "id": "012025001",
@@ -110,6 +90,5 @@
     "password": "01mm001",
     "role": "student"
   }
-
 ]
   

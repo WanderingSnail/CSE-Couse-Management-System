@@ -4,11 +4,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>QU Student Management - Course Validation</title>
+  <link rel="stylesheet" href="../styles/mainStyle.css" />
 </head>
-
 <body>
+    <header>
+        <div class="logo-img">
+          <img src="../img/QU logo.png" alt="Qatar University logo" width="100%" />
+        </div>
+        <nav class="navbar">
+          <a href="main.html" class="logo">QU Student Management</a>
+          <ul class="nav-links">
+            <li><a href="instructor_dashboard.html" class="active">Instructor Dashboard</a></li>
+            <li><a href="login.html" class="btn-logout">Logout</a></li>
+          </ul>
+        </nav>
+      </header>
 
-</body>
+    <main class="course-search">
+    <h2>Course Preferences</h2>
+    <p>Select the courses you are interested in teaching.</p>
 
+
+    <div id="course-list" class="courses-container">
+        <table id="coursesTable">
+            <thead>
+              <tr>
+                <th>Select</th>
+                <th>Course ID</th>
+                <th>Course Name</th>
+                <th>Class ID</th>
+                <th>Schedule</th>
+                <th>Capacity</th>
+              </tr>
+            </thead>
+            <tbody id="course-list-tbody">
+              <!-- Dynamic rows will be inserted here by JavaScript -->
+            </tbody>
+          </table>
+    </div>
+
+    <div class="register-button-container">
+      <button id="submit-preferences" class="btn-register">Submit Preferences</button>
+    </div>
+  </main>
+  </body>
+<script src="..\scripts\instructor_preference.js" type="module" defer></script>
 </html>

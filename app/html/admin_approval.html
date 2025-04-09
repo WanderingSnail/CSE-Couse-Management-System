@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QU Student Management - Course Validation</title>
+  <link rel="stylesheet" href="../styles/mainStyle.css" />
+</head>
+
+<body>
+  <header>
+    <div class="logo-img">
+      <img src="../img/QU logo.png" alt="Qatar University logo" width="100%" />
+    </div>
+    <nav class="navbar">
+      <a href="main.html" class="logo">QU Student Management</a>
+      <ul class="nav-links">
+        <li><a href="schedule.html">Courses Schedule</a></li>
+        <li><a href="#" id="showCourseBtn">Create Course</a></li>
+        <li><a href="#" id="showClassBtn">Create Class</a></li>
+        <li><a href="login.html" class="btn-logout">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+    <main>
+        <h2>Admin: Review Instructor Preferences</h2>
+        <table id="coursesTable">
+        <thead>
+            <tr>
+                <th>Course Name</th>
+              <th>Instructor Preferences</th>
+              <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="courseListTbody"></tbody>
+        </table>
+    </main>
+
+  <footer>
+    <p>&copy; 2025 CSE Department - Qatar University</p>
+  </footer>
+</body>
+
+</html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", async () => {
+    const preferencesTable = document.getElementById("courseListTbody");
+
+    try {
+      const courseResponse = await fetch("../data/classes.json");
+      const courses = await courseResponse.json();
+
+      const preferencesResponse = await fetch("../data/instructor-preferences.json");
+      const preferences = await preferencesResponse.json();
+
+      // Render preferences for open courses
+      courses.filter(course => course.status === "open").forEach(course => {
+        const row = document.createElement("tr");
+
+        const courseNameCell = document.createElement("td");
+        courseNameCell.textContent = course.courseName;
+        row.appendChild(courseNameCell);
+
+        const preferencesCell = document.createElement("td");
+        const interestedInstructors = preferences.filter(pref => pref.interestedCourses.includes(course.classId));
+
+        preferencesCell.textContent = interestedInstructors.map(instructor => instructor.instructorId).join(", ");
+        row.appendChild(preferencesCell);
+
+        const actionCell = document.createElement("td");
+        const assignButton = document.createElement("button");
+        assignButton.textContent = "Assign Instructor";
+        assignButton.addEventListener("click", () => {
+          // Assign instructor to the course
+          const selectedInstructor = interestedInstructors[0]; // For simplicity, we are assigning the first interested instructor.
+          
+          // Add the instructor to the class
+          course.instructors = selectedInstructor.instructorId;
+
+          // Save the updated course and instructor information
+          fetch("../data/classes.json", {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(courses)
+          });
+
+          alert(`Instructor ${selectedInstructor.instructorId} has been assigned to ${course.courseName}`);
+        });
+
+        actionCell.appendChild(assignButton);
+        row.appendChild(actionCell);
+
+        preferencesTable.appendChild(row);
+      });
+    } catch (error) {
+      console.error("Error loading data:", error);
+      alert("Failed to load instructor preferences.");
+    }
+  });
+</script>

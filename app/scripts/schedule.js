@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     "13:00 - 14:00",
     "14:00 - 15:00"
   ];
-  const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
+  const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
   let classes = [];
 

@@ -1,54 +1,67 @@
-/* Hind */
-/* Fontsshare sample code to inplement fonts */
 @font-face {
-    font-family: 'Hind';
-    src: url('..\fonts\Hind\Fonts\WEB\fonts\Hind-Regular.woff2') format('woff2'),
-       url('..\fonts\Hind\Fonts\WEB\fonts\Hind-Regular.woff') format('woff'),
-       url('..\fonts\Hind\Fonts\WEB\fonts\Hind-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-display: swap;
-    font-style: normal;
-  }
-  
-  /* Pilcrow Rounded */
-  /* Fontsshare sample code to inplement fonts */
-  @font-face {
-    font-family: 'Pilcrow Rounded';
-    src: url('..\fonts\Pilcrow Rounded\Fonts\WEB\fonts\PilcrowRounded-Semibold.woff2') format('woff2'),
-       url('..\fonts\Pilcrow Rounded\Fonts\WEB\fonts\PilcrowRounded-Semibold.woff') format('woff'),
-       url('..\fonts\Pilcrow Rounded\Fonts\WEB\fonts\PilcrowRounded-Semibold.ttf') format('truetype');
-    font-weight: 600;
-    font-display: swap;
-    font-style: normal;
-  }
-  
+  font-family: 'Hind';
+  src: url('..\fonts\Hind\Fonts\WEB\fonts\Hind-Regular.woff2') format('woff2'),
+    url('..\fonts\Hind\Fonts\WEB\fonts\Hind-Regular.woff') format('woff'),
+    url('..\fonts\Hind\Fonts\WEB\fonts\Hind-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pilcrow Rounded';
+  src: url('..\fonts\Pilcrow Rounded\Fonts\WEB\fonts\PilcrowRounded-Semibold.woff2') format('woff2'),
+    url('..\fonts\Pilcrow Rounded\Fonts\WEB\fonts\PilcrowRounded-Semibold.woff') format('woff'),
+    url('..\fonts\Pilcrow Rounded\Fonts\WEB\fonts\PilcrowRounded-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
 :root {
-    --font-family: 'Hind', sans-serif;
-    --font-family-heading: 'Pilcrow Rounded', sans-serif;
+  --font-family: 'Hind', sans-serif;
+  --font-family-heading: 'Pilcrow Rounded', sans-serif;
 }
 
-/* Mobile first approach from Kinsta */
-/* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-  #wrapper {width:95%;  margin: 0 auto; }
+  #wrapper {
+    width: 95%;
+    margin: 0 auto;
+  }
 
-  #header {width:100%; }
+  #header {
+    width: 100%;
+  }
 
-  #content {width:100%; }
+  #content {
+    width: 100%;
+  }
 
-  #sidebar {width:100%; }
+  #sidebar {
+    width: 100%;
+  }
 
-  #footer {width:100%; }
+  #footer {
+    width: 100%;
+  }
 }
- 
-/* Large devices (desktops, 992px and up) */
+
 @media (min-width: 992px) {
 
-#wrapper {width:90%;  margin: 0 auto; }
+  #wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
 
-#content {width:70%; float:left; }
+  #content {
+    width: 70%;
+    float: left;
+  }
 
-#sidebar {width:30%; float:right; }
+  #sidebar {
+    width: 30%;
+    float: right;
+  }
 }
 
 * {

@@ -35,12 +35,10 @@ export class Student {
         return this.#role;
     }
 
-    //Enrolled courses with courseId, classId, courseName, category, instructor, status
     get enrolledCourses() {
         return this.#enrolledCourses;
     }
 
-    //Completed courses with courseId, classId, courseName, category, instructor, grade
     get completedCourses() {
         return this.#completedCourses;
     }

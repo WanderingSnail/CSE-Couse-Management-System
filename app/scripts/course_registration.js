@@ -15,11 +15,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     console.log('Selected classes:', selectedClasses);
 
-    //Get DOM elements
     const coursesTable = document.querySelector("#coursesTable").querySelector("tbody");
     const registerBtn = document.querySelector("#registerBtn");
 
-    //Check availability of selected courses
     function checkAvailability() {
         selectedClasses.forEach(course => {
             if (!course) return;
@@ -40,7 +38,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     checkAvailability();
 
-    //Function to display selected courses
     function displaySelectedClasses() {
         coursesTable.innerHTML = "";
 
@@ -69,7 +66,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
-    //Event listeners
     registerBtn.addEventListener("click", async () => {
         const registeredCourses = [];
         const checkboxes = document.querySelectorAll('.course-checkbox:checked');
@@ -104,27 +100,21 @@ document.addEventListener("DOMContentLoaded", async () => {
                 status: course.status
             });
 
-            //Update class's current students
             course.currentStudents++;
         }
 
         if (registeredCourses.length > 0) {
-            //Update student's enrolled courses
             student.enrolledCourses.push(...registeredCourses);
             
-            //Save updated data
             await Student.save(students);
             await Class.save(classes);
 
-            //Clear local storage
             alert("Course registered successfully!");
             localStorage.removeItem('selectedCourses');
 
-            //Redirect to main page
             window.location.href = '../html/main.html';
         }
     });
 
-    //Initial display
     displaySelectedClasses();
 });

@@ -35,7 +35,7 @@ export class Course {
     get name() {
         return this.#name;
     }
-    
+
     get description() {
         return this.#description;
     }
@@ -94,9 +94,9 @@ export class Course {
 
         const response = await fetch('../data/courses.json');
         const coursesJSON = await response.json();
-        
+
         localStorage.setItem('courses', JSON.stringify(coursesJSON, null, 2));
-        
+
         return coursesJSON.map(Course.fromJson);
     }
 

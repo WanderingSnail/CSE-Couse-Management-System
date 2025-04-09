@@ -1,5 +1,3 @@
-import { User } from "./user.js";
-
 export class Admin {
     #id;
     #name;
@@ -7,7 +5,7 @@ export class Admin {
     #password;
     #role;
 
-    constructor(id, name, username, password, role="admin") {
+    constructor(id, name, username, password, role = "admin") {
         this.#id = id;
         this.#name = name;
         this.#username = username;

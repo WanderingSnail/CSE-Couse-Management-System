@@ -1,4 +1,3 @@
-/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -13,175 +12,137 @@ body {
     "header"
     "main"
     "footer";
+  font-family: Arial, sans-serif;
+  background-color: #fff;
 }
 
 header {
   grid-area: header;
-  background-color: snow;
+  background-color: #fff;
+  padding: 3rem 2rem;
 }
 
 .logo-title {
   display: flex;
-  padding: 0.5rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
   text-align: center;
-  text-shadow: 2px 2px 4px #a19b9b;
-  h1 {
-    font-size: large;
-  }
-  span {
-    color: rgb(177, 87, 87);
-  }
+  gap: 0.5rem;
+  text-shadow: 1px 1px 2px #cfcfcf;
+}
+
+.logo-title h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
 }
 
 .logo-img {
-  width: 4rem;
-  img {
-    border-radius: 48%;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  }
+  width: 4.5rem;
+}
+
+.logo-img img {
+  border-radius: 50%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 100%;
+  height: auto;
 }
 
 main {
   grid-area: main;
-  background-image: url(../img/Qu_system.webp);
-  background-size: cover;
-  width: 100%;
-  padding-top: 3.5rem;
-}
-
-footer {
-  grid-area: footer;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
 
 .login-container {
   display: flex;
   justify-content: center;
-  align-self: center;
+  align-items: center;
+  width: 100%;
 }
 
 #login-Form {
+  background-color: rgba(255, 255, 255, 0.97);
+  width: 22rem;
+  padding: 2rem 2.5rem;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background-color: #eee7e76e;
-  width: 20rem;
-  height: 22rem;
-  border-radius: 50px;
-  transition: 1s ease;
-  h2 {
-    text-align: center;
-    color: black;
-  }
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  gap: 1.2rem;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 8px 20px;
+  transition: transform 0.3s ease;
 }
 
 #login-Form:hover {
-  transform: scale(1.1);
-  background-color: rgba(252, 252, 252, 0.973);
+  transform: scale(1.02);
+}
+
+#login-Form h2 {
+  text-align: center;
+  color: #222;
+  font-size: 1.5rem;
 }
 
 .input-group {
-  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.input-user-password, .input-user-username {
-  border: 2px solid rgb(182, 166, 166);
-  border-radius: 40px;
-  width: 100%;
-  padding: 0.6em;
-  border-radius: 40px;
+.input-user-password,
+.input-user-username {
+  border: 1.5px solid #ccc;
+  border-radius: 50px;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
 }
 
 label {
-  display: block;
-  margin-bottom: 0.3em;
-  font-weight: 600;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #333;
 }
 
 .login-btn {
-  align-self: center;
   background-color: #121414;
   color: #fff;
   border: none;
-  padding: 0.7em 1.2em;
-  border-radius: 4px;
-  cursor: pointer;
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
   font-weight: 600;
-  transition: 0.7s ease;
+  font-size: 0.9rem;
+  cursor: pointer;
+  align-self: center;
+  transition: all 0.3s ease;
 }
 
 .login-btn:hover {
-  transform: scale(1.1);
+  background-color: #000;
+  transform: scale(1.05);
 }
 
 .redirect-msg {
-  align-self: center;
-  margin: 0.8rem;
-  font-size: small;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #555;
 }
 
 footer {
-  background-color: snow;
-  color: #000000;
+  grid-area: footer;
+  background-color: #fff;
+  color: #000;
   text-align: center;
-  padding: 0.7em;
+  padding: 1rem;
   font-weight: bold;
-  font-size: small;
+  font-size: 0.9rem;
 }
+
 @media screen and (min-width: 481px) {
   .logo-title {
     flex-direction: row;
+    gap: 1rem;
   }
-  .nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-right: 1rem;
-  }
-  .nav-ul {
-    display: flex;
-  }
-}
-
-/* main html styling  */
-
-.header-title {
-  text-decoration: none;
-}
-nav {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.nav-ul li {
-  list-style: none;
-  text-align: center;
-  padding: 0.4rem;
-  text-wrap: nowrap;
-}
-.nav-ul li a {
-  text-decoration: none;
-  color: white;
-  padding: 0.2rem;
-  border-radius: 3rem;
-  font-size: small;
-  transition: 0.7s ease;
-  background-color: rgb(212, 122, 122);
-}
-
-.nav-ul li a:hover {
-  background-color: brown;
-}
-
-.nav-ul li:hover {
-  transform: scale(1.1);
 }

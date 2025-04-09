@@ -7,7 +7,7 @@ export class Instructor {
     #expertise_area;
     #assignedCourses;
 
-    constructor(id, name, username, password, role="instructor", expertise_area=[], assignedCourses=[]) {
+    constructor(id, name, username, password, role = "instructor", expertise_area = [], assignedCourses = []) {
         this.#id = id;
         this.#name = name;
         this.#username = username;
@@ -33,12 +33,10 @@ export class Instructor {
         return this.#role;
     }
 
-    //Assigned courses with courseId, classId
     get assignedCourses() {
         return this.#assignedCourses;
     }
 
-    //Expertise area the same as courses category
     get expertise_area() {
         return this.#expertise_area;
     }
@@ -75,9 +73,9 @@ export class Instructor {
 
         const response = await fetch('../data/instructor.json');
         const instructorsJSON = await response.json();
-        
+
         localStorage.setItem('instructors', JSON.stringify(instructorsJSON, null, 2));
-        
+
         return instructorsJSON.map(Instructor.fromJson);
     }
 

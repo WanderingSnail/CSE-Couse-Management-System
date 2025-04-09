@@ -7,13 +7,13 @@ export class Class {
     #prerequisites;
     #creditHours;
     #minStudents;
-    #status; //open, closed, in progress, completed
+    #status;
     #instructors;
     #capacity;
     #schedule;
     #studentList;
     #currentStudents;
-    
+
     constructor(
         classId,
         courseId,
@@ -45,7 +45,7 @@ export class Class {
         this.#studentList = studentList || [];
         this.#currentStudents = currentStudents || 0;
     }
-    
+
     get classId() {
         return this.#classId;
     }
@@ -152,9 +152,9 @@ export class Class {
 
         const response = await fetch('../data/classes.json');
         const classesJSON = await response.json();
-        
+
         localStorage.setItem('classes', JSON.stringify(classesJSON, null, 2));
-        
+
         return classesJSON.map(Class.fromJson);
     }
 

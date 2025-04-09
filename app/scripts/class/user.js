@@ -29,7 +29,6 @@ export class User {
         return this.#role;
     }
 
-    //Login function
     login(username, password) {
         return this.#username === username && this.#password === password;
     }
@@ -38,7 +37,6 @@ export class User {
         return new User(json.id, json.name, json.username, json.password, json.role);
     }
 
-    //Load users from json file
     static async load() {
         const storedUsers = localStorage.getItem('users');
         if (storedUsers) {

@@ -5,14 +5,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     const classes = await Class.load();
     const students = await Student.load();
 
-    // Get DOM elements
     const coursesTable = document.querySelector("#coursesTable").querySelector("tbody");
     const searchByName = document.querySelector("#searchByName");
     const searchByCategory = document.querySelector("#searchByCategory");
     const searchBtn = document.querySelector("#searchBtn");
     const registerBtn = document.querySelector("#registerBtn");
     
-    // Initialize courses array with unique course IDs
     const classesByCourse = {};
     classes.forEach((classItem) => {
         if (!classesByCourse[classItem.courseId]) {
@@ -33,7 +31,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
     console.log(classesByCourse);
    
-    // Function to display courses
     function displayCourses(classesByCourse) {
         coursesTable.innerHTML = "";
     
@@ -65,7 +62,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             `;
             coursesTable.appendChild(row);
 
-            // Add event listener to class dropdown
             const dropdown = row.querySelector('.class-dropdown');
             dropdown.addEventListener('change', (e) => {
                 const selectedClassId = e.target.value;
@@ -80,7 +76,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
   
-    // Filter courses
     function filterCourses() {
         const nameFilter = searchByName.value.toLowerCase();
         const categoryFilter = searchByCategory.value;
@@ -96,7 +91,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         displayCourses(filteredClassesByCourse);
     }
 
-    // Handle course registration
     registerBtn.addEventListener('click', () => {
         const selectedCourses = [];
         const checkboxes = document.querySelectorAll('.course-checkbox:checked');
@@ -116,7 +110,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         console.log('Selected courses:', selectedCourses);
 
         if (selectedCourses.length > 0) {
-            // Store selected courses in localStorage
             localStorage.setItem('selectedCourses', JSON.stringify(selectedCourses));
             
             window.location.href = '../html/course_registration.html';
@@ -125,12 +118,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     });
   
-    // Event Listeners
     searchBtn.addEventListener("click", filterCourses);
     searchByName.addEventListener("input", filterCourses);
     searchByCategory.addEventListener("change", filterCourses);
 
-    // Initial display
     displayCourses(classesByCourse);
 });
   

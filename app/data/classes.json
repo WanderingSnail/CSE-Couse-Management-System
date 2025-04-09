@@ -359,6 +359,28 @@
     "currentStudents": 1
   },
   {
+    "classId": "L01",
+    "courseId": "CMPS310",
+    "courseName": "Software Engineering",
+    "category": ["Software Engineering"],
+    "description": "Understand the principles of software engineering, design, and development.",
+    "prerequisites": ["CMPS251"],
+    "creditHours": 3,
+    "minStudents": 4,
+    "status": "inProgress",
+    "instructors": "Bruce Wayne",
+    "capacity": 20,
+    "schedule": {
+      "room.NO": "115",
+      "day": ["Thursday", "Saturday"],
+      "time": "10:00 - 11:00"
+    },
+    "studentList": [
+      { "name": "Yousef Karim", "id": "012024007" }
+    ],
+    "currentStudents": 1
+  },
+  {
     "classId": "L02",
     "courseId": "CMPS310",
     "courseName": "Software Engineering",

@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>QU Student Management - Course Validation</title>
   <link rel="stylesheet" href="../styles/mainStyle.css" />
+  <script src="../scripts/admin.js" type="module" defer></script>
 </head>
 
 <body>
@@ -18,6 +19,8 @@
       <ul class="nav-links">
         <li><a href="schedule.html">Courses Schedule</a></li>
         <li><a href="schedule.html">Assign Instructors</a></li>
+        <li><a href="#" id="showCourseBtn">Create Course</a></li>
+        <li><a href="#" id="showClassBtn">Create Class</a></li>
         <li><a href="login.html" class="btn-logout">Logout</a></li>
       </ul>
     </nav>
@@ -37,108 +40,47 @@
               <th>Action</th>
             </tr>
           </thead>
-          <tbody>
-          <tbody>
-            <!-- Inject from JSON into here -->
-
-
-
-
-
-          </tbody>
-          </tbody>
+          <tbody></tbody>
         </table>
       </div>
 
-      <!-- Save into JSON -->
-
-      <form action="#" method="post" class="course-form" id="newCourseForm">
-        <h3>Create New Course</h3>
-      
-        <div class="form-group">
-          <label>Course ID:</label>
-          <input type="text" name="courseId" required>
+      <form class="course-form hide-on-close" id="courseFormSection">
+        <div class="form-header">
+          <h3>Create New Course</h3>
+          <button type="button" class="form-close" data-target="courseFormSection">✖</button>
         </div>
-      
-        <div class="form-group">
-          <label>Course Name:</label>
-          <input type="text" name="name" required>
+        <div class="form-group"><label>Course ID:</label><input type="text" name="courseId" required /></div>
+        <div class="form-group"><label>Course Name:</label><input type="text" name="name" required /></div>
+        <div class="form-group"><label>Category:</label><input type="text" name="category"
+            placeholder="e.g., Programming, Security" required /></div>
+        <div class="form-group"><label>Description:</label><textarea name="description" rows="3" required></textarea>
         </div>
-      
-        <div class="form-group">
-          <label>Category (comma-separated):</label>
-          <input type="text" name="category" placeholder="e.g., Programming, Security" required>
+        <div class="form-group"><label>Prerequisites:</label><input type="text" name="prerequisites"
+            placeholder="e.g., CMPS151, CMPS251" /></div>
+        <div class="form-group"><label>Credit Hours:</label><input type="number" name="creditHours" min="1" required />
         </div>
-      
-        <div class="form-group">
-          <label>Description:</label>
-          <textarea name="description" rows="3" required></textarea>
-        </div>
-      
-        <div class="form-group">
-          <label>Prerequisites (comma-separated course IDs):</label>
-          <input type="text" name="prerequisites" placeholder="e.g., CMPS151, CMPS251">
-        </div>
-      
-        <div class="form-group">
-          <label>Credit Hours:</label>
-          <input type="number" name="creditHours" min="1" required>
-        </div>
-      
-        <div class="form-group">
-          <label>Minimum Students:</label>
-          <input type="number" name="minStudents" min="1" required>
-        </div>
-      
-        <div class="form-group">
-          <label>Maximum Students:</label>
-          <input type="number" name="maxStudents" min="1" required>
-        </div>
-      
-        <div class="form-group">
-          <button type="submit" class="btn-submit">Create Course</button>
-        </div>
+        <div class="form-group"><label>Minimum Students:</label><input type="number" name="minStudents" min="1"
+            required /></div>
+        <div class="form-group"><label>Maximum Students:</label><input type="number" name="maxStudents" min="1"
+            required /></div>
+        <div class="form-group"><button type="submit" class="btn-submit">Create Course</button></div>
       </form>
-      
 
-      <form action="#" method="post" class="course-form" id="newCourseForm">
-        <h3>Create New Class</h3>
-      
-        <div class="form-group">
-          <label>Course ID:</label>
-          <input type="text" name="courseId" required>
+      <form class="course-form hide-on-close" id="classFormSection">
+        <div class="form-header">
+          <h3>Create New Class</h3>
+          <button type="button" class="form-close" data-target="classFormSection">✖</button>
         </div>
-      
-        <div class="form-group">
-          <label>Course Name:</label>
-          <input type="text" name="course_name" required>
+        <div class="form-group"><label>Course ID:</label><input type="text" name="courseId" required /></div>
+        <div class="form-group"><label>Course Name:</label><input type="text" name="course_name" required /></div>
+        <div class="form-group"><label>Category:</label><input type="text" name="category" required /></div>
+        <div class="form-group"><label>Class ID:</label><input type="text" name="class" required /></div>
+        <div class="form-group"><label>Description:</label><textarea name="description" rows="3" required></textarea>
         </div>
-      
-        <div class="form-group">
-          <label>Category (comma-separated):</label>
-          <input type="text" name="category" required>
+        <div class="form-group"><label>Credit Hours:</label><input type="number" name="creditHours" min="1" required />
         </div>
-      
-        <div class="form-group">
-          <label>Class ID:</label>
-          <input type="text" name="class" required>
-        </div>
-      
-        <div class="form-group">
-          <label>Description:</label>
-          <textarea name="description" rows="3" required></textarea>
-        </div>
-      
-        <div class="form-group">
-          <label>Credit Hours:</label>
-          <input type="number" name="creditHours" min="1" required>
-        </div>
-      
-        <div class="form-group">
-          <label>Minimum Students:</label>
-          <input type="number" name="minStudents" min="1" required>
-        </div>
-      
+        <div class="form-group"><label>Minimum Students:</label><input type="number" name="minStudents" min="1"
+            required /></div>
         <div class="form-group">
           <label>Status:</label>
           <select name="status" required>
@@ -147,37 +89,15 @@
             <option value="completed">Completed</option>
           </select>
         </div>
-      
-        <div class="form-group">
-          <label>Instructor Name:</label>
-          <input type="text" name="instructor" required>
-        </div>
-      
-        <div class="form-group">
-          <label>Capacity:</label>
-          <input type="number" name="capacity" min="1" required>
-        </div>
-      
-        <div class="form-group">
-          <label>Room Number:</label>
-          <input type="text" name="room" required>
-        </div>
-      
-        <div class="form-group">
-          <label>Days (comma-separated):</label>
-          <input type="text" name="days" placeholder="e.g., Monday, Wednesday" required>
-        </div>
-      
-        <div class="form-group">
-          <label>Time:</label>
-          <input type="text" name="time" placeholder="e.g., 10:00 - 11:00" required>
-        </div>
-      
-        <div class="form-group">
-          <button type="submit" class="btn-submit">Create Class</button>
-        </div>
+        <div class="form-group"><label>Instructor Name:</label><input type="text" name="instructor" required /></div>
+        <div class="form-group"><label>Capacity:</label><input type="number" name="capacity" min="1" required /></div>
+        <div class="form-group"><label>Room Number:</label><input type="text" name="room" required /></div>
+        <div class="form-group"><label>Days:</label><input type="text" name="days" placeholder="e.g., Monday, Wednesday"
+            required /></div>
+        <div class="form-group"><label>Time:</label><input type="text" name="time" placeholder="e.g., 10:00 - 11:00"
+            required /></div>
+        <div class="form-group"><button type="submit" class="btn-submit">Create Class</button></div>
       </form>
-      
     </section>
   </main>
 
@@ -186,6 +106,4 @@
   </footer>
 </body>
 
-<script src="..\scripts\admin.js" type="module" defer></script>
 </html>
-

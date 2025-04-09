@@ -43,6 +43,18 @@ export class Instructor {
         return this.#expertise_area;
     }
 
+    toJSON() {
+        return {
+            id: this.#id,
+            name: this.#name,
+            username: this.#username,
+            password: this.#password,
+            role: this.#role,
+            expertise_area: this.#expertise_area,
+            assignedCourses: this.#assignedCourses
+        };
+    }
+
     static fromJson(json) {
         return new Instructor(
             json.id,
@@ -67,5 +79,10 @@ export class Instructor {
         localStorage.setItem('instructors', JSON.stringify(instructorsJSON, null, 2));
         
         return instructorsJSON.map(Instructor.fromJson);
+    }
+
+    static async save(instructors) {
+        const instructorsJSON = instructors.map(instructor => instructor.toJSON());
+        localStorage.setItem('instructors', JSON.stringify(instructorsJSON, null, 2));
     }
 }

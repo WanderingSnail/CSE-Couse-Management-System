@@ -60,6 +60,19 @@ export class Course {
         return this.#maxStudents;
     }
 
+    toJSON() {
+        return {
+            courseId: this.#courseId,
+            name: this.#name,
+            category: this.#category,
+            description: this.#description,
+            prerequisites: this.#prerequisites,
+            creditHours: this.#creditHours,
+            minStudents: this.#minStudents,
+            maxStudents: this.#maxStudents
+        };
+    }
+
     static fromJson(json) {
         return new Course(
             json.courseId,
@@ -85,5 +98,10 @@ export class Course {
         localStorage.setItem('courses', JSON.stringify(coursesJSON, null, 2));
         
         return coursesJSON.map(Course.fromJson);
+    }
+
+    static async save(courses) {
+        const coursesJSON = courses.map(course => course.toJSON());
+        localStorage.setItem('courses', JSON.stringify(coursesJSON, null, 2));
     }
 }

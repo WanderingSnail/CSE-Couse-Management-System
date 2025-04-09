@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
     console.log("Current student:", student);
 
-    //Construct the learning path directly from student data
     const learningPath = {
         enrolled: student.enrolledCourses.map(course => ({
             name: course.courseName,
@@ -29,14 +28,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         }))
     };
     
-    // Get DOM elements
     const enrolledCoursesTable = document.querySelector("#enrolledCoursesTable").querySelector("tbody");
     const completedCoursesTable = document.querySelector("#completedCoursesTable").querySelector("tbody");
     const searchByName = document.querySelector("#searchByName");
     const searchByCategory = document.querySelector("#searchByCategory");
     const searchBtn = document.querySelector("#searchBtn");    
    
-    // Function to display enrolled courses
     function displayEnrolledCourses(coursesToDisplay = learningPath.enrolled) {
         enrolledCoursesTable.innerHTML = "";
         if (coursesToDisplay.length === 0) {
@@ -57,10 +54,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
-    // Function to display completed courses
     function displayCompletedCourses(coursesToDisplay = learningPath.completed) {
-        completedCoursesTable.innerHTML = ""; // Clear table before inserting new rows
-  
+        completedCoursesTable.innerHTML = "";
         if (coursesToDisplay.length === 0) {
             completedCoursesTable.innerHTML = "<tr><td colspan='4'>No completed courses found.</td></tr>";
             return;
@@ -79,7 +74,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
   
-    // Filter courses
     function filterCourses() {
         const nameFilter = searchByName.value.toLowerCase().trim();
         const categoryFilter = searchByCategory.value.trim();
@@ -100,12 +94,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         displayCompletedCourses(filteredCompleted);
     }
   
-    // Event Listeners
     searchBtn.addEventListener("click", filterCourses);
     searchByName.addEventListener("input", filterCourses);
     searchByCategory.addEventListener("change", filterCourses);
 
-    // Initial display
     displayEnrolledCourses();
     displayCompletedCourses();
 });

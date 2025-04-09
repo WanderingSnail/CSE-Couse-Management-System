@@ -23,20 +23,20 @@
       </ul>
     </nav>
   </header>
-  
-    <main>
-        <h2>Admin: Review Instructor Preferences</h2>
-        <table id="coursesTable">
-        <thead>
-            <tr>
-                <th>Course Name</th>
-              <th>Instructor Preferences</th>
-              <th>Action</th>
-            </tr>
-        </thead>
-        <tbody id="courseListTbody"></tbody>
-        </table>
-    </main>
+
+  <main>
+    <h2>Instructor Preferences</h2>
+    <table id="coursesTable">
+      <thead>
+        <tr>
+          <th>Course Details</th>
+          <th>Instructor</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="courseListTbody"></tbody>
+    </table>
+  </main>
 
   <footer>
     <p>&copy; 2025 CSE Department - Qatar University</p>
@@ -45,61 +45,110 @@
 
 </html>
 
-<script>
+<script type="module">
+  import { Instructor } from "../scripts/class/instructor.js";
+  import { Class } from "../scripts/class/class.js";
+
   document.addEventListener("DOMContentLoaded", async () => {
     const preferencesTable = document.getElementById("courseListTbody");
 
-    try {
-      const courseResponse = await fetch("../data/classes.json");
-      const courses = await courseResponse.json();
+    const instructors = await Instructor.load();
+    const classes = await Class.load();
+    const preferences = JSON.parse(localStorage.getItem("instructor-preferences")) || [];
 
-      const preferencesResponse = await fetch("../data/instructor-preferences.json");
-      const preferences = await preferencesResponse.json();
+    if (preferences.length === 0) {
+      preferencesTable.innerHTML = `<tr><td colspan="3">No instructor preferences found.</td></tr>`;
+      return;
+    }
 
-      // Render preferences for open courses
-      courses.filter(course => course.status === "open").forEach(course => {
-        const row = document.createElement("tr");
+    preferences.forEach(pref => {
+      (pref.interestedCourses || []).forEach(courseString => {
+        const [courseId, ...rest] = courseString.split(" ");
+        const classId = rest.pop();
+        const courseName = rest.join(" ");
 
-        const courseNameCell = document.createElement("td");
-        courseNameCell.textContent = course.courseName;
-        row.appendChild(courseNameCell);
+        const tr = document.createElement("tr");
 
-        const preferencesCell = document.createElement("td");
-        const interestedInstructors = preferences.filter(pref => pref.interestedCourses.includes(course.classId));
+        const tdCourse = document.createElement("td");
+        tdCourse.textContent = `${courseId} - ${courseName} (${classId})`;
+        tr.appendChild(tdCourse);
 
-        preferencesCell.textContent = interestedInstructors.map(instructor => instructor.instructorId).join(", ");
-        row.appendChild(preferencesCell);
+        const tdInstructor = document.createElement("td");
+        tdInstructor.textContent = pref.name;
+        tr.appendChild(tdInstructor);
 
-        const actionCell = document.createElement("td");
-        const assignButton = document.createElement("button");
-        assignButton.textContent = "Assign Instructor";
-        assignButton.addEventListener("click", () => {
-          // Assign instructor to the course
-          const selectedInstructor = interestedInstructors[0]; // For simplicity, we are assigning the first interested instructor.
-          
-          // Add the instructor to the class
-          course.instructors = selectedInstructor.instructorId;
+        const tdAction = document.createElement("td");
 
-          // Save the updated course and instructor information
-          fetch("../data/classes.json", {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(courses)
-          });
+        const assignBtn = document.createElement("button");
+        assignBtn.textContent = "Approve";
+        assignBtn.className = "btn-validate";
 
-          alert(`Instructor ${selectedInstructor.instructorId} has been assigned to ${course.courseName}`);
+        assignBtn.addEventListener("click", async () => {
+          const allClasses = await Class.load();
+          const targetClass = allClasses.find(c =>
+            c.classId === classId && c.courseId === courseId
+          );
+
+          if (!targetClass) {
+            alert("Class not found.");
+            return;
+          }
+
+          targetClass.instructors = pref.name;
+
+          targetClass.status = "inProgress";
+
+          await Class.save(allClasses);
+
+          const instructor = instructors.find(i => i.id === pref.id);
+          if (instructor) {
+            instructor.assignedCourses = instructor.assignedCourses || [];
+
+            const already = instructor.assignedCourses.some(
+              entry => entry.classId === targetClass.classId
+            );
+
+            if (!already) {
+              instructor.assignedCourses.push({
+                courseId: targetClass.courseId,
+                classId: targetClass.classId
+              });
+
+              await Instructor.save(instructors);
+            }
+          }
+
+          alert(`${pref.name} assigned to ${courseId} (${classId})`);
+          tr.remove();
         });
 
-        actionCell.appendChild(assignButton);
-        row.appendChild(actionCell);
+        const rejectBtn = document.createElement("button");
+        rejectBtn.textContent = "Reject";
+        rejectBtn.className = "btn-cancel";
 
-        preferencesTable.appendChild(row);
+        rejectBtn.addEventListener("click", () => {
+          const preferences = JSON.parse(localStorage.getItem("instructor-preferences")) || [];
+
+          const updatedPreferences = preferences.map(p => {
+            return {
+              ...p,
+              interestedCourses: p.interestedCourses.filter(entry =>
+                entry !== `${courseId} ${courseName} ${classId}`
+              )
+            };
+          }).filter(p => p.interestedCourses.length > 0);
+
+          localStorage.setItem("instructor-preferences", JSON.stringify(updatedPreferences, null, 2));
+          alert(`Rejected ${pref.name}'s interest in ${courseId} - ${courseName} (${classId})`);
+          tr.remove();
+        });
+
+        tdAction.appendChild(assignBtn);
+        tdAction.appendChild(rejectBtn);
+        tr.appendChild(tdAction);
+
+        preferencesTable.appendChild(tr);
       });
-    } catch (error) {
-      console.error("Error loading data:", error);
-      alert("Failed to load instructor preferences.");
-    }
+    });
   });
 </script>

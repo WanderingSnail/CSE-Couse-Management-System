@@ -6,10 +6,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     const students = await Student.load();
 
     const studentID = localStorage.getItem("id");
-    const student = students.find(student => student.id === studentID);
+    const student = students.find(student => student.id.toString() === studentID);
 
     const selectedCourses = JSON.parse(localStorage.getItem('selectedCourses') || '[]');
-    const selectedClasses = selectedCourses.map(course => 
+    const selectedClasses = selectedCourses.map(course =>
         classes.find(c => c.courseId === course.courseId && c.classId === course.classId)
     ).filter(Boolean);
 
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             if (course.currentStudents >= course.capacity) {
                 course.availability = "Not Available";
-            } else if (!course.prerequisites.every(prerequisite => 
+            } else if (!course.prerequisites.every(prerequisite =>
                 student.completedCourses.some(completed => completed.courseId === prerequisite)
             )) {
                 course.availability = "Not Available";
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         if (registeredCourses.length > 0) {
             student.enrolledCourses.push(...registeredCourses);
-            
+
             await Student.save(students);
             await Class.save(classes);
 

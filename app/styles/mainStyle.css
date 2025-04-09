@@ -300,3 +300,8 @@ td select {
 .form-close:hover {
     color: #dc3545;
 }
+
+#coursesTable td select, #coursesTable td button {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+  }  

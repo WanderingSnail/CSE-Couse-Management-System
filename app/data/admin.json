@@ -1,9 +1,9 @@
 [
-    {
-      "id": "112014001",
-      "name": "Khalid Ali",
-      "username": "ka140001",
-      "password": "11ka001",
-      "role": "admin"
-    }
+  {
+    "id": "112014001",
+    "name": "Khalid Ali",
+    "username": "ka140001",
+    "password": "11ka001",
+    "role": "admin"
+  }
 ]

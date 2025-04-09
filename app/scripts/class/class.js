@@ -82,8 +82,16 @@ export class Class {
         return this.#status;
     }
 
+    set status(value) {
+        return this.#status = value;
+    }
+
     get instructors() {
         return this.#instructors;
+    }
+
+    set instructors(value) {
+        this.#instructors = value;
     }
 
     get capacity() {

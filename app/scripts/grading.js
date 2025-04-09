@@ -23,13 +23,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         return assignedClass && classItem.instructors === instructor.name;
     });
 
-    // Get DOM elements
     const courseSelect = document.querySelector("#courseSelect");
     const gradesTable = document.querySelector(".grades-submission table tbody");
     const searchBtn = document.querySelector("#searchBtn"); 
     const submitGradesBtn = document.querySelector("#submitGradesBtn");
 
-    //Course selector
     assignedClasses.forEach(classItem => {
         const option = document.createElement("option");
         option.value = classItem.courseId;
@@ -37,7 +35,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         courseSelect.appendChild(option);
     });
 
-    //Display students
     function displayStudents(selectedClasses = assignedClasses) {
         gradesTable.innerHTML = "";
         
@@ -84,7 +81,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     }
 
-    // Filter classes by course
     function filterClasses() {
         const courseFilter = courseSelect.value;
         
@@ -99,7 +95,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         displayStudents(filteredClasses);
     }
 
-    // Submit grades to students' completedCourses
     async function submitGrades() {
         const gradeInputs = document.querySelectorAll(".grade-input");
         const updatedStudents = new Set();
@@ -112,7 +107,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             const studentId = gradeInput.dataset.studentId;
             const student = students.find(s => s.id === studentId);
             
-            //Update student's enrolled courses to completed courses
             if (student) {
                 const enrolledIndex = student.enrolledCourses.findIndex(
                     course => course.courseId === gradeInput.dataset.courseId &&
@@ -137,7 +131,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
         }
         
-        //Save updated students
         if (updatedStudents.size > 0) {
             try {
                 await Student.save(students);                
@@ -151,12 +144,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     }
 
-    //Event listeners
     courseSelect.addEventListener("change", filterClasses);
     searchBtn.addEventListener("click", filterClasses);
     submitGradesBtn.addEventListener("click", submitGrades);
 
-    //Initial display
     displayStudents();
 });
   

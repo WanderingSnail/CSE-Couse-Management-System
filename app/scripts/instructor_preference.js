@@ -1,4 +1,3 @@
-// instructor-preference.js
 import { Class } from './class/class.js';
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -7,9 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     
 
     try {
-      // Load class
       const classes = await Class.load();
-      // Filter open classes only
       const openCourses = classes.filter(c => c.status === "open");
   
       openCourses.forEach(course => {

@@ -35,5 +35,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         else {
             alert("Invalid username or password");
         }
+
+        localStorage.setItem("id", user.id);
     });
 });

@@ -8,6 +8,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     const studentID = localStorage.getItem("id");
     const student = students.find(student => student.id.toString() === studentID);
 
+    if (!student) {
+        alert("Student not found. Please log in again.");
+        return;
+    }
+
     const selectedCourses = JSON.parse(localStorage.getItem('selectedCourses') || '[]');
     const selectedClasses = selectedCourses.map(course =>
         classes.find(c => c.courseId === course.courseId && c.classId === course.classId)

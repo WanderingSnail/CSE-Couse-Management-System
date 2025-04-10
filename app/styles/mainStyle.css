@@ -291,17 +291,18 @@ td select {
 
 .hide-on-close {
     display: none;
-  }
-  
-  .hide-on-close.visible {
+}
+
+.hide-on-close.visible {
     display: block;
-  }  
+}
 
 .form-close:hover {
     color: #dc3545;
 }
 
-#coursesTable td select, #coursesTable td button {
+#coursesTable td select,
+#coursesTable td button {
     margin-top: 0.5rem;
     padding: 0.5rem;
-  }  
+}

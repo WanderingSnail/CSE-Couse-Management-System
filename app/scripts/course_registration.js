@@ -102,9 +102,14 @@ document.addEventListener("DOMContentLoaded", async () => {
                 classId: classId,
                 courseName: course.courseName,
                 category: course.category,
-                status: course.status
+                status: course.status,
+                instructor: course.instructors,
+                schedule: course.schedule
             });
 
+            if (!course.studentList.includes(student.id)) {
+                course.studentList.push(student.id);
+            }
             course.currentStudents++;
         }
 

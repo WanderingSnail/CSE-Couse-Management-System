@@ -13,12 +13,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     const tr = document.createElement("tr");
 
     const studentCount = cls.currentStudents || 0;
-    const canValidate = studentCount >= cls.minStudents;
     let actionBtn = "";
 
     if (cls.status === "open") {
       if (studentCount >= cls.minStudents) {
-        actionBtn = `<button class="btn-validate" onclick="validateClass('${cls.classId}', this)">Validate</button>`;
+        actionBtn = `<button class="btn-validate" onclick="validateClass('${cls.classId}', '${cls.courseId}')">Validate</button>`;
       } else {
         actionBtn = `<button class="btn-cancel" onclick="cancelClass('${cls.classId}', '${cls.courseId}')">Cancel</button>`;
       }
@@ -158,15 +157,18 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 });
 
-window.validateClass = async function (classId, btn) {
+window.validateClass = async function (classId, courseId) {
   const classes = await Class.load();
-  const classToValidate = classes.find((c) => c.classId === classId);
-  if (classToValidate) {
-    classToValidate.status = "inProgress";
-    await Class.save(classes);
 
-    const td = btn.parentElement;
-    td.innerHTML = `<p style="color:green; font-weight:bold;">Class Validated</p>`;
+  const exactClass = classes.find(
+    (c) => c.classId === classId && c.courseId === courseId
+  );
+
+  if (exactClass) {
+    exactClass.status = "inProgress";
+    await Class.save(classes);
+    alert(`Class ${classId} of course ${courseId} validated successfully`);
+    window.location.reload();
   }
 };
 
@@ -182,7 +184,5 @@ window.cancelClass = async function (classId, courseId) {
     await Class.save(classes);
     alert(`Class ${classId} of course ${courseId} cancelled successfully`);
     window.location.reload();
-  } else {
-    alert("Matching class not found.");
   }
 };

@@ -8,7 +8,7 @@
     "prerequisites": [],
     "creditHours": 3,
     "minStudents": 4,
-    "status": "inProgress",
+    "status": "open",
     "instructors": "Brad Peter",
     "capacity": 20,
     "schedule": {
@@ -45,8 +45,17 @@
       "day": ["Monday", "Wednesday"],
       "time": "09:00 - 10:00"
     },
-    "studentList": [],
-    "currentStudents": 0
+    "studentList": [
+      { "name": "Ibrahim Al-Hassan", "id": "012020012" },
+      { "name": "Hassan Al-Rashid", "id": "012020013" },
+      { "name": "Rashid Al-Maktoum", "id": "012020014" },
+      { "name": "Tariq Al-Salem", "id": "012020015" },
+      { "name": "Khalid Al-Omari", "id": "012020016" },
+      { "name": "Omar Al-Farid", "id": "012020017" },
+      { "name": "Saif Al-Amin", "id": "012020018" },
+      { "name": "Nasser Al-Rawi", "id": "012020019" }
+    ],
+    "currentStudents": 7
   },
   {
     "classId": "L01",
@@ -185,9 +194,7 @@
       "day": ["Wednesday", "Friday"],
       "time": "08:00 - 09:00"
     },
-    "studentList": [
-      { "name": "Khalid Mansour", "id": "012024005" }
-    ],
+    "studentList": [{ "name": "Khalid Mansour", "id": "012024005" }],
     "currentStudents": 1
   },
   {
@@ -207,9 +214,7 @@
       "day": ["Wednesday", "Friday"],
       "time": "09:00 - 10:00"
     },
-    "studentList": [
-      { "name": "Mohmmed Mohsin", "id": "012025001" }
-    ],
+    "studentList": [{ "name": "Mohmmed Mohsin", "id": "012025001" }],
     "currentStudents": 1
   },
   {
@@ -249,9 +254,7 @@
       "day": ["Wednesday", "Friday"],
       "time": "11:00 - 12:00"
     },
-    "studentList": [
-      { "name": "Khalid Mansour", "id": "012024005" }
-    ],
+    "studentList": [{ "name": "Khalid Mansour", "id": "012024005" }],
     "currentStudents": 1
   },
   {
@@ -271,9 +274,7 @@
       "day": ["Thursday", "Saturday"],
       "time": "08:00 - 09:00"
     },
-    "studentList": [
-      { "name": "Mohmmed Mohsin", "id": "012025001" }
-    ],
+    "studentList": [{ "name": "Mohmmed Mohsin", "id": "012025001" }],
     "currentStudents": 1
   },
   {
@@ -353,9 +354,7 @@
       "day": ["Thursday", "Saturday"],
       "time": "10:00 - 11:00"
     },
-    "studentList": [
-      { "name": "Yousef Karim", "id": "012024007" }
-    ],
+    "studentList": [{ "name": "Yousef Karim", "id": "012024007" }],
     "currentStudents": 1
   },
   {
@@ -515,9 +514,7 @@
       "day": ["Sunday", "Tuesday"],
       "time": "08:00 - 09:00"
     },
-    "studentList": [
-      { "name": "Yousef Karim", "id": "012024007" }
-    ],
+    "studentList": [{ "name": "Yousef Karim", "id": "012024007" }],
     "currentStudents": 1
   },
   {

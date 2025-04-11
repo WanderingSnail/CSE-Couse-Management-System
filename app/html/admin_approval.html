@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QU Student Management - Course Validation</title>
+    <link rel="stylesheet" href="../styles/mainStyle.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>QU Student Management - Course Validation</title>
-  <link rel="stylesheet" href="../styles/mainStyle.css" />
-</head>
+  <body>
+    <header>
+      <div class="logo-img">
+        <img
+          src="../img/QU logo.png"
+          alt="Qatar University logo"
+          width="100%"
+        />
+      </div>
+      <nav class="navbar">
+        <a href="admin_dashboard.html" class="logo">QU Student Management</a>
+        <ul class="nav-links">
+          <li><a href="admin_dashboard.html">Admin Dashboard</a></li>
+          <li><a href="login.html" class="btn-logout">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
 
-<body>
-  <header>
-    <div class="logo-img">
-      <img src="../img/QU logo.png" alt="Qatar University logo" width="100%" />
-    </div>
-    <nav class="navbar">
-      <a href="main.html" class="logo">QU Student Management</a>
-      <ul class="nav-links">
-        <li><a href="schedule.html">Courses Schedule</a></li>
-        <li><a href="#" id="showCourseBtn">Create Course</a></li>
-        <li><a href="#" id="showClassBtn">Create Class</a></li>
-        <li><a href="login.html" class="btn-logout">Logout</a></li>
-      </ul>
-    </nav>
-  </header>
+    <main>
+      <h2>Instructor Preferences</h2>
+      <table id="coursesTable">
+        <thead>
+          <tr>
+            <th>Course Details</th>
+            <th>Instructor</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="courseListTbody"></tbody>
+      </table>
+    </main>
 
-  <main>
-    <h2>Instructor Preferences</h2>
-    <table id="coursesTable">
-      <thead>
-        <tr>
-          <th>Course Details</th>
-          <th>Instructor</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody id="courseListTbody"></tbody>
-    </table>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 CSE Department - Qatar University</p>
-  </footer>
-</body>
-
+    <footer>
+      <p>&copy; 2025 CSE Department - Qatar University</p>
+    </footer>
+  </body>
 </html>
 
 <script type="module">
@@ -54,15 +54,16 @@
 
     const instructors = await Instructor.load();
     const classes = await Class.load();
-    const preferences = JSON.parse(localStorage.getItem("instructor-preferences")) || [];
+    const preferences =
+      JSON.parse(localStorage.getItem("instructor-preferences")) || [];
 
     if (preferences.length === 0) {
       preferencesTable.innerHTML = `<tr><td colspan="3">No instructor preferences found.</td></tr>`;
       return;
     }
 
-    preferences.forEach(pref => {
-      (pref.interestedCourses || []).forEach(courseString => {
+    preferences.forEach((pref) => {
+      (pref.interestedCourses || []).forEach((courseString) => {
         const [courseId, ...rest] = courseString.split(" ");
         const classId = rest.pop();
         const courseName = rest.join(" ");
@@ -85,8 +86,8 @@
 
         assignBtn.addEventListener("click", async () => {
           const allClasses = await Class.load();
-          const targetClass = allClasses.find(c =>
-            c.classId === classId && c.courseId === courseId
+          const targetClass = allClasses.find(
+            (c) => c.classId === classId && c.courseId === courseId
           );
 
           if (!targetClass) {
@@ -100,18 +101,18 @@
 
           await Class.save(allClasses);
 
-          const instructor = instructors.find(i => i.id === pref.id);
+          const instructor = instructors.find((i) => i.id === pref.id);
           if (instructor) {
             instructor.assignedCourses = instructor.assignedCourses || [];
 
             const already = instructor.assignedCourses.some(
-              entry => entry.classId === targetClass.classId
+              (entry) => entry.classId === targetClass.classId
             );
 
             if (!already) {
               instructor.assignedCourses.push({
                 courseId: targetClass.courseId,
-                classId: targetClass.classId
+                classId: targetClass.classId,
               });
 
               await Instructor.save(instructors);
@@ -127,19 +128,27 @@
         rejectBtn.className = "btn-cancel";
 
         rejectBtn.addEventListener("click", () => {
-          const preferences = JSON.parse(localStorage.getItem("instructor-preferences")) || [];
+          const preferences =
+            JSON.parse(localStorage.getItem("instructor-preferences")) || [];
 
-          const updatedPreferences = preferences.map(p => {
-            return {
-              ...p,
-              interestedCourses: p.interestedCourses.filter(entry =>
-                entry !== `${courseId} ${courseName} ${classId}`
-              )
-            };
-          }).filter(p => p.interestedCourses.length > 0);
+          const updatedPreferences = preferences
+            .map((p) => {
+              return {
+                ...p,
+                interestedCourses: p.interestedCourses.filter(
+                  (entry) => entry !== `${courseId} ${courseName} ${classId}`
+                ),
+              };
+            })
+            .filter((p) => p.interestedCourses.length > 0);
 
-          localStorage.setItem("instructor-preferences", JSON.stringify(updatedPreferences, null, 2));
-          alert(`Rejected ${pref.name}'s interest in ${courseId} - ${courseName} (${classId})`);
+          localStorage.setItem(
+            "instructor-preferences",
+            JSON.stringify(updatedPreferences, null, 2)
+          );
+          alert(
+            `Rejected ${pref.name}'s interest in ${courseId} - ${courseName} (${classId})`
+          );
           tr.remove();
         });
 

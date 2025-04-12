@@ -17,9 +17,12 @@
           width="100%"
         />
       </div>
-      <nav class="navbar">
+      <nav class="navbar" id="admin-navbar">
+        <div class="top-row">
         <a href="admin_dashboard.html" class="logo">QU Student Management</a>
-        <ul class="nav-links">
+        </div>
+        
+        <ul class="nav-links" id="admin-nav-links">
           <li><a href="schedule.html">Courses Schedule</a></li>
           <li><a href="#" id="showCourseBtn">Create Course</a></li>
           <li><a href="#" id="showClassBtn">Create Class</a></li>
@@ -33,7 +36,7 @@
 
     <main>
       <section class="course-validation">
-        <div class="courses-container">
+        <div class="courses-container" id="admin-dash">
           <table id="coursesTable">
             <thead>
               <tr>

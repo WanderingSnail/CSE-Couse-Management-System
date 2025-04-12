@@ -117,7 +117,6 @@ main {
     width: 100%;
     margin-bottom: 1rem;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
-
 }
 
 #coursesTable {
@@ -307,111 +306,69 @@ td select {
     padding: 0.5rem;
 }
 
-/* Existing styles (no change) */
-
 @media screen and (max-width: 768px) {
-    /* Header and navigation adjustments */
-    nav {
-        flex-direction: column;
-        padding: 1rem;
-        align-items: flex-start;
+    table th:nth-child(4),
+    table td:nth-child(4),
+    table th:nth-child(6),
+    table td:nth-child(6),
+    table th:nth-child(9),
+    table td:nth-child(9),
+    table th:nth-child(10),
+    table td:nth-child(10) {
+      display: none;
     }
-    
+  
+    #admin-dash table th:nth-child(2),
+    #admin-dash table td:nth-child(2),
+    #admin-dash table th:nth-child(4),
+    #admin-dash table td:nth-child(4) {
+        display: none;
+    }
+
+    #admin-dash table th:nth-child(6),
+    #admin-dash table td:nth-child(6){
+        display: table-cell;
+    }
+
     .nav-links {
-        flex-direction: column;
-        width: 100%;
-        margin-top: 1rem;
+      flex-direction: column;
+      align-items: center;
     }
-
-    .nav-links li {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 1rem;
-    }
-
-    .nav-links li a {
-        padding: 1rem;
-        font-size: 1.2rem;
-    }
-
-    /* Course table adjustments */
-    #coursesTable {
-        font-size: 0.9rem;
+  
+    .courses-container {
         overflow-x: auto;
     }
-
-    #coursesTable th,
-    #coursesTable td {
-        padding: 0.5rem;
-        text-align: left;
+  
+    table {
+      font-size: 0.85rem;
+    }
+  
+    .btn-register {
+      width: 100%;
+      font-size: 1rem;
     }
 
-    .courses-container {
-        padding: 1rem;
-    }
-
-    /* Registration section */
-    .registration-section h2 {
-        font-size: 1.5rem;
-    }
-
-    /* Adjusting button and register button layout */
-    .register-button-container {
-        text-align: center;
-        margin-top: 1rem;
-    }
-
-    .register-button-container .btn-register {
+    #admin-nav-links {
+        flex-direction: row;
+        align-items: flex-start;
         width: 100%;
-        padding: 1rem;
-        font-size: 1.1rem;
+        margin-top: 15px;
+      }
+    
+    #admin-navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+    #admin-nav-links li a {
+        font-size: 0.85rem;
     }
 
-    /* Footer adjustments */
-    footer {
-        padding: 1rem;
-        font-size: 0.9rem;
+    .top-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
     }
 }
-
-@media screen and (max-width: 480px) {
-    /* Further adjustments for very small screens */
-    body {
-        font-size: 14px;
-    }
-
-    nav .logo {
-        font-size: 1.3rem;
-    }
-
-    .nav-links li a {
-        padding: 0.8rem;
-        font-size: 1rem;
-    }
-
-    /* Course search section */
-    .course-search {
-        padding: 1rem;
-    }
-
-    .search-bar input[type="text"],
-    .search-bar select,
-    .search-bar button {
-        width: 100%;
-        margin-bottom: 1rem;
-    }
-
-    .courses-container {
-        padding: 0.5rem;
-    }
-
-    #coursesTable th,
-    #coursesTable td {
-        padding: 0.5rem;
-    }
-
-    .register-button-container .btn-register {
-        font-size: 1rem;
-        padding: 0.8rem;
-    }
-}
+  
